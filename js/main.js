@@ -8,6 +8,7 @@ $(document).ready(function() {
 
 	$('#fullpage').fullpage({
 		verticalCentered: false,
+    slidesNavigation: true,
 	});
 
 	var $os = getMobileOperatingSystem();
