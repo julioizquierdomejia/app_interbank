@@ -232,5 +232,11 @@ h2.subTituloVideo{
 }
 
 .fullPage-slidesNav{
-	margin-bottom: 120px;
+	margin-bottom: 100px;
+}
+
+.iframe_video {
+  width: 100%;
+  height: 200px;
+  background-color: green;
 }

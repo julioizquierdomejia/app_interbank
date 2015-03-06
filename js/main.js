@@ -23,6 +23,26 @@ $(document).ready(function() {
 		$('.googleButton').css('display','block');
 	};
 
+
+});
+
+$(window).load(function(){
+    $(".iframe_video").each(function() {
+        var item = $(this).attr('data-div');
+        var video = $(this).attr('data-video');
+        var player;
+        player = new YT.Player(item, {
+            height: '100%',
+            width: '100%',
+            videoId: video
+        });
+        $('.slidervideo').on('click', '.flex-control-nav a', function() {
+          player.stopVideo();
+        });
+        $('.slidervideo').on('click', '.flex-direction-nav a', function() {
+          player.stopVideo();
+        });
+    });    
 });
 
 function getMobileOperatingSystem() {
