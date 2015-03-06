@@ -1,0 +1,113 @@
+
+
+body, html{
+	font-family: 'omnesmedium';
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.envoltura{
+	-webkit-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	position: absolute;
+	
+}
+
+.menuContextual{
+	z-index: 99;
+	height: 100%;
+	width: 280px;
+	background-color: #ccc;
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+
+	-webkit-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+	-moz-transform: translateX(100%);
+}
+
+.open-slider .menuContextual {
+	-webkit-transform:translateX(0%);
+	transform:translateX(0%);
+	-moz-transform:translateX(0%);
+}
+
+.open-slider .envoltura {
+	-webkit-transform:translateX(-280px);
+	transform:translateX(-280px);
+	-moz-transform:translateX(-280px);
+}
+
+#section0{
+	background-size:cover;
+	background-position: center center;
+	background-image: url(../img/fondoHome.png);
+}
+
+#section1{
+	background-size:cover;
+	background-position: center center;
+	background-image: url(../img/fondoP1.jpg);
+}
+
+.head{
+	width: 100%;
+	height: 45px;
+	background-color: white;
+	position: relative;
+}
+
+.head img{
+	padding: 10px 14px;
+}
+
+.botonMenu{
+	width: 45px;
+	height: 45px;
+	background-color: #009b3a;
+	float: right;
+	position: relative;
+}
+
+h2{
+	font-family: 'omneslight';
+	font-size: 20px;
+	color:#4b4b4b;
+	padding: 20px 0px 0px 14px;
+}
+
+h1{
+	font-family: 'omnesmedium';
+	color: #009b3a;
+	font-size: 32px;
+	padding: 0px 0px 0px 14px;
+	margin-top: -10px;
+}
+
+
+
+.callTo{
+	width: 74%;
+	height: 12%;
+	display: block;
+	margin-left: 14px;
+	position: absolute;
+	border-radius: 8px;
+	color: white;
+	top: 50%;
+}
+
+.callTo img{
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: auto;
+}
