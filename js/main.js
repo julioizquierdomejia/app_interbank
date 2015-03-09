@@ -1,6 +1,7 @@
 $(document).ready(function() {
   var $html = $("html");
   var $statusMenu = false;
+  
 
   $('.botonMenu').click(function(){
     //console.log('estas haciendo click');
@@ -9,10 +10,13 @@ $(document).ready(function() {
     $('#raya2').toggleClass('girarRaya2');
   })
 
-	$('#fullpage').fullpage({
-		verticalCentered: false,
-    slidesNavigation: true,
-	});
+  $('.contextual > li').click(function(){
+    $html.toggleClass('open-slider');
+    $('#raya1').toggleClass('girarRaya1');
+    $('#raya2').toggleClass('girarRaya2');
+  })
+
+
 
 	var $os = getMobileOperatingSystem();
 
@@ -30,15 +34,50 @@ $(document).ready(function() {
 });
 
 $(window).load(function(){
+
+  var player;
+  var $meVideo;
+
+  var videoArray = [];
+
+  $('#fullpage').fullpage({
+    verticalCentered: false,
+    slidesNavigation: true,
+
+    anchors: ['home', 'conoce', 'aprende', 'preguntas'],
+    navigationPosition: 'right',
+
+    afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
+      
+      for (i = 0; i < videoArray.length; i++) { 
+          videoArray[i].pauseVideo();
+      }
+
+    },
+    afterLoad: function(anchorLink, index){
+      for (i = 0; i < videoArray.length; i++) { 
+          videoArray[i].pauseVideo();
+      }      
+    },
+
+
+  });
+
     $(".iframe_video").each(function() {
         var item = $(this).attr('data-div');
         var video = $(this).attr('data-video');
-        var player;
+        
+
         player = new YT.Player(item, {
             height: '100%',
             width: '100%',
             videoId: video
         });
+
+        $meVideo = player;
+
+        videoArray.push($meVideo);
+       
         $('.slidervideo').on('click', '.flex-control-nav a', function() {
           player.stopVideo();
         });
