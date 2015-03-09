@@ -1,9 +1,12 @@
 $(document).ready(function() {
   var $html = $("html");
+  var $statusMenu = false;
 
   $('.botonMenu').click(function(){
-    console.log('estas haciendo click');
+    //console.log('estas haciendo click');
     $html.toggleClass('open-slider');
+    $('#raya1').toggleClass('girarRaya1');
+    $('#raya2').toggleClass('girarRaya2');
   })
 
 	$('#fullpage').fullpage({

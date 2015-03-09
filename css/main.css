@@ -80,14 +80,51 @@ body, html{
 	-moz-transition: all .3s ease-out;
 }
 
-.head img{padding: 10px 14px;}
+.head > img{padding: 10px 14px;}
+
 
 .botonMenu{
-	width: 45px;
+	width: 44px;
 	height: 45px;
-	background-color: #009b3a;
 	float: right;
 	position: relative;
+}
+
+.botonMenu .raya{
+	width: 22px;
+	height: 3px;
+	position: absolute;
+
+	-webkit-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+	-moz-transition: all .5s ease-out;
+
+	-webkit-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+	-moz-transition-delay: 0.5s;
+}
+
+.botonMenu .raya > img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.botonMenu #raya1{margin: 16px 2px 2px 13px;}
+.botonMenu #raya2{margin: 26px 2px 2px 13px;}
+
+.girarRaya1{
+	-ms-transform: rotate(135deg) translate(4px, -4px); /* IE 9 */
+	-webkit-transform: rotate(135deg) translate(4px, -4px); /* Safari */
+	transform: rotate(135deg) translate(4px, -4px);
+}
+
+.girarRaya2{
+	-ms-transform: rotate(-135deg) translate(2px, 3px); /* IE 9 */
+	-webkit-transform: rotate(-135deg) translate(2px, 3px); /* Safari */
+	transform: rotate(-135deg) translate(2px, 3px);
 }
 
 .open-slider .menuContextual {
@@ -124,7 +161,8 @@ body, html{
 
 h2.subTituloHome{
 	font-family: 'omneslight';
-	font-size: 23px;
+	font-size: 18px;
+	/*font-size: 23px;*/
 	color:#4b4b4b;
 	padding: 50px 0px 0px 14px;
 }
@@ -132,17 +170,19 @@ h2.subTituloHome{
 h1.tituloHome{
 	font-family: 'omnesmedium';
 	color: #009b3a;
-	font-size: 32px;
+	font-size: 29px;
+	/*font-size: 32px;*/
 	padding: 0px 0px 0px 14px;
 	margin-top: -10px;
+	line-height: 29px;
 }
 
 h1.tituloVideos{
 	font-family: 'omnesmedium';
 	color: #9c5fb5;
-	font-size: 32px;
+	font-size: 26px;
 	padding: 26px 0px 0px 14px;
-	line-height: 32px;
+	line-height: 24px;
 }
 
 h2.subTituloVideo{
@@ -157,8 +197,11 @@ h2.subTituloVideo{
 
 /* -- el call para el home */
 .callTo{
-	width: 74%;
+	width: 70%;
 	height: 12%;
+	margin-top: -10px;
+	/*width: 74%;
+	height: 12%;*/
 	display: block;
 	margin-left: 14px;
 	position: relative;
@@ -195,8 +238,8 @@ h2.subTituloVideo{
 }
 
 .arrowGreen{
-	width: 70%;
-	padding: 14px 0px 0px 40px;
+	width: 66%;
+	padding: 22px 0px 0px 40px;
 }
 
 .arrowGreen img{
@@ -232,11 +275,56 @@ h2.subTituloVideo{
 }
 
 .fullPage-slidesNav{
-	margin-bottom: 100px;
+	display: none;
 }
 
 .iframe_video {
-	width: 100%;
-	height: 200px;
+	width: 90%;
+	height: 140px;
 	background-color: green;
+	margin-left: 5%;
+
+}
+
+@media only screen and (min-device-width : 321px) and (max-device-width : 720px) {
+	h2.subTituloHome{
+		font-size: 23px;
+		padding: 70px 0px 0px 14px;
+	}
+
+	h1.tituloHome{
+		font-size: 32px;
+		line-height: 33px;
+		padding: 0px 0px 10px 14px;
+	}
+
+	.callTo{
+		width: 74%;
+		height: 12%;
+		padding: 10px 0px 4px 0px;
+	}
+
+	h1.tituloVideos{
+		font-size: 32px;
+		padding: 26px 0px 0px 14px;
+		line-height: 32px;
+	}
+
+	h2.subTituloVideo{
+		font-size: 14px;
+		padding: 0px 0px 0px 14px;
+		margin-top: -14px;
+		line-height: 18px;
+	}
+
+	.iframe_video {
+		width: 100%;
+		height: 230px;
+		margin-left: 0;
+	}
+
+	.fullPage-slidesNav{
+		margin-bottom: 100px;
+		display: block;
+	}
 }
