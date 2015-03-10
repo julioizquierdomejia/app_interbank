@@ -333,6 +333,8 @@ h1.tituloPreguntas{
     color: #009b3a;
     font-family: 'omnesmedium';
     font-size: 16px;
+
+    text-decoration: none;
 }
 
 /* -- Navegaciones */
