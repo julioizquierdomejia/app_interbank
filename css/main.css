@@ -332,6 +332,7 @@ h1.tituloPreguntas{
     box-sizing: border-box;
     color: #009b3a;
     font-family: 'omnesmedium';
+    font-size: 16px;
 }
 
 /* -- Navegaciones */
