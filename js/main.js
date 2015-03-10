@@ -70,7 +70,11 @@ $(window).load(function(){
       player = new YT.Player(item, {
           height: '100%',
           width: '100%',
-          videoId: video
+          videoId: video,
+          playerVars: { 
+                'showinfo': 0,
+                'modestbranding': 1,
+            }
       });
 
       $meVideo = player;
@@ -133,7 +137,7 @@ $(window).load(function(){
     }})
   }
 
-  
+
   });   
 
 });
