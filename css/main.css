@@ -1,4 +1,13 @@
-
+/* Smartphones (landscape) ----------- */
+@media(min-width: 50px) and (orientation : landscape) {
+/* Styles */
+	html, body{
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+	.warning{display: block!important;}
+}
 
 body, html{
 	font-family: 'omnesmedium';
@@ -7,6 +16,35 @@ body, html{
 	padding: 0;
 	overflow: hidden;
 	background-color: white;
+}
+
+.warning{
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	position: absolute;
+	z-index: 200;
+	display: none;
+	opacity: 0.9;
+}
+
+.warning > .aviso{
+	color: #009b3a;
+	margin: 64px auto;
+	width: 45%;
+	height: 120px;
+	text-align: center;
+	font-family: 'omnessemibold';
+	font-size: 20px;	
+}
+
+.warning > img{
+	width: 56px;
+	height: auto;
+	position: absolute;
+	left: 50%;
+	margin-left: -29px;
+	top: 146px;
 }
 
 /* --- LA envoltura General ---  */
@@ -148,18 +186,17 @@ body, html{
 }
 
 /* --- LAS SSECCIONES ---  */
-
-#section0{
+.section{
 	background-size:cover;
 	background-position: center center;
-	background-image: url(../img/fondoHome.png);
 }
 
-#section1{
-	background-size:cover;
-	background-position: center center;
-	background-image: url(../img/fondoP1.jpg);
-}
+#section0{background-image: url(../img/fondoHome.png);}
+#section1{background-image: url(../img/fondoP1.jpg);}
+#section2{background-image: url(../img/fondoP1.jpg);}
+#section3{background-image: url(../img/fondoP4.jpg);}
+
+
 
 h2.subTituloHome{
 	font-family: 'omneslight';
@@ -197,9 +234,27 @@ h2.subTituloVideo{
 	line-height: 18px;
 }
 
+h2.subTituloPreguntas{
+	font-family: 'omneslight';
+	font-size: 14px;
+	color:#f1ce7a;
+	padding: 0px 0px 0px 14px;
+	width: 90%;
+	margin-top: -14px;
+	line-height: 18px;
+}
+
 h1.tituloAprende{
 	font-family: 'omnesmedium';
 	color: #1970d2;
+	font-size: 26px;
+	padding: 32px 0px 0px 14px;
+	line-height: 22px;
+}
+
+h1.tituloPreguntas{
+	font-family: 'omnesmedium';
+	color: #FFF;
 	font-size: 26px;
 	padding: 32px 0px 0px 14px;
 	line-height: 22px;
@@ -334,6 +389,109 @@ h1.tituloAprende{
 .btn_recibos{background-position: 0 -224px;}
 .btn_transfiere{background-position: 0 -280px;}
 .btn_pagosfre{background-position: 0 -344px;}
+
+/* >>>> seccion preguntas - Last Section <<<< */
+.faqsec .contnt_txt {
+  display: block;
+  clear: both;
+  margin: 6px auto 0 auto;
+  color: #b0c7f1;
+  font-size: 14px;
+  width: 98%;
+}
+.faqsec .contnt_txt li {
+  margin: 0 0 0 0;
+  position: relative;
+  padding: 4px 0;
+  color: #ffffff;
+}
+.faqsec .listui li {
+  padding: 8px 0 8px 36px;
+  background: url(../img/icon_acordeon.png) no-repeat;
+  background-position: 0 -685px;
+}
+.faqsec .listui .n2 {
+  background-position: 0 -727px;
+}
+.faqsec .listui .n3 {
+  background-position: 0 -769px;
+}
+.faqsec .listui .n4 {
+  background-position: 0 -809px;
+}
+.faqsec ul {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  list-style-type: none;
+}
+.faqsec li {
+  list-style-type: none;
+  margin: 16px 0 16px 0;
+}
+.faqsec h2{
+  display: block;
+  width: 72%;
+  padding: 0px 30px 0px 38px;
+  color: #f1ce7a;
+  font-size: 19px;
+  transition: color 0.3s ease-out;
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  letter-spacing: -0.5px;
+  line-height: 26px;
+}
+
+.faqsec .faq01 {background: url(../img/iconCelular.png) no-repeat;}
+.faqsec .faq02 {background: url(../img/iconMundo.png) no-repeat;}
+.faqsec .faq03 {background: url(../img/iconSMS.png) no-repeat;}
+.faqsec .faq04 {background: url(../img/iconMaletin.png) no-repeat;}
+.faqsec .faq05 {background: url(../img/iconCandado.png) no-repeat;}
+
+.faqsec .active a {
+  color: #ffffff;
+  font-size: 25px;
+  font-family: 'omnessemibold';
+  transition: color 0.3s ease-out;
+  line-height: 26px;
+}
+.faqsec .active a:before {
+  background-position: -17px -18px;
+}
+
+/*
+.faqsec .active .faq01 {
+  background-position: 0 -416px;
+  width: 86%;
+}
+.faqsec .faq02 {
+  background-position: 0 -448px;
+}
+.faqsec .active .faq02 {
+  background-position: 0 -478px;
+}
+.faqsec .faq03 {
+  background-position: 0 -507px;
+}
+.faqsec .active .faq03 {
+  background-position: 0 -536px;
+}
+.faqsec .faq04 {
+  background-position: 0 -563px;
+}
+.faqsec .active .faq04 {
+  background-position: 0 -587px;
+  width: 97%;
+}
+.faqsec .faq05 {
+  background-position: 0 -620px;
+}
+.faqsec .active .faq05 {
+  background-position: 0 -653px;
+}
+
+*/
+
 
 @media only screen and (min-device-width : 321px) and (max-device-width : 720px) {
 	h2.subTituloHome{

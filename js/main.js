@@ -7,6 +7,7 @@ $(window).load(function(){
   var player;
   var $meVideo;
   var videoArray = [];
+  var isDevice = false;
 
   
   //Detectamos el sistema operativo para saber
@@ -84,6 +85,10 @@ $(window).load(function(){
       });
   });
 
+  if (((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) && !(navigator.userAgent.match(/iemobile/i))) {
+    isDevice = true;
+  }
+
 
   //function Resize
   $(window).on("resize", function () {
@@ -94,10 +99,12 @@ $(window).load(function(){
     heightViewPort = height;
     
     if (width > height) {
+      //alert('landscape');
         // Landscape
 
         if (isDevice) {
             var heightIphone = $(window).outerHeight();
+            
             $("#section0").height(heightIphone);
             $("#section1").height(heightIphone);
             $("#section2").height(heightIphone);
@@ -105,12 +112,28 @@ $(window).load(function(){
         }
 
         setTimeout(function () {
-            ResizeIpad();
+            //ResizeIpad();
         }, 3000);
     } else {
+        //alert('portrairt');
         // Portrait
+        var heightIphone = $(window).outerHeight();
+        $("#section0").height(heightIphone);
+        $("#section1").height(heightIphone);
+        $("#section2").height(heightIphone);
+        $("#section3").height(heightIphone);
 
     }
+
+    girarIcono();
+
+  function girarIcono(){
+    TweenMax.to($('.warning > img'), 1, {css:{rotation:90}, yoyo:true, repeat:3, delay:1.5, onComplete:function(){
+      girarIcono();     
+    }})
+  }
+
+  
   });   
 
 });
