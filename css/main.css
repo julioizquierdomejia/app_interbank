@@ -335,9 +335,11 @@ h1.tituloPreguntas{
 	background-color: white;
 	border-radius: 50px;
 
+	/*
 	-moz-box-shadow: #515151 0px 0px 14px;
     -webkit-box-shadow: #515151 0px 0px 14px;
     box-shadow: #515151 0px 0px 14px;
+    */
 
     position: absolute;
     bottom: 36px;
