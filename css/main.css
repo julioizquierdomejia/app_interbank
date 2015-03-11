@@ -9,6 +9,22 @@
 	.warning{display: block!important;}
 }
 
+
+/*>>>>>>>>>> Mobile First <<<<<<<<<<<<<<*/
+
+/* Colores de las Bolitas */
+/* Seccion Videos */
+#section1 > .fullPage-slidesNav > ul > li > a.active > span{background-color: #9c5fb5;}
+#section1 > .fullPage-slidesNav > ul > li > a > span{border-color: #9c5fb5;}
+
+/* Seccion Aprende */
+#section2 > .fullPage-slidesNav > ul > li > a.active > span{background-color: #0039a6;}
+#section2 > .fullPage-slidesNav > ul > li > a > span{border-color: #0039a6;}
+
+/* Seccion FAQ */
+#section3 > .fullPage-slidesNav > ul > li > a.active > span{background-color: #f1ce7a;}
+#section3 > .fullPage-slidesNav > ul > li > a > span{background-color: white; border-color: #f1ce7a;}
+
 body, html{
 	font-family: 'omnesmedium';
 	font-size: 16px;
@@ -219,8 +235,8 @@ h1.tituloHome{
 h1.tituloVideos{
 	font-family: 'omnesmedium';
 	color: #9c5fb5;
-	font-size: 26px;
-	padding: 26px 0px 0px 14px;
+	font-size: 22px;
+	padding: 22px 0px 0px 14px;
 	line-height: 24px;
 }
 
@@ -231,7 +247,7 @@ h2.subTituloVideo{
 	padding: 0px 0px 0px 14px;
 	width: 90%;
 	margin-top: -14px;
-	line-height: 18px;
+	line-height: 15px;
 }
 
 h2.subTituloPreguntas{
@@ -240,13 +256,13 @@ h2.subTituloPreguntas{
 	color:#f1ce7a;
 	padding: 0px 0px 0px 14px;
 	width: 90%;
-	margin-top: -14px;
+	margin-top: 20px;
 	line-height: 18px;
 }
 
 h1.tituloAprende{
 	font-family: 'omnesmedium';
-	color: #1970d2;
+	color: #0039a6;
 	font-size: 26px;
 	padding: 32px 0px 0px 14px;
 	line-height: 22px;
@@ -256,7 +272,7 @@ h1.tituloPreguntas{
 	font-family: 'omnesmedium';
 	color: #FFF;
 	font-size: 26px;
-	padding: 32px 0px 0px 14px;
+	padding: 44px 0px 0px 14px;
 	line-height: 22px;
 }
 
@@ -283,12 +299,12 @@ h1.tituloPreguntas{
 
 /* -- el call para Internas */
 .callToInternas{
-	width: 74%;
+	width: 60%;
 	height: 12%;
 	display: block;
-	margin-left: -37%;
+	margin-left: -30%;
 	left: 50%;
-	bottom: 40px;
+	bottom: 30px;
 	position: absolute;
 	border-radius: 8px;
 	color: white;
@@ -343,15 +359,14 @@ h1.tituloPreguntas{
 }
 
 .fullPage-slidesNav{
-	display: none;
+	margin-bottom: 52px;
+	display: block;
+
 }
 
 .iframe_video {
-	width: 90%;
-	height: 120px;
-	background-color: green;
-	margin-left: 5%;
-
+	width: 100%;
+	height: 136px;
 }
 
 /* Estilos Aprende */
@@ -363,44 +378,44 @@ h1.tituloPreguntas{
 
 .title{
     margin: 0px 0px 0px 14px;
-    color:#1970d2;
-    font-size: 24px;
+    color:#0039a6;
+    font-size: 22px;
     padding:0px 0px 4px 40px;
-    background: url(../img/icon_acordeon.png) no-repeat;
+    font-family: 'omnessemibold';
 }
 
 .left{
     width: 20%;
     float:left;
-    font-size: 14px;
-    color:#1970d2;
+    font-size: 13px;
+    color:#0039a6;
     margin-left: 14px;
 }
 .right{
     width: 70%;
     float:left;
     color:#313131;
-    font-size: 22px;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 16px;
     margin-bottom: 2px;
 }
 
-.btn_consulta{background-position: 0 -31px;}
-.btn_cuenta{background-position: 0 -96px;}
-.btn_mtarjeta{background-position: 0 -162px;}
-.btn_recibos{background-position: 0 -224px;}
-.btn_transfiere{background-position: 0 -280px;}
-.btn_pagosfre{background-position: 0 -344px;}
+.btn_consulta{background: url(../img/iconSaldoAzul.png) no-repeat;}
+.btn_cuenta{background: url(../img/iconoEnviaAzul.png) no-repeat;}
+.btn_mtarjeta{background: url(../img/iconoPagaAzul.png) no-repeat;}
+.btn_recibos{background: url(../img/iconoRecibosAzul.png) no-repeat;}
+.btn_transfiere{background: url(../img/iconoTrnasfiereAzul.png) no-repeat;}
+.btn_pagosfre{background: url(../img/iconoGuardarAzul.png) no-repeat;}
+.btn_grabfre{background: url(../img/iconoRecargaAzul.png) no-repeat;}
 
 /* >>>> seccion preguntas - Last Section <<<< */
 .faqsec .contnt_txt {
   display: block;
   clear: both;
-  margin: 6px auto 0 auto;
+  margin: -10px auto 0 auto;
   color: #b0c7f1;
   font-size: 14px;
-  width: 98%;
+  width: 90%;
 }
 .faqsec .contnt_txt li {
   margin: 0 0 0 0;
@@ -431,10 +446,16 @@ h1.tituloPreguntas{
   list-style-type: none;
   margin: 16px 0 16px 0;
 }
+
+#section3 .slides{
+	margin-top: -14px;
+}
+
 .faqsec h2{
   display: block;
   width: 72%;
-  padding: 0px 30px 0px 38px;
+  padding: 0px 30px 0px 28px;
+  margin-left: 14px;
   color: #f1ce7a;
   font-size: 19px;
   transition: color 0.3s ease-out;
@@ -442,7 +463,7 @@ h1.tituloPreguntas{
   text-decoration: none;
   position: relative;
   letter-spacing: -0.5px;
-  line-height: 26px;
+  line-height: 20px;
 }
 
 .faqsec .faq01 {background: url(../img/iconCelular.png) no-repeat;}
@@ -461,39 +482,6 @@ h1.tituloPreguntas{
 .faqsec .active a:before {
   background-position: -17px -18px;
 }
-
-/*
-.faqsec .active .faq01 {
-  background-position: 0 -416px;
-  width: 86%;
-}
-.faqsec .faq02 {
-  background-position: 0 -448px;
-}
-.faqsec .active .faq02 {
-  background-position: 0 -478px;
-}
-.faqsec .faq03 {
-  background-position: 0 -507px;
-}
-.faqsec .active .faq03 {
-  background-position: 0 -536px;
-}
-.faqsec .faq04 {
-  background-position: 0 -563px;
-}
-.faqsec .active .faq04 {
-  background-position: 0 -587px;
-  width: 97%;
-}
-.faqsec .faq05 {
-  background-position: 0 -620px;
-}
-.faqsec .active .faq05 {
-  background-position: 0 -653px;
-}
-
-*/
 
 
 @media only screen and (min-device-width : 321px) and (max-device-width : 720px) {
@@ -543,36 +531,30 @@ h1.tituloPreguntas{
 		margin-bottom: 100px;
 		display: block;
 	}
+	
 
 	/* Estilos Aprende */
 	.title{
 	    margin: 0px 0px 8px 14px;
-	    color:#1970d2;
+	    color:#0039a6;
 	    font-size: 26px;
 	    padding:0px 0px 2px 40px;
-	    background: url(../img/icon_acordeon.png) no-repeat;
 	}
 
 	.left{
 	    width: 22%;
 	    float:left;
-	    font-size: 20px;
-	    color:#1970d2;
+	    font-size: 17px;
+	    color:black;
 	    margin-left: 14px;
 	}
 	.right{
 	    width: 67%;
 	    float:left;
 	    color:#313131;
-	    font-size: 20px;
-	    line-height: 24px;
+	    font-size: 17px;
+	    line-height: 18px;
 	    margin-bottom: 4px;
 	}
 
-	.btn_consulta{background-position: 0 -31px;}
-	.btn_cuenta{background-position: 0 -96px;}
-	.btn_mtarjeta{background-position: 0 -162px;}
-	.btn_recibos{background-position: 0 -224px;}
-	.btn_transfiere{background-position: 0 -280px;}
-	.btn_pagosfre{background-position: 0 -344px;}
 }
