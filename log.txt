@@ -1,0 +1,71 @@
+commit 690e294637d41c5fba19ffe0a1887de82e1af83c
+Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
+Date:   Tue Mar 10 15:58:59 2015 -0500
+
+    Limpieza del visor del Video youtube
+
+commit 2251a84c1ee2778b5a8c106cc87c85719cb2b1e0
+Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
+Date:   Tue Mar 10 12:58:32 2015 -0500
+
+    Quitando text-decoration al ver mas del home
+
+commit fba438e8f9d2d3ccec76231feafc802dcd8bd14f
+Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
+Date:   Tue Mar 10 12:49:46 2015 -0500
+
+    agrege anchor al boton del home para que baje a la siguiente pagina
+
+commit 3c12d04c71d02b978a711d81c1a0f5becc42d48e
+Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
+Date:   Tue Mar 10 11:42:19 2015 -0500
+
+    Maquetado y animado del wraning al poner el device en Landscape
+
+commit 8e874c003edc090b409840badc9009a93b23b86e
+Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
+Date:   Mon Mar 9 18:55:34 2015 -0500
+
+    Maquetado de la seccion Aprende
+
+commit 4190bc3fb70f538dcbafd626c1dd1b9b3cde6bce
+Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
+Date:   Mon Mar 9 15:16:52 2015 -0500
+
+    Gestion de videos Play y Pause en fullPage
+
+commit ddaeaa1befd9095772053de35ad79e510920c52c
+Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
+Date:   Mon Mar 9 12:30:35 2015 -0500
+
+    se configuro y animo el boton par abrir el menu contextual escondido
+
+commit 27fe7150eeb7fcfc57b8d814a014a561709f8458
+Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
+Date:   Fri Mar 6 15:52:27 2015 -0500
+
+    Slider de Video Terminado
+
+commit 3dddd20336ee1249c51e5db45353e2ff1776767b
+Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
+Date:   Fri Mar 6 15:14:21 2015 -0500
+
+    Se logro instanciar el objeto para la muestra de videos
+
+commit 2fa2fe34c119f4f97661ad42e7cc40ad0edac846
+Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
+Date:   Fri Mar 6 14:37:38 2015 -0500
+
+    Estructura terminada con navegacion por Sweep vertical y horizontal
+
+commit 8977cbabfc8139fcf5a6ace28804660758604fa8
+Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
+Date:   Thu Mar 5 21:57:03 2015 -0500
+
+    Fixeado de la cabecera
+
+commit c21e64c9adb4699fba75fd1e38e414ece7d897a7
+Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
+Date:   Thu Mar 5 21:48:37 2015 -0500
+
+    Estructura principal de Proyecto - Mobile First
