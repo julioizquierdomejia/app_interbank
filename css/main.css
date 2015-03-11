@@ -361,7 +361,14 @@ h1.tituloPreguntas{
 .fullPage-slidesNav{
 	margin-bottom: 52px;
 	display: block;
+}
 
+#section2 .fullPage-slidesNav{
+	margin-left: -98px!important;
+}
+
+#section3 .fullPage-slidesNav{
+	margin-bottom: 0px;
 }
 
 .iframe_video {
@@ -442,7 +449,7 @@ h1.tituloPreguntas{
   padding: 0 0 0 0;
   list-style-type: none;
 }
-.faqsec li {
+.faqsec > li {
   list-style-type: none;
   margin: 16px 0 16px 0;
 }

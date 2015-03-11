@@ -1,3 +1,15 @@
+commit 110c387ec44e2d8f7c20a364ee02fb407f673343
+Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
+Date:   Wed Mar 11 18:11:21 2015 -0500
+
+    Recupere todo - Proyecto Estable
+
+commit 9ff099ddfa7599c5c936df37656dccbb52d9fde9
+Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
+Date:   Wed Mar 11 17:47:56 2015 -0500
+
+    Textos Actualizados con los Ultimos JPPG de Joaquin
+
 commit 690e294637d41c5fba19ffe0a1887de82e1af83c
 Author: Julio Izquierdo Mejia <julio.izquierdo.mejia@gmail.com>
 Date:   Tue Mar 10 15:58:59 2015 -0500
