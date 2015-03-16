@@ -225,7 +225,7 @@ h2.subTituloHome{
 h1.tituloHome{
 	font-family: 'omnesmedium';
 	color: #009b3a;
-	font-size: 29px;
+	font-size: 26px;
 	/*font-size: 32px;*/
 	padding: 0px 0px 0px 14px;
 	margin-top: -10px;
@@ -278,7 +278,7 @@ h1.tituloPreguntas{
 
 /* -- el call para el home */
 .callTo{
-	width: 70%;
+	width: 60%;
 	height: 12%;
 	margin-top: -10px;
 	/*width: 74%;
@@ -319,7 +319,7 @@ h1.tituloPreguntas{
 }
 
 .arrowGreen{
-	width: 66%;
+	width: 50%;
 	padding: 22px 0px 0px 40px;
 }
 
@@ -330,8 +330,8 @@ h1.tituloPreguntas{
 
 .nextPag{
 	display: block;
-	width: 84px;
-	height: 84px;
+	width: 74px;
+	height: 74px;
 	background-color: white;
 	border-radius: 50px;
 
@@ -344,7 +344,7 @@ h1.tituloPreguntas{
     position: absolute;
     bottom: 36px;
     left: 50%;
-    margin-left: -36px;
+    margin-left: -37px;
     text-align: center;
     padding: 18px 0px 0px 0px;
     box-sizing: border-box;
