@@ -368,7 +368,7 @@ h1.tituloPreguntas{
 
 /* -- Navegaciones */
 .controlArrow{
-	display: none;
+	display: none!important;
 }
 
 .fullPage-slidesNav{
@@ -381,7 +381,7 @@ h1.tituloPreguntas{
 }
 
 #section3 .fullPage-slidesNav{
-	margin-bottom: 0px;
+	margin-bottom: 28px;
 }
 
 .iframe_video {
@@ -521,7 +521,7 @@ h1.tituloPreguntas{
 	}
 
 	h1.tituloAprende{
-		font-size: 32px;
+		font-size: 26px;
 		line-height: 33px;
 		padding: 40px 0px 10px 14px;
 	}
@@ -539,10 +539,29 @@ h1.tituloPreguntas{
 	}
 
 	h2.subTituloVideo{
-		font-size: 15px;
+		font-size: 17px;
 		padding: 0px 0px 0px 14px;
 		margin-top: -14px;
 		line-height: 18px;
+	}
+
+	h2.subTituloPreguntas{
+		font-family: 'omneslight';
+		font-size: 24px;
+		color:#f1ce7a;
+		padding: 0px 0px 0px 14px;
+		width: 90%;
+		margin-top: 20px;
+		line-height: 18px;
+	}
+	
+	h1.tituloPreguntas{
+		font-family: 'omnesmedium';
+		color: #FFF;
+		font-size: 26px;
+		padding: 44px 0px 0px 14px;
+		line-height: 18px;
+		letter-spacing: -0.5px;
 	}
 
 	.iframe_video {
@@ -561,12 +580,12 @@ h1.tituloPreguntas{
 	.title{
 	    margin: 0px 0px 8px 14px;
 	    color:#0039a6;
-	    font-size: 26px;
-	    padding:0px 0px 2px 40px;
+	    font-size: 24px;
+	    padding:0px 0px 6px 40px;
 	}
 
 	.left{
-	    width: 22%;
+	    width: 16%;
 	    float:left;
 	    font-size: 17px;
 	    color:black;
@@ -578,7 +597,37 @@ h1.tituloPreguntas{
 	    color:#313131;
 	    font-size: 17px;
 	    line-height: 18px;
-	    margin-bottom: 4px;
+	    margin-bottom: 12px;
+	}
+	
+	.btn_consulta{background: url(../img/iconSaldoAzul.png) no-repeat;}
+	.btn_cuenta{background: url(../img/iconoEnviaAzul.png) no-repeat;}
+	.btn_mtarjeta{background: url(../img/iconoPagaAzul.png) no-repeat;}
+	.btn_recibos{background: url(../img/iconoRecibosAzul.png) no-repeat;}
+	.btn_transfiere{background: url(../img/iconoTrnasfiereAzul.png) no-repeat;}
+	.btn_pagosfre{background: url(../img/iconoGuardarAzul.png) no-repeat;}
+	.btn_grabfre{background: url(../img/iconoRecargaAzul.png) no-repeat;}
+
+	#section2 .slides{
+		margin-top: -16px;
+	}
+
+	.faqsec h2{
+	  font-size: 24px;
+	  line-height: 26px;
+	  font-family: 'omnesmedium';
+	  font-weight: normal;
+	}
+
+	.faqsec .contnt_txt {
+	  display: block;
+	  clear: both;
+	  margin: -10px auto 0 auto;
+	  color: #b0c7f1;
+	  font-size: 17px;
+	  width: 90%;
+	  font-weight: normal;
+	  font-family:'omneslight';
 	}
 
 }

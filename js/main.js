@@ -95,6 +95,8 @@ $(window).load(function(){
 
     anchors: ['home', 'conoce', 'aprende', 'preguntas'],
     navigationPosition: 'right',
+    loopHorizontal: false,
+    controlArrows: false,
 
     afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
       
