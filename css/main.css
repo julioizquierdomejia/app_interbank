@@ -150,13 +150,17 @@ body, html{
 	height: 3px;
 	position: absolute;
 
+	/*
 	-webkit-transition: all .5s ease-out;
 	transition: all .5s ease-out;
 	-moz-transition: all .5s ease-out;
 
-	-webkit-transition-delay: 0.5s;
-	transition-delay: 0.5s;
-	-moz-transition-delay: 0.5s;
+	-webkit-transition-delay: 0.3s;
+	transition-delay: 0.3s;
+	-moz-transition-delay: 0.3s;
+	*/
+
+	
 }
 
 .botonMenu .raya > img{
@@ -171,15 +175,23 @@ body, html{
 .botonMenu #raya2{margin: 26px 2px 2px 13px;}
 
 .girarRaya1{
-	-ms-transform: rotate(135deg) translate(4px, -4px); /* IE 9 */
-	-webkit-transform: rotate(135deg) translate(4px, -4px); /* Safari */
+	/*
+	-ms-transform: rotate(135deg) translate(4px, -4px);
+	-webkit-transform: rotate(135deg) translate(4px, -4px);
 	transform: rotate(135deg) translate(4px, -4px);
+	*/
+
+	-webkit-transform: translate(0px, 5px) rotate(135deg); /* Safari */
 }
 
 .girarRaya2{
-	-ms-transform: rotate(-135deg) translate(2px, 3px); /* IE 9 */
-	-webkit-transform: rotate(-135deg) translate(2px, 3px); /* Safari */
+	/*
+	-ms-transform: rotate(-135deg) translate(2px, 3px);
+	-webkit-transform: rotate(-135deg) translate(2px, 3px);
 	transform: rotate(-135deg) translate(2px, 3px);
+	*/
+
+	-webkit-transform: translate(0px, -5px) rotate(-135deg); /* Safari */
 }
 
 .open-slider .menuContextual {
@@ -396,7 +408,7 @@ h1.tituloPreguntas{
     width: 15%;
     float:left;
     font-size: 13px;
-    color:#0039a6;
+    color:black;
     margin-left: 14px;
 }
 .right{
@@ -498,12 +510,14 @@ h1.tituloPreguntas{
 	h2.subTituloHome{
 		font-size: 23px;
 		padding: 70px 0px 0px 14px;
+		letter-spacing: 0.5px;
 	}
 
 	h1.tituloHome{
 		font-size: 32px;
 		line-height: 33px;
-		padding: 0px 0px 10px 14px;
+		padding: -8px 0px 10px 14px;
+		margin-top: -14px;
 	}
 
 	h1.tituloAprende{
@@ -513,19 +527,19 @@ h1.tituloPreguntas{
 	}
 
 	.callTo{
-		width: 74%;
+		width: 66%;
 		height: 12%;
 		padding: 10px 0px 4px 0px;
 	}
 
 	h1.tituloVideos{
-		font-size: 32px;
+		font-size: 26px;
 		padding: 26px 0px 0px 14px;
-		line-height: 32px;
+		line-height: 29px;
 	}
 
 	h2.subTituloVideo{
-		font-size: 14px;
+		font-size: 15px;
 		padding: 0px 0px 0px 14px;
 		margin-top: -14px;
 		line-height: 18px;
@@ -533,7 +547,7 @@ h1.tituloPreguntas{
 
 	.iframe_video {
 		width: 100%;
-		height: 230px;
+		height: 200px;
 		margin-left: 0;
 	}
 

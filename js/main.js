@@ -24,18 +24,68 @@ $(window).load(function(){
   
   //Evetos para el boton del Menu Contextual
   $('.botonMenu').click(function(){
+
     //console.log('estas haciendo click');
     $html.toggleClass('open-slider');
+    /*
     $('#raya1').toggleClass('girarRaya1');
     $('#raya2').toggleClass('girarRaya2');
+    */
+
+    if (!$statusMenu) {
+      TweenMax.to($('#raya1'), 0.26, {top:5, onComplete:function(){
+        TweenMax.to($('#raya1'), 0.26, {rotation:-45})
+      }})
+
+      TweenMax.to($('#raya2'), 0.26, {top:-5, onComplete:function(){
+        TweenMax.to($('#raya2'), 0.26, {rotation:45})
+      }})
+
+      $statusMenu = true;
+    }
+    else{
+     TweenMax.to($('#raya1'), 0.26, {rotation:0, onComplete:function(){
+        TweenMax.to($('#raya1'), 0.26, {top:0})
+      }})
+
+      TweenMax.to($('#raya2'), 0.26, {rotation:0, onComplete:function(){
+        TweenMax.to($('#raya2'), 0.26, {top:0})
+      }})
+
+      $statusMenu = false; 
+    };
+
+    
+
   })
 
   //que pasa cuando se le da click a una opcion del menu contextual
   // se cierra y ejecuta la navegacion
   $('.contextual > li').click(function(){
     $html.toggleClass('open-slider');
-    $('#raya1').toggleClass('girarRaya1');
-    $('#raya2').toggleClass('girarRaya2');
+
+    if (!$statusMenu) {
+      TweenMax.to($('#raya1'), 0.26, {top:5, delay:1, onComplete:function(){
+        TweenMax.to($('#raya1'), 0.26, {rotation:-45})
+      }})
+
+      TweenMax.to($('#raya2'), 0.26, {top:-5, delay:1, onComplete:function(){
+        TweenMax.to($('#raya2'), 0.26, {rotation:45})
+      }})
+
+      $statusMenu = true;
+    }
+    else{
+     TweenMax.to($('#raya1'), 0.26, {rotation:0, delay:1, onComplete:function(){
+        TweenMax.to($('#raya1'), 0.26, {top:0})
+      }})
+
+      TweenMax.to($('#raya2'), 0.26, {rotation:0, delay:1, onComplete:function(){
+        TweenMax.to($('#raya2'), 0.26, {top:0})
+      }})
+
+      $statusMenu = false; 
+    };
   })
 
   //Seteamos el FullPage
