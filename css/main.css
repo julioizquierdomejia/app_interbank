@@ -271,9 +271,9 @@ h1.tituloAprende{
 h1.tituloPreguntas{
 	font-family: 'omnesmedium';
 	color: #FFF;
-	font-size: 26px;
+	font-size: 19px;
 	padding: 44px 0px 0px 14px;
-	line-height: 22px;
+	line-height: 18px;
 }
 
 /* -- el call para el home */
@@ -429,27 +429,27 @@ h1.tituloPreguntas{
   width: 90%;
 }
 .faqsec .contnt_txt li {
-  margin: 0 0 0 0;
+  margin: 0 0 0 8px;
   position: relative;
   padding: 4px 0;
   color: #ffffff;
 }
 .faqsec .listui li {
-  padding: 8px 0 8px 36px;
-  background: url(../img/icon_acordeon.png) no-repeat;
-  background-position: 0 -685px;
+  padding: 8px 0 8px 28px;
+  background: url(../img/numerosIcon.png) no-repeat;
+  background-position: 0 7px;
 }
 .faqsec .listui .n2 {
-  background-position: 0 -727px;
+  background-position: 0 -54px;
 }
 .faqsec .listui .n3 {
-  background-position: 0 -769px;
+  background-position: 0 -110px;
 }
 .faqsec .listui .n4 {
-  background-position: 0 -809px;
+  background-position: 0 -165px;
 }
 .faqsec ul {
-  margin: 0 0 0 0;
+  margin: 0 0 0 -10px;
   padding: 0 0 0 0;
   list-style-type: none;
 }
@@ -468,7 +468,7 @@ h1.tituloPreguntas{
   padding: 0px 30px 0px 28px;
   margin-left: 14px;
   color: #f1ce7a;
-  font-size: 19px;
+  font-size: 17px;
   transition: color 0.3s ease-out;
   outline: none;
   text-decoration: none;
@@ -477,11 +477,11 @@ h1.tituloPreguntas{
   line-height: 20px;
 }
 
-.faqsec .faq01 {background: url(../img/iconCelular.png) no-repeat;}
-.faqsec .faq02 {background: url(../img/iconMundo.png) no-repeat;}
-.faqsec .faq03 {background: url(../img/iconSMS.png) no-repeat;}
-.faqsec .faq04 {background: url(../img/iconMaletin.png) no-repeat;}
-.faqsec .faq05 {background: url(../img/iconCandado.png) no-repeat;}
+.faqsec .faq01 {background: url(../img/iconCelular1.png) no-repeat;}
+.faqsec .faq02 {background: url(../img/iconMundo1.png) no-repeat;}
+.faqsec .faq03 {background: url(../img/iconSMS1.png) no-repeat;}
+.faqsec .faq04 {background: url(../img/iconMaletin1.png) no-repeat;}
+.faqsec .faq05 {background: url(../img/iconCandado1.png) no-repeat;}
 
 .faqsec .active a {
   color: #ffffff;
