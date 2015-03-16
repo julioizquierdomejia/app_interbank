@@ -82,8 +82,6 @@ body, html{
 	right: 0px;
 	bottom: 0px;
 
-	border-bottom: 1px solid green;
-
 	-webkit-transition: all .3s ease-out;
 	transition: all .3s ease-out;
 	-moz-transition: all .3s ease-out;
@@ -100,6 +98,7 @@ body, html{
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	border-bottom: 1px solid #b6e4c8;
 }
 
 .menuContextual ul.contextual > li{
@@ -115,7 +114,7 @@ body, html{
 	box-sizing: border-box;
 
 	padding-left: 22px;
-	border-bottom: 1px solid green;
+	border-bottom: 1px solid #b6e4c8;
 
 	color : #009b3a;
 	font-size: 22px;
