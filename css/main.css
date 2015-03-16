@@ -235,16 +235,16 @@ h1.tituloHome{
 h1.tituloVideos{
 	font-family: 'omnesmedium';
 	color: #9c5fb5;
-	font-size: 22px;
+	font-size: 19px;
 	padding: 22px 0px 0px 14px;
-	line-height: 24px;
+	line-height: 18px;
 }
 
 h2.subTituloVideo{
 	font-family: 'omneslight';
 	font-size: 14px;
 	color:#4b4b4b;
-	padding: 0px 0px 0px 14px;
+	padding: 6px 0px 0px 14px;
 	width: 90%;
 	margin-top: -14px;
 	line-height: 15px;
@@ -361,7 +361,7 @@ h1.tituloPreguntas{
 }
 
 .fullPage-slidesNav{
-	margin-bottom: 52px;
+	margin-bottom: 56px;
 	display: block;
 }
 
