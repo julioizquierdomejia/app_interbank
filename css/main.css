@@ -263,9 +263,9 @@ h2.subTituloPreguntas{
 h1.tituloAprende{
 	font-family: 'omnesmedium';
 	color: #0039a6;
-	font-size: 26px;
-	padding: 32px 0px 0px 14px;
-	line-height: 22px;
+	font-size: 19px;
+	padding: 38px 0px 0px 14px;
+	line-height: 18px;
 }
 
 h1.tituloPreguntas{
@@ -381,20 +381,20 @@ h1.tituloPreguntas{
 /* Estilos Aprende */
 
 #section2 .slides{
-	margin-top: -10px;
+	margin-top: -4px;
 }
 
 
 .title{
     margin: 0px 0px 0px 14px;
     color:#0039a6;
-    font-size: 22px;
-    padding:0px 0px 4px 40px;
-    font-family: 'omnessemibold';
+    font-size: 17px;
+    padding:0px 0px 10px 28px;
+    font-family: 'omnesmedium';
 }
 
 .left{
-    width: 20%;
+    width: 15%;
     float:left;
     font-size: 13px;
     color:#0039a6;
@@ -403,19 +403,21 @@ h1.tituloPreguntas{
 .right{
     width: 70%;
     float:left;
-    color:#313131;
+    color:#4b4b4b;
     font-size: 14px;
-    line-height: 16px;
+    line-height: 15px;
+    font-weight: bold;
     margin-bottom: 2px;
+    font-family: 'omneslight';
 }
 
-.btn_consulta{background: url(../img/iconSaldoAzul.png) no-repeat;}
-.btn_cuenta{background: url(../img/iconoEnviaAzul.png) no-repeat;}
-.btn_mtarjeta{background: url(../img/iconoPagaAzul.png) no-repeat;}
-.btn_recibos{background: url(../img/iconoRecibosAzul.png) no-repeat;}
-.btn_transfiere{background: url(../img/iconoTrnasfiereAzul.png) no-repeat;}
-.btn_pagosfre{background: url(../img/iconoGuardarAzul.png) no-repeat;}
-.btn_grabfre{background: url(../img/iconoRecargaAzul.png) no-repeat;}
+.btn_consulta{background: url(../img/iconSaldoAzul1.png) no-repeat;}
+.btn_cuenta{background: url(../img/iconoEnviaAzul1.png) no-repeat;}
+.btn_mtarjeta{background: url(../img/iconoPagaAzul1.png) no-repeat;}
+.btn_recibos{background: url(../img/iconoRecibosAzul1.png) no-repeat;}
+.btn_transfiere{background: url(../img/iconoTrnasfiereAzul1.png) no-repeat;}
+.btn_pagosfre{background: url(../img/iconoGuardarAzul1.png) no-repeat;}
+.btn_grabfre{background: url(../img/iconoRecargaAzul1.png) no-repeat;}
 
 /* >>>> seccion preguntas - Last Section <<<< */
 .faqsec .contnt_txt {
