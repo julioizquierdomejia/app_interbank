@@ -97,6 +97,8 @@ $(window).load(function(){
     navigationPosition: 'right',
     loopHorizontal: false,
     controlArrows: false,
+    resize : true,
+    responsive: 0,
 
     afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
       
