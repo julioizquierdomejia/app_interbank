@@ -89,6 +89,7 @@ $(window).load(function(){
   })
 
   //Seteamos el FullPage
+  /*
   $('#fullpage').fullpage({
     verticalCentered: false,
     slidesNavigation: true,
@@ -115,6 +116,8 @@ $(window).load(function(){
 
 
   });
+
+*/
 
   $(".iframe_video").each(function() {
       var item = $(this).attr('data-div');

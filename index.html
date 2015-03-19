@@ -27,58 +27,91 @@
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
 				anchors: ['firstPage', 'secondPage', '3rdPage'],
-				sectionsColor: ['#8FB98B', '#DE564B', '#EAE1C0'],
+				verticalCentered: false,
 				slidesNavigation: true,
+				controlArrows: false,
+				loopHorizontal: false,
 			});
 		});
 	</script>
 	
+	<script src="https://www.youtube.com/iframe_api" type="text/javascript"></script>
+	<script type="text/javascript" src='js/main.js'></script>
+	
 </head>
 <body>
 	<div id="fullpage">
+		
+		<!-- Seccion 0 - HOME -->
 		<div class="section " id="section0">
-			
 			<h2 class="subTituloHome">Lo más fácil de tu Smartphone,</h2>
 			<h1 class="tituloHome">es la nueva </br>Interbank App</h1>
-
 			<a class="callTo">
 				<img class='appleButton' src="img/appleButton.png" width="202" height="57">
 				<img class='googleButton' src="img/googleButton.png" width="202" height="57">
 			</a>
-
 			<div class="arrowGreen">
 				<img src="img/legal_free_mobil.png">
 			</div>
-
 			<a class="nextPag" href="#conoce">
 				Ver más
 				<i class="fa fa-chevron-down fa-fw fa-2x"></i>
 			</a>
 		</div>
+		
+		<!-- Seccion 0 - GARLERIA DE VIDEOS -->
 
 		<div class="section" id="section1">
-		    <div class="slide" id="slide1" data-anchor="slide1">
-				<div class="intro">
-					<h1>Clickable</h1>
-					<p>
-						You can even click on the navigation and jump directly to another section.
-					</p>
-				</div>
+			<div class="slide" id="slide1" data-anchor="slide1">
+				<h1 class="tituloVideos">Consulta tus cuentas al instante</h1>
+				<h2 class="subTituloVideo">¡Más fácil que etiquetar a tus amigos es consultar tus cuentas con la nueva Interbank App!</h2>
+				
+				<div id="video1" data-div="video1" data-video="soI75Kd1M-U" class="iframe_video"></div>
 			</div>
 
-		    <div class="slide" id="slide2" data-anchor="slide2">
-				<h1>Slide 2</h1>
+			<div class="slide" id="slide2" data-anchor="slide2">
+				<h1 class="tituloVideos">Graba tus operaciones frecuentes</h1>
+				<h2 class="subTituloVideo">¡Más fácil que etiquetar a tus amigos es consultar tus cuentas con la nueva Interbank App!</h2>
+				
+				<div id="video2" data-div="video2" data-video="ILy9g1_fXfg" class="iframe_video"></div>
 			</div>
 
 			<div class="slide" id="slide3" data-anchor="slide3">
-				<h1>Slide 3</h1>
-			</div>	<div class="slide" id="slide3" data-anchor="slide3">
-				<h1>Slide 4</h1>
+				<h1 class="tituloVideos">Envía tu número de cuenta</h1>
+				<h2 class="subTituloVideo">¡Con la nueva Interbank App, enviar un número de cuenta es más fácil que pedir vidas en tu juego favorito!</h2>
+				
+				<div id="video3" data-div="video3" data-video="eNsIsTleiNM" class="iframe_video"></div>
 			</div>
-			<div class="slide" id="slide3" data-anchor="slide3">
-				<h1>Slide 5</h1>
+
+			<div class="slide" id="slide4" data-anchor="slide4">
+				<h1 class="tituloVideos">Paga tus tarjetas en segundos</h1>
+				<h2 class="subTituloVideo">¡Más fácil que hacer un autolike, es pagar tus tarjetas sin costo con la nueva Interbank App!</h2>
+				
+				<div id="video4" data-div="video4" data-video="WUmYvCukjvY" class="iframe_video"></div>
 			</div>
+
+			<div class="slide" id="slide5" data-anchor="slide5">
+				<h1 class="tituloVideos">Transfiere dinero desde donde estés</h1>
+				<h2 class="subTituloVideo">¡Más fácil que colgar fotos de tu almuerzo, es transferir dinero, a cualquier banco, desde la nueva Interbank APP!</h2>
+				
+				<div id="video5" data-div="video5" data-video="6mQoGGKGdIg" class="iframe_video"></div>
+			</div>
+
+			<div class="slide" id="slide6" data-anchor="slide6">
+				<h1 class="tituloVideos">Paga recibos desde tu smartphone</h1>
+				<h2 class="subTituloVideo">¡Con la nueva Interbank App, pagar tus recibos es más fácil que tomarte un selfie!</h2>
+				
+				<div id="video6" data-div="video6" data-video="WAyN5MZ68Nw" class="iframe_video"></div>
+			</div>
+
+			
+		    <a class="callToInternas">
+				<img class='appleButton' src="img/appleButton.png" width="202" height="57">
+				<img class='googleButton' src="img/googleButton.png" width="202" height="57">
+			</a>
 		</div>
+
+
 		<div class="section" id="section2">
 			<div class="intro">
 				<h1>Enjoy it</h1>

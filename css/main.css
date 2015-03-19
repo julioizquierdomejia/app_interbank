@@ -14,16 +14,16 @@
 
 /* Colores de las Bolitas */
 /* Seccion Videos */
-#section1 > .fullPage-slidesNav > ul > li > a.active > span{background-color: #9c5fb5;}
-#section1 > .fullPage-slidesNav > ul > li > a > span{border-color: #9c5fb5;}
+#section1 > .fp-slidesNav > ul > li > a.active > span{background-color: #9c5fb5;}
+#section1 > .fp-slidesNav > ul > li > a > span{border-color: #9c5fb5;}
 
 /* Seccion Aprende */
-#section2 > .fullPage-slidesNav > ul > li > a.active > span{background-color: #0039a6;}
-#section2 > .fullPage-slidesNav > ul > li > a > span{border-color: #0039a6;}
+#section2 > .fp-slidesNav > ul > li > a.active > span{background-color: #0039a6;}
+#section2 > .fp-slidesNav > ul > li > a > span{border-color: #0039a6;}
 
 /* Seccion FAQ */
-#section3 > .fullPage-slidesNav > ul > li > a.active > span{background-color: #f1ce7a;}
-#section3 > .fullPage-slidesNav > ul > li > a > span{background-color: white; border-color: #f1ce7a;}
+#section3 > .fp-slidesNav > ul > li > a.active > span{background-color: #f1ce7a;}
+#section3 > .fp-slidesNav > ul > li > a > span{background-color: white; border-color: #f1ce7a;}
 
 body, html{
 	font-family: 'omnesmedium';
@@ -231,6 +231,7 @@ h2.subTituloHome{
 	/*font-size: 23px;*/
 	color:#4b4b4b;
 	padding: 50px 0px 0px 14px;
+	margin: 0;
 }
 
 h1.tituloHome{
@@ -371,16 +372,16 @@ h1.tituloPreguntas{
 	display: none!important;
 }
 
-.fullPage-slidesNav{
+.fp-slidesNav{
 	margin-bottom: 56px;
 	display: block;
 }
 
-#section2 .fullPage-slidesNav{
+#section2 .fp-slidesNav{
 	margin-left: -98px!important;
 }
 
-#section3 .fullPage-slidesNav{
+#section3 .fp-slidesNav{
 	margin-bottom: 10px;
 }
 
@@ -570,12 +571,12 @@ h1.tituloPreguntas{
 		margin-left: 0;
 	}
 
-	.fullPage-slidesNav{
+	.fp-slidesNav{
 		margin-bottom: 90px;
 		display: block;
 	}
 
-	#section3 .fullPage-slidesNav{
+	#section3 .fp-slidesNav{
 		margin-bottom: 26px;
 	}
 	
