@@ -12,21 +12,20 @@
 	<!-- jQuery -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	
+	<!-- TweenMax -->
+	<script type="text/javascript" src='js/greensock/TweenMax.min.js'></script>
 
-	<!-- Estilos para el FullPAge-js -->
+	<!-- FullPAge-js -->
 	<link rel="stylesheet" href="js/fullPage/jquery.fullPage.css" />
-	
-	
-	<!-- js para el fullPage -->
 	<script type="text/javascript" src="js/fullPage/vendors/jquery.slimscroll.min.js"></script>
-
 	<script type="text/javascript" src="js/fullPage/jquery.fullPage.js"></script>
 	<script type="text/javascript" src="js/fullPage/examples.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
-				anchors: ['firstPage', 'secondPage', '3rdPage'],
+				anchors: ['home', 'conoce', 'aprende', 'preguntas'],
 				verticalCentered: false,
 				slidesNavigation: true,
 				controlArrows: false,
@@ -40,8 +39,34 @@
 	
 </head>
 <body>
+
+	<!-- El mensaje de alerta -->
+	<div class="warning">
+		<p class="aviso">Para una mejor experiencia gira tu dispositivo</p>
+		<img src="img/iconoMobile.png">
+	</div>
+	
+	<!-- El Menu Contextual -->
+	<div class="menuContextual">
+		<ul class="contextual">
+			<li class="opc"><a href="#home">Inicio</a></li>
+			<li class="opc"><a href="#conoce">Conoce</a></li>
+			<li class="opc"><a href="#aprende">Aprende</a></li>
+			<li class="opc"><a href="#preguntas">¿Preguntas?</a></li>
+		</ul>
+	</div>
+
+	<!-- Este es el Header -->
+	<div class="head">
+		<img src="img/logoHead.jpg" width="173" height="23">
+		<div class="botonMenu">
+			<div class="raya" id="raya1"><img src="img/rayita.png"></div>
+			<div class="raya" id="raya2"><img src="img/rayita.png"></div>
+		</div>
+	</div>
+
+	<!-- Aqui inicia el FullPage -->
 	<div id="fullpage">
-		
 		<!-- Seccion 0 - HOME -->
 		<div class="section " id="section0">
 			<h2 class="subTituloHome">Lo más fácil de tu Smartphone,</h2>
@@ -59,8 +84,7 @@
 			</a>
 		</div>
 		
-		<!-- Seccion 0 - GARLERIA DE VIDEOS -->
-
+		<!-- Seccion 1 - GARLERIA DE VIDEOS -->
 		<div class="section" id="section1">
 			<div class="slide" id="slide1" data-anchor="slide1">
 				<h1 class="tituloVideos">Consulta tus cuentas al instante</h1>
@@ -111,12 +135,199 @@
 			</a>
 		</div>
 
-
+		<!-- Seccion 2 APRENDE -->
 		<div class="section" id="section2">
-			<div class="intro">
-				<h1>Enjoy it</h1>
+			<h1 class="tituloAprende">Aprende cómo funciona</h1>
+			<!-- slide 1 -->
+			<div class="slide" id="slide1" data-anchor="slide1">
+				<p class="title btn_consulta">Consulta tu saldo</p>
+	            <div class="left">Paso  1</div>
+	            <div class="right">¡Ingresa el Nº de tu tarjeta, clave y listo!</div>
+	            <div class="clear"></div>
+			</div>
+
+			<!-- slide 2 -->
+			<div class="slide" id="slide2" data-anchor="slide2">
+				<p class="title btn_cuenta">Envía tu N° de cuenta</p>
+	            <div class="left">Paso  1</div>
+	            <div class="right">Selecciona la cuenta que quieres enviar.</div>
+	            <div class="clear"></div>
+	            <div class="left">Paso  2</div>
+	            <div class="right">Haz clic en el número de esta.</div>
+	            <div class="clear"></div>
+	            <div class="left">Paso  3</div>
+	            <div class="right">Selecciona el medio de envío, escribe los datos ¡y listo!</div>
+	            <div class="clear"></div>
+			</div>
+
+			<!-- slide 3 -->
+			<div class="slide" id="slide3" data-anchor="slide3">
+				<p class="title btn_mtarjeta">Paga tarjetas de crédito</p>
+                <div class="left">Paso  1</div>
+                <div class="right">En “Operaciones” selecciona “Pagar tarjeta”.</div>
+                <div class="clear"></div>
+                <div class="left">Paso  2</div>
+                <div class="right">Selecciona la cuenta con la que pagarás.</div>
+                <div class="clear"></div>
+                <div class="left">Paso  3</div>
+                <div class="right">Selecciona tu tarjeta Interbank o de otro banco, e ingresa los datos</div>
+                <div class="clear"></div>
+                <div class="left">Paso  4</div>
+                <div class="right">Ingresa la clave SMS que te llegará por un mensaje de texto ¡y listo!</div>
+                <div class="clear"></div>
+			</div>
+
+			<!-- slide 4 -->
+			<div class="slide" id="slide4" data-anchor="slide4">
+				<p class="title btn_recibos">Paga recibos</p>
+				<div class="left">Paso  1</div>
+				<div class="right">En “Operaciones” selecciona “Pagar recibos”.</div>
+				<div class="clear"></div>
+				<div class="left">Paso  2</div>
+				<div class="right">Selecciona el servicio que quieras pagar.</div>
+				<div class="clear"></div>
+				<div class="left">Paso  3</div>
+				<div class="right">Selecciona la cuenta con la que pagarás.</div>
+				<div class="clear"></div>
+				<div class="left">Paso  4</div>
+				<div class="right">Ingresa la clave SMS que te llegará por mensaje de texto ¡y listo!</div>
+				<div class="clear"></div>
+			</div>
+
+			<!-- slide 5 -->
+			<div class="slide" id="slide5" data-anchor="slide5">
+				<p class="title btn_transfiere">Transfiere dinero</p>
+                <div class="left">Paso  1</div>
+                <div class="right">En “Operaciones” selecciona “Transferir dinero”.</div>
+                <div class="clear"></div>
+                <div class="left">Paso  2</div>
+                <div class="right">Selecciona la cuenta con la que pagarás.</div>
+                <div class="clear"></div>
+                <div class="left">Paso  3</div>
+                <div class="right">Selecciona la cuenta de destino en Interbank o de otros bancos.</div>
+                <div class="clear"></div>
+                <div class="left">Paso  4</div>
+                <div class="right">Ingresa código interbancario, el monto y confirma la operación.</div>
+                <div class="clear"></div>
+                <div class="left">Paso  5</div>
+                <div class="right">Ingresa la clave SMS que te llegará ¡y listo!</div>
+                <div class="clear"></div>
+			</div>
+
+			<!-- slide 6 -->
+			<div class="slide" id="slide6" data-anchor="slide6">
+				<p class="title btn_pagosfre">Graba tus operaciones frecuentes</p>
+				<div class="left">Paso  1</div>
+				<div class="right">Realiza cualquier pago, recarga o transferencia. Antes de terminar, selecciona “Guardar como operación frecuente” e ingresa un nombre para la misma</div>
+				<div class="clear"></div>
+				<div class="left">Paso  2</div>
+				<div class="right">¡Listo! El APP guardará tus pagos frecuentes en la primera pantalla de operaciones.</div>
+				<div class="clear"></div>
+			</div>
+
+			<!-- slide 7 -->
+			<div class="slide" id="slide7" data-anchor="slide7">
+				<p class="title btn_grabfre">Recarga</p>
+				<div class="left">Paso  1</div>
+				<div class="right">En “Operaciones” selecciona “Pagar Recibos y Recargas”.</div>
+				<div class="clear"></div>
+				<div class="left">Paso  2</div>
+				<div class="right">Selecciona la cuenta con la que pagarás.</div>
+				<div class="clear"></div>
+				<div class="left">Paso  3</div>
+				<div class="right">Elige tu operador móvil e ingresa el monto.</div>
+				<div class="clear"></div>
+				<div class="left">Paso  4</div>
+				<div class="right">Confirma la operación con tu clave SMS y listo.</div>
+				<div class="clear"></div>
+			</div>
+
+			<a class="callToInternas">
+				<img class='appleButton' src="img/appleButton.png" width="202" height="57">
+				<img class='googleButton' src="img/googleButton.png" width="202" height="57">
+			</a>
+		</div>
+
+		<!-- Seccion 2 APRENDE -->
+		<div class="section faqsec" id="section3">
+			<h1 class="tituloPreguntas">Preguntas frecuentes</h1>
+			<!-- slide 1 -->
+			<div class="slide" id="slide1" data-anchor="slide1">
+				<h2 class="faq01">Soy nuevo usuario, ¿cómo me registro desde la aplicación? </h2>
+                <div class="contnt_txt">
+                    <ul class="listui">
+                        <li class="n1">
+                            Ingresa el número de tu tarjeta y clave de cajero de 4 dígitos.
+                        </li>
+                        <li class="n2">
+                            Crea tu clave web.
+                        </li>
+                        <li class="n3">
+                            Lee y acepta los Términos y Condiciones.
+                        </li>
+                        <li class="n4">
+                            Finalmente, ingresa con tu nueva clave web, la cual podrás usar en la aplicación móvil como en la Banca por Internet
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+			</div>
+
+			<!-- slide 2 -->
+			<div class="slide" id="slide2" data-anchor="slide2">
+				<h2 class="faq02">¿Qué es la clave web? </h2>
+                <div class="contnt_txt">
+                    <ul>
+                        <li>
+                            Es una clave, de 6  a 16 caracteres, que te permitirá ingresar a nuestra Banca por Internet y también al Interbank App. Podrás crearla ingresando tu número de tarjeta y clave de cajero en nuestra Banca por Internet o desde la Interbank App, y una vez creada será exclusiva para ingresar por ambos canales.
+                        </li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+			</div>
+
+			<!-- slide 3 -->
+			<div class="slide" id="slide3" data-anchor="slide3">
+				<h2 class="faq03">¿Qué es la clave SMS? </h2>
+                <div class="contnt_txt">
+	                <ul>
+	                    <li>
+	                        Es una clave aleatoria que llega a tu celular a través de un mensaje de texto y es necesaria para confirmar tus pagos y transferencias a terceros. Este es un servicio gratuito y solo para clientes Claro y Movistar.<br/>
+	                        Si tienes otro operador, deberás solicitar un token a través de la Banca por Internet y solo podrás hacer operaciones a terceros a través de la Banca por Internet.
+	                    </li>
+	                </ul>
+	                <div class="clear"></div>
+	            </div>
+			</div>
+
+			<!-- slide 4 -->
+			<div class="slide" id="slide4" data-anchor="slide4">
+				<h2 class="faq04">¿Puedo realizar operaciones desde la Interbank App con mi token? </h2>
+                <div class="contnt_txt">
+                    <ul>
+                        <li>
+                            Si no tienes un celular Claro o Movistar, deberás solicitar un token y solo así podrás realizar tus operaciones a través de la Banca por Internet.
+                        </li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+			</div>
+
+			<!-- slide 5 -->
+			<div class="slide" id="slide5" data-anchor="slide5">
+				<h2 class="faq05">¿Qué pasa si olvidé mi clave web? </h2>
+                <div class="contnt_txt">
+                    <ul>
+                        <li>
+                            Deberás ingresar a nuestra Banca por Internet, y seleccionar la opción “¿Olvidaste tu clave?”. Aquí colocarás tu número de tarjeta y clave de cajero automático para crear una nueva contraseña web.
+
+                        </li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
 			</div>
 		</div>
+
 	</div>
 </body>
 </html>
