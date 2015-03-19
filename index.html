@@ -3,9 +3,11 @@
 <head>
 	<meta charset='utf-8' />
 	<title>Interbank App</title>
+	<meta name="viewport" content="user-scalable=no,initial-scale=1">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/font-face.css" />
+	<link rel="stylesheet" href="css/main.css" /> <!-- css de proyecto -->
 
 	<!-- jQuery -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -13,13 +15,13 @@
 
 	<!-- Estilos para el FullPAge-js -->
 	<link rel="stylesheet" href="js/fullPage/jquery.fullPage.css" />
-	<link rel="stylesheet" href="js/fullPage/examples.css" />
+	
 	
 	<!-- js para el fullPage -->
-	<script type="text/javascript" src="js/fullpage/vendors/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="js/fullPage/vendors/jquery.slimscroll.min.js"></script>
 
-	<script type="text/javascript" src="js/fullpage/jquery.fullPage.js"></script>
-	<script type="text/javascript" src="js/fullpage/examples.js"></script>
+	<script type="text/javascript" src="js/fullPage/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="js/fullPage/examples.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -34,14 +36,26 @@
 </head>
 <body>
 	<div id="fullpage">
-
 		<div class="section " id="section0">
-			<div class="intro">
-				<img src="imgs/1.png"  alt="1"/>
-				<h1>Sliders navigation dots</h1>
-				<p>Create a navigation for your landscape sliders</p>
+			
+			<h2 class="subTituloHome">Lo más fácil de tu Smartphone,</h2>
+			<h1 class="tituloHome">es la nueva </br>Interbank App</h1>
+
+			<a class="callTo">
+				<img class='appleButton' src="img/appleButton.png" width="202" height="57">
+				<img class='googleButton' src="img/googleButton.png" width="202" height="57">
+			</a>
+
+			<div class="arrowGreen">
+				<img src="img/legal_free_mobil.png">
 			</div>
+
+			<a class="nextPag" href="#conoce">
+				Ver más
+				<i class="fa fa-chevron-down fa-fw fa-2x"></i>
+			</a>
 		</div>
+
 		<div class="section" id="section1">
 		    <div class="slide" id="slide1" data-anchor="slide1">
 				<div class="intro">
