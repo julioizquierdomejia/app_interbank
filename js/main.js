@@ -1,3 +1,5 @@
+$(document).ready(function() {});
+
 $(window).load(function(){
 
   //variables
@@ -22,15 +24,37 @@ $(window).load(function(){
     $('.googleButton').css('display','block');
   };
   
+  $('#fullpage').fullpage({
+    anchors: ['home', 'conoce', 'aprende', 'preguntas'],
+    verticalCentered: false,
+    slidesNavigation: true,
+    controlArrows: false,
+    loopHorizontal: false,
+
+    afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
+      
+      for (i = 0; i < videoArray.length; i++) { 
+          videoArray[i].pauseVideo();
+      }
+
+    },
+    afterLoad: function(anchorLink, index){
+      for (i = 0; i < videoArray.length; i++) { 
+          videoArray[i].pauseVideo();
+      }      
+    },
+  });
+
+
+  TweenMax.to($('.warning > img'), 1, {css:{rotation:90}, yoyo:true, repeat:3, delay:1.5, onComplete:function(){
+    $('.warning > img').css('rotation','0');
+    girarIcono();
+  }})
+
   //Evetos para el boton del Menu Contextual
   $('.botonMenu').click(function(){
 
-    //console.log('estas haciendo click');
     $html.toggleClass('open-slider');
-    /*
-    $('#raya1').toggleClass('girarRaya1');
-    $('#raya2').toggleClass('girarRaya2');
-    */
 
     if (!$statusMenu) {
       TweenMax.to($('#raya1'), 0.26, {top:5, onComplete:function(){
@@ -54,8 +78,6 @@ $(window).load(function(){
 
       $statusMenu = false; 
     };
-
-    
 
   })
 
@@ -88,37 +110,7 @@ $(window).load(function(){
     };
   })
 
-  //Seteamos el FullPage
-  /*
-  $('#fullpage').fullpage({
-    verticalCentered: false,
-    slidesNavigation: true,
-
-    anchors: ['home', 'conoce', 'aprende', 'preguntas'],
-    navigationPosition: 'right',
-    loopHorizontal: false,
-    controlArrows: false,
-    resize : true,
-    responsive: 0,
-
-    afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
-      
-      for (i = 0; i < videoArray.length; i++) { 
-          videoArray[i].pauseVideo();
-      }
-
-    },
-    afterLoad: function(anchorLink, index){
-      for (i = 0; i < videoArray.length; i++) { 
-          videoArray[i].pauseVideo();
-      }      
-    },
-
-
-  });
-
-*/
-
+ 
   $(".iframe_video").each(function() {
       var item = $(this).attr('data-div');
       var video = $(this).attr('data-video');
@@ -146,58 +138,14 @@ $(window).load(function(){
       });
   });
 
-  if (((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) && !(navigator.userAgent.match(/iemobile/i))) {
-    isDevice = true;
-  }
+});
 
 
-  //function Resize
-  $(window).on("resize", function () {
-    // Get screen size (inner/outerWidth, inner/outerHeight)
-    var height = $(window).height();
-    var width = $(window).width();
-    
-    heightViewPort = height;
-    
-    if (width > height) {
-      //alert('landscape');
-        // Landscape
-
-        if (isDevice) {
-            var heightIphone = $(window).outerHeight();
-            
-            $("#section0").height(heightIphone);
-            $("#section1").height(heightIphone);
-            $("#section2").height(heightIphone);
-            $("#section3").height(heightIphone);
-        }
-
-        setTimeout(function () {
-            //ResizeIpad();
-        }, 3000);
-    } else {
-        //alert('portrairt');
-        // Portrait
-        var heightIphone = $(window).outerHeight();
-        $("#section0").height(heightIphone);
-        $("#section1").height(heightIphone);
-        $("#section2").height(heightIphone);
-        $("#section3").height(heightIphone);
-
-    }
-
-    girarIcono();
-
-  function girarIcono(){
+function girarIcono(){
     TweenMax.to($('.warning > img'), 1, {css:{rotation:90}, yoyo:true, repeat:3, delay:1.5, onComplete:function(){
-      girarIcono();     
+      girarIcono();
     }})
   }
-
-
-  });   
-
-});
 
 function getMobileOperatingSystem() {
   var userAgent = navigator.userAgent || navigator.vendor || window.opera;
