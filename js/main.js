@@ -30,6 +30,7 @@ $(window).load(function(){
     slidesNavigation: true,
     controlArrows: false,
     loopHorizontal: false,
+    easingcss3: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)',
 
     afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
       
@@ -38,11 +39,21 @@ $(window).load(function(){
       }
 
     },
-    afterLoad: function(anchorLink, index){
-      for (i = 0; i < videoArray.length; i++) { 
-          videoArray[i].pauseVideo();
-      }      
-    },
+    
+    onLeave: function(index, newIndex, direction){
+      if (index == 2 && direction == 'down'){
+          for (i = 0; i < videoArray.length; i++) {
+              videoArray[i].pauseVideo();
+          }
+      }
+      else if(index == 2 && direction == 'up'){
+          for (i = 0; i < videoArray.length; i++) {
+              videoArray[i].pauseVideo();
+          }
+      }
+
+  }
+
   });
 
 
