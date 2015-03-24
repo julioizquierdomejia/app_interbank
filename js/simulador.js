@@ -1,6 +1,7 @@
 
 var partes, vista1, contenidos, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, btnOperacionesOver, btnUs, conteMenu, vista3, btnComp, vista4, btnCorreo, mandarEmail, btnNumCuentas;
 var path = "img/";
+var myGuia;
 $(document).ready(function(){
 	var loaderBar;
 	var stage;
@@ -15,8 +16,6 @@ $(document).ready(function(){
 
 
 	partes = new Array();
-
-console.log("Entro------");
 
 	function init() {
 		canvas = document.getElementById("myCanvas");
@@ -101,7 +100,6 @@ console.log("Entro------");
 
 	function handleFileLoad(event) {
 		var item = event.item;
-		console.log(event.item);
 		partes.push(item)
 
 		login();
@@ -138,7 +136,10 @@ console.log("Entro------");
 	}
 
 	init();
+
+	animGuia.prototype = new createjs.Container();
 	function animGuia () {
+		console.log("animGuia");
 		var circle = new createjs.Shape();
 		circle.graphics.beginFill("#e2e2e2").drawCircle(0, 0, 10);
 		circle.alpha = 0.5;
@@ -157,7 +158,10 @@ console.log("Entro------");
 		guia.addChild(circle);	
 	}
 	function login(){
-		animGuia();
+		//animGuia();
+		myGuia = new Guia(200,253);
+	    contenidos.addChild(myGuia);
+	    stage.update();
 
 		vista1 = new createjs.Bitmap(preload.getResult("login"));
 		contenidos.addChild(vista1);
@@ -173,8 +177,9 @@ console.log("Entro------");
 
 		stage.addChild(contenidos);
 
-		guia.x = 200; guia.y = 253;
-		contenidos.addChild(guia);
+		/*gui1.x = 200; gui1.y = 253;
+		contenidos.addChild(gui1);
+		stage.update();*/
 
         createjs.Ticker.setFPS(30);
         createjs.Ticker.addEventListener("tick", stage)
@@ -221,9 +226,6 @@ console.log("Entro------");
 
 			guia.x = 485; guia.y = 17; guia.alpha = 0.3;
 			contenidos.addChild(guia);
-
-			var gui2 = new guia();
-			contenidos.addChild(gui2);
 
 			btnComp.on("click", escena3);
 
