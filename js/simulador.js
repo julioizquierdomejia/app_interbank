@@ -176,7 +176,7 @@ console.log("Entro------");
 		
 	}
 	function cuentas() {
-		menu();
+		menu(1);
 		vista2 = new createjs.Bitmap(preload.getResult("vista2"));
 		contenidos.addChild(vista2);
 
@@ -194,9 +194,21 @@ console.log("Entro------");
 
 		createjs.Tween.get(contenidos, {loop: false}).to({x: -250}, 700, createjs.Ease.getPowInOut(4))
 	}
-	function menu(){
-		btnC = new createjs.Bitmap(preload.getResult("btnCuentas"));
-		btnO = new createjs.Bitmap(preload.getResult("btnOperaciones"));
+	function menu(op){
+
+		switch(op){
+			case 1:
+				btnC = new createjs.Bitmap(preload.getResult("btnCuentasOver"));
+				btnO = new createjs.Bitmap(preload.getResult("btnOperaciones"));
+				break;
+
+			case 2:
+				btnO = new createjs.Bitmap(preload.getResult("btnOperacionesOver"));
+				btnC = new createjs.Bitmap(preload.getResult("btnCuentas"));
+				break;
+		}
+
+
 		btnUs = new createjs.Bitmap(preload.getResult("btnUs"));
 
 		conteMenu.addChild(btnC);
@@ -209,8 +221,8 @@ console.log("Entro------");
 
 		stage.addChild(conteMenu);
 
-		conteMenu.y = 391;
+		conteMenu.y = 426;
 
-		createjs.Tween.get(conteMenu, {loop: false}).from({y: 426}, 700, createjs.Ease.getPowInOut(4))
+		createjs.Tween.get(conteMenu, {loop: false}).wait(200).to({y:391}, 700, createjs.Ease.getPowInOut(4))
 	}
 });
