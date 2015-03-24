@@ -1,5 +1,5 @@
 
-var partes, vista1, contenidos, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, btnOperacionesOver, btnUs, conteMenu;
+var partes, vista1, contenidos, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, btnOperacionesOver, btnUs, conteMenu, vista3, btnComp, vista4, btnCorreo, mandarEmail, btnNumCuentas;
 var path = "img/";
 $(document).ready(function(){
 	var loaderBar;
@@ -59,7 +59,14 @@ console.log("Entro------");
 			{src: "simulador/cuentasOver.jpg", id: "btnCuentasOver"},
 			{src: "simulador/operaciones.jpg", id: "btnOperaciones"},
 			{src: "simulador/operacionesOver.jpg", id: "btnOperacionesOver"},
-			{src: "simulador/us.jpg", id: "btnUs"}
+			{src: "simulador/us.jpg", id: "btnUs"},
+			{src: "simulador/compartir-2.jpg", id: "vista3"},
+			{src: "simulador/btnCompartir.jpg", id: "btnComp"},
+			{src: "simulador/compartir-3.jpg", id: "vista4"},
+			{src: "simulador/btnCorreo.jpg", id: "btnCorreo"},
+			{src: "simulador/btnNumCuentas.jpg", id: "btnNumCuentas"},
+			{src: "simulador/mandarEmail.jpg", id: "mandarEmail"}
+
 		];
 
 		preload = new createjs.LoadQueue(true, "test/");
@@ -147,8 +154,7 @@ console.log("Entro------");
 		createjs.Tween.get(guiaO, {loop: true}).to({scaleX: 0.4, scaleY: 0.4, alpha: 0, x: -23, y: -23}, 800, createjs.Ease.getPowInOut(4))
 
 		guia.addChild(guiaO);
-
-		guia.addChild(circle);
+		guia.addChild(circle);	
 	}
 	function login(){
 		animGuia();
@@ -193,6 +199,61 @@ console.log("Entro------");
 		contenidos.addChild(guia);
 
 		createjs.Tween.get(contenidos, {loop: false}).to({x: -250}, 700, createjs.Ease.getPowInOut(4))
+
+		ahorroS.on("click", escena2);
+
+		function escena2(){
+			vista3 = new createjs.Bitmap(preload.getResult("vista3"));
+			btnNumCuentas = new createjs.Bitmap(preload.getResult("btnNumCuentas")).set({
+			 cursor: "pointer",
+			 x: 290, y: 90,
+			});
+			btnComp = new createjs.Bitmap(preload.getResult("btnComp")).set({
+			 cursor: "pointer",
+			 x: 468, y: 0,
+			});
+
+			contenidos.addChild(vista3);
+			contenidos.addChild(btnNumCuentas);
+			contenidos.addChild(btnComp);
+
+			vista3.x = 250;
+
+			guia.x = 485; guia.y = 17; guia.alpha = 0.3;
+			contenidos.addChild(guia);
+
+			var gui2 = new guia();
+			contenidos.addChild(gui2);
+
+			btnComp.on("click", escena3);
+
+			function escena3(){
+				vista4 = new createjs.Bitmap(preload.getResult("vista4"));
+
+				btnCorreo = new createjs.Bitmap(preload.getResult("btnCorreo")).set({
+				 cursor: "pointer",
+				 x: 265, y: 163,
+				});
+
+				contenidos.addChild(vista4);
+				contenidos.addChild(btnCorreo);
+
+				vista4.x = 250;
+
+				guia.x = 450; guia.y = 178;
+				contenidos.addChild(guia);
+
+				btnCorreo.on("click", escena4);
+
+				function escena4 () {
+					mandarEmail = new createjs.Bitmap(preload.getResult("mandarEmail"));
+
+					stage.addChild(mandarEmail);
+
+					mandarEmail.x = 450; mandarEmail.y = 178;
+				}
+			}
+		}
 	}
 	function menu(op){
 
