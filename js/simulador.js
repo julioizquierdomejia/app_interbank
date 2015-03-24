@@ -1,5 +1,5 @@
 
-var partes, vista1, contenidos, btnSiguiente, vista2, guia, guiaO, ahorroS;
+var partes, vista1, contenidos, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, btnOperacionesOver, btnUs, conteMenu;
 var path = "img/";
 $(document).ready(function(){
 	var loaderBar;
@@ -54,7 +54,12 @@ console.log("Entro------");
 			{src: "simulador/compartir-1.jpg", id: "vista2"},
 			{src: "simulador/bSiguiente.jpg", id: "bSiguiente"},
 			{src: "simulador/guia.png", id: "guiaO"},
-			{src: "simulador/ahorroSueldoSoles.jpg", id: "ahorroS"}
+			{src: "simulador/ahorroSueldoSoles.jpg", id: "ahorroS"},
+			{src: "simulador/cuentas.jpg", id: "btnCuentas"},
+			{src: "simulador/cuentasOver.jpg", id: "btnCuentasOver"},
+			{src: "simulador/operaciones.jpg", id: "btnOperaciones"},
+			{src: "simulador/operacionesOver.jpg", id: "btnOperacionesOver"},
+			{src: "simulador/us.jpg", id: "btnUs"}
 		];
 
 		preload = new createjs.LoadQueue(true, "test/");
@@ -70,6 +75,7 @@ console.log("Entro------");
 		createjs.Ticker.setFPS(30);
 
 		contenidos = new createjs.Container();
+		conteMenu = new createjs.Container();
 		guia = new createjs.Container();
 
 		
@@ -91,7 +97,7 @@ console.log("Entro------");
 		console.log(event.item);
 		partes.push(item)
 
-		inicio();
+		login();
 		/*var image = event.result;
 		console.log(event.target);
 		var w = image.width;
@@ -128,11 +134,11 @@ console.log("Entro------");
 	function animGuia () {
 		var circle = new createjs.Shape();
 		circle.graphics.beginFill("#e2e2e2").drawCircle(0, 0, 10);
-		circle.alpha = 0.3;
+		circle.alpha = 0.5;
 		
 		guiaO = new createjs.Bitmap(preload.getResult("guiaO")).set({
-			 scaleX: 0.2, scaleY: 0.2, 
-			 x: -11, y: -11,
+			 scaleX: 0.15, scaleY: 0.15, 
+			 x: -8, y: -8,
 			 //scaleX: 0.3, scaleY: 0.3, 
 			 //x: -17, y: -17,
 			 alpha: 0.5
@@ -144,7 +150,7 @@ console.log("Entro------");
 
 		guia.addChild(circle);
 	}
-	function inicio(){
+	function login(){
 		animGuia();
 
 		vista1 = new createjs.Bitmap(preload.getResult("login"));
@@ -155,7 +161,7 @@ console.log("Entro------");
 			 x: 20, y: 236,
 		});
 
-		btnSiguiente.on("click", segundaVista);
+		btnSiguiente.on("click", cuentas);
 
 		contenidos.addChild(btnSiguiente);
 
@@ -166,9 +172,11 @@ console.log("Entro------");
 
         createjs.Ticker.setFPS(30);
         createjs.Ticker.addEventListener("tick", stage)
-	}
 
-	function segundaVista () {
+		
+	}
+	function cuentas() {
+		menu();
 		vista2 = new createjs.Bitmap(preload.getResult("vista2"));
 		contenidos.addChild(vista2);
 
@@ -184,6 +192,25 @@ console.log("Entro------");
 		guia.x = 450; guia.y = 93;
 		contenidos.addChild(guia);
 
-		createjs.Tween.get(contenidos, {loop: false}).to({x: -250}, 1000, createjs.Ease.getPowInOut(4))
+		createjs.Tween.get(contenidos, {loop: false}).to({x: -250}, 700, createjs.Ease.getPowInOut(4))
+	}
+	function menu(){
+		btnC = new createjs.Bitmap(preload.getResult("btnCuentas"));
+		btnO = new createjs.Bitmap(preload.getResult("btnOperaciones"));
+		btnUs = new createjs.Bitmap(preload.getResult("btnUs"));
+
+		conteMenu.addChild(btnC);
+		conteMenu.addChild(btnO);
+		conteMenu.addChild(btnUs);
+
+		btnC.x = 0; btnC.y = 0;
+		btnO.x = 58; btnO.y = 0;
+		btnUs.x = 130; btnUs.y = 0;
+
+		stage.addChild(conteMenu);
+
+		conteMenu.y = 391;
+
+		createjs.Tween.get(conteMenu, {loop: false}).from({y: 426}, 700, createjs.Ease.getPowInOut(4))
 	}
 });
