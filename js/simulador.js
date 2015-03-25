@@ -1,5 +1,5 @@
 
-var partes, vista1, conteCuentas, conteLogin, opeVista1, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, btnComp, vista4, btnCorreo, mandarEmail, btnNumCuentas, prr;
+var partes, vista1, conteCuentas, conteLogin, opeVista1, opeVista3, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, btnComp, vista4, btnCorreo, mandarEmail, btnNumCuentas, prr;
 var path = "img/";
 var myGuia;
 $(document).ready(function(){
@@ -68,6 +68,7 @@ $(document).ready(function(){
 			{src: "simulador/operacionesPagoRec.jpg", id: "opeVista1"},
 			{src: "simulador/PagarRecibosYrecargas.jpg", id: "prr"},
 			{src: "simulador/operacionesPagoRec2.jpg", id: "opeVista2"},
+			{src: "simulador/operacionesPagoRec3.jpg", id: "opeVista3"}
 
 		];
 
@@ -212,6 +213,7 @@ $(document).ready(function(){
 		ahorroS.on("click", cuentasEscena2);
 
 		stage.addChild(conteCuentas);
+		stage.removeChild(conteOperaciones);
 		menu(1);
 
 		function cuentasEscena2(){
@@ -267,7 +269,7 @@ $(document).ready(function(){
 					mandarEmail.x = 1000;
 
 					guia.x = 110; guia.y = 10; guia.alpha = 0.3;
-					conteMenu.addChild(guia);
+					conteCuentas.addChild(guia);
 
 				}
 			}
@@ -275,6 +277,7 @@ $(document).ready(function(){
 	}
 	function Operaciones(){
 		menu(2);
+		animGuia();
 
 		opeVista1 = new createjs.Bitmap(preload.getResult("opeVista1"));
 		conteOperaciones.addChild(opeVista1);
@@ -286,15 +289,47 @@ $(document).ready(function(){
 
 		conteOperaciones.addChild(prr);
 
-		prr.on("click", Operaciones);
+		guia.x = 220; guia.y = 118;
+		conteOperaciones.addChild(guia);
+
+		prr.on("click", OperacionesVista1);
 
 		stage.addChild(conteOperaciones);
 		stage.removeChild(conteCuentas);
 
+		function OperacionesVista1(){
 
-		//*createjs.Tween.get(conteCuentas, {loop: false}).to({x: -250}, 700, createjs.Ease.getPowInOut(4))
+			opeVista2 = new createjs.Bitmap(preload.getResult("opeVista2"));
+			conteOperaciones.addChild(opeVista2);
 
-		//ahorroS.on("click", escena2);
+			opeVista2.x = 250;
+			conteOperaciones.x = -250;
+
+			btnSiguiente = new createjs.Bitmap(preload.getResult("btnSiguiente")).set({
+			 cursor: "pointer",
+			 x: 270, y: 346,
+			});
+			
+			conteOperaciones.addChild(btnSiguiente);
+
+			guia.x = 450; guia.y = 363;
+			conteOperaciones.addChild(guia);
+
+			btnSiguiente.on("click", OperacionesVista2);
+
+			function OperacionesVista2(){
+
+				opeVista3 = new createjs.Bitmap(preload.getResult("opeVista3"));
+				conteOperaciones.addChild(opeVista3);
+
+				opeVista3.x = 500;
+				conteOperaciones.x = -500;
+
+				guia.x = 700; guia.y = 100;
+				conteOperaciones.addChild(guia);
+
+			}
+		}
 	}
 	function menu(op){
 		stage.removeChild(conteMenu);
