@@ -1,5 +1,5 @@
 
-var partes, vista1, contenidos, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, btnOperacionesOver, btnUs, conteMenu, vista3, btnComp, vista4, btnCorreo, mandarEmail, btnNumCuentas;
+var partes, vista1, conteCuentas, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, btnOperacionesOver, btnUs, conteMenu, vista3, btnComp, vista4, btnCorreo, mandarEmail, btnNumCuentas;
 var path = "img/";
 var myGuia;
 $(document).ready(function(){
@@ -51,7 +51,7 @@ $(document).ready(function(){
 		manifest = [
 			{src: "simulador/login.jpg", id: "login"},
 			{src: "simulador/compartir-1.jpg", id: "vista2"},
-			{src: "simulador/bSiguiente.jpg", id: "bSiguiente"},
+			{src: "simulador/bSiguiente.jpg", id: "btnSiguiente"},
 			{src: "simulador/guia.png", id: "guiaO"},
 			{src: "simulador/ahorroSueldoSoles.jpg", id: "ahorroS"},
 			{src: "simulador/cuentas.jpg", id: "btnCuentas"},
@@ -80,7 +80,8 @@ $(document).ready(function(){
 
 		createjs.Ticker.setFPS(30);
 
-		contenidos = new createjs.Container();
+		conteCuentas = new createjs.Container();
+		conteOperaciones = new createjs.Container();
 		conteMenu = new createjs.Container();
 		guia = new createjs.Container();
 
@@ -137,7 +138,7 @@ $(document).ready(function(){
 
 	init();
 
-	animGuia.prototype = new createjs.Container();
+	
 	function animGuia () {
 		console.log("animGuia");
 		var circle = new createjs.Shape();
@@ -158,28 +159,25 @@ $(document).ready(function(){
 		guia.addChild(circle);	
 	}
 	function login(){
-		//animGuia();
-		myGuia = new Guia(200,253);
-	    contenidos.addChild(myGuia);
-	    stage.update();
+		animGuia();
 
 		vista1 = new createjs.Bitmap(preload.getResult("login"));
-		contenidos.addChild(vista1);
+		conteCuentas.addChild(vista1);
 
-		btnSiguiente = new createjs.Bitmap(preload.getResult("bSiguiente")).set({
+		btnSiguiente = new createjs.Bitmap(preload.getResult("btnSiguiente")).set({
 			 cursor: "pointer",
 			 x: 20, y: 236,
 		});
 
+		conteCuentas.addChild(btnSiguiente);
+
 		btnSiguiente.on("click", cuentas);
 
-		contenidos.addChild(btnSiguiente);
+		stage.addChild(conteCuentas);
 
-		stage.addChild(contenidos);
-
-		/*gui1.x = 200; gui1.y = 253;
-		contenidos.addChild(gui1);
-		stage.update();*/
+		guia.x = 200; guia.y = 253;
+		conteCuentas.addChild(guia);
+		stage.update();
 
         createjs.Ticker.setFPS(30);
         createjs.Ticker.addEventListener("tick", stage)
@@ -189,21 +187,21 @@ $(document).ready(function(){
 	function cuentas() {
 		menu(1);
 		vista2 = new createjs.Bitmap(preload.getResult("vista2"));
-		contenidos.addChild(vista2);
+		conteCuentas.addChild(vista2);
 
 		ahorroS = new createjs.Bitmap(preload.getResult("ahorroS")).set({
 			 cursor: "pointer",
 			 x: 255, y: 70,
 		});
 
-		contenidos.addChild(ahorroS);
+		conteCuentas.addChild(ahorroS);
 
 		vista2.x = 250;
 
 		guia.x = 450; guia.y = 93;
-		contenidos.addChild(guia);
+		conteCuentas.addChild(guia);
 
-		createjs.Tween.get(contenidos, {loop: false}).to({x: -250}, 700, createjs.Ease.getPowInOut(4))
+		createjs.Tween.get(conteCuentas, {loop: false}).to({x: -250}, 700, createjs.Ease.getPowInOut(4))
 
 		ahorroS.on("click", escena2);
 
@@ -218,18 +216,19 @@ $(document).ready(function(){
 			 x: 468, y: 0,
 			});
 
-			contenidos.addChild(vista3);
-			contenidos.addChild(btnNumCuentas);
-			contenidos.addChild(btnComp);
+			conteCuentas.addChild(vista3);
+			conteCuentas.addChild(btnNumCuentas);
+			conteCuentas.addChild(btnComp);
 
 			vista3.x = 250;
 
 			guia.x = 485; guia.y = 17; guia.alpha = 0.3;
-			contenidos.addChild(guia);
+			conteCuentas.addChild(guia);
 
 			btnComp.on("click", escena3);
 
 			function escena3(){
+
 				vista4 = new createjs.Bitmap(preload.getResult("vista4"));
 
 				btnCorreo = new createjs.Bitmap(preload.getResult("btnCorreo")).set({
@@ -237,22 +236,26 @@ $(document).ready(function(){
 				 x: 265, y: 163,
 				});
 
-				contenidos.addChild(vista4);
-				contenidos.addChild(btnCorreo);
+				conteCuentas.addChild(vista4);
+				conteCuentas.addChild(btnCorreo);
 
 				vista4.x = 250;
 
 				guia.x = 450; guia.y = 178;
-				contenidos.addChild(guia);
+				conteCuentas.addChild(guia);
 
 				btnCorreo.on("click", escena4);
 
 				function escena4 () {
+					console.log("Entro escena 4")
 					mandarEmail = new createjs.Bitmap(preload.getResult("mandarEmail"));
 
-					stage.addChild(mandarEmail);
+					conteCuentas.addChild(mandarEmail);
 
-					mandarEmail.x = 450; mandarEmail.y = 178;
+					mandarEmail.x = 250; mandarEmail.y = 0;
+
+					guia.x = 485; guia.y = 17;
+					conteCuentas.addChild(guia);
 				}
 			}
 		}
