@@ -209,20 +209,21 @@ $(document).ready(function(){
 			vista3 = new createjs.Bitmap(preload.getResult("vista3"));
 			btnNumCuentas = new createjs.Bitmap(preload.getResult("btnNumCuentas")).set({
 			 cursor: "pointer",
-			 x: 290, y: 90,
+			 x: 161, y: 90,
 			});
 			btnComp = new createjs.Bitmap(preload.getResult("btnComp")).set({
 			 cursor: "pointer",
-			 x: 468, y: 0,
+			 x: 715, y: 0,
 			});
 
 			conteCuentas.addChild(vista3);
 			conteCuentas.addChild(btnNumCuentas);
 			conteCuentas.addChild(btnComp);
 
-			vista3.x = 250;
+			conteCuentas.x = -500;
+			vista3.x = 500;
 
-			guia.x = 485; guia.y = 17; guia.alpha = 0.3;
+			guia.x = 735; guia.y = 17; guia.alpha = 0.3;
 			conteCuentas.addChild(guia);
 
 			btnComp.on("click", escena3);
@@ -233,15 +234,16 @@ $(document).ready(function(){
 
 				btnCorreo = new createjs.Bitmap(preload.getResult("btnCorreo")).set({
 				 cursor: "pointer",
-				 x: 265, y: 163,
+				 x: 764, y: 163,
 				});
 
 				conteCuentas.addChild(vista4);
 				conteCuentas.addChild(btnCorreo);
 
-				vista4.x = 250;
+				vista4.x = 750;
+				conteCuentas.x = -750;
 
-				guia.x = 450; guia.y = 178;
+				guia.x = 950; guia.y = 178;
 				conteCuentas.addChild(guia);
 
 				btnCorreo.on("click", escena4);
@@ -251,8 +253,9 @@ $(document).ready(function(){
 					mandarEmail = new createjs.Bitmap(preload.getResult("mandarEmail"));
 
 					conteCuentas.addChild(mandarEmail);
+					conteCuentas.x = -1000
 
-					mandarEmail.x = 250; mandarEmail.y = 0;
+					mandarEmail.x = 1000;
 
 					guia.x = 485; guia.y = 17;
 					conteCuentas.addChild(guia);
