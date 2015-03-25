@@ -1,5 +1,5 @@
 
-var partes, vista1, conteCuentas, conteLogin, opeVista1, opeVista3, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, btnComp, vista4, btnCorreo, mandarEmail, btnNumCuentas, prr;
+var partes, vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, btnComp, vista4, btnCorreo, mandarEmail, btnNumCuentas, prr;
 var path = "img/";
 var myGuia;
 $(document).ready(function(){
@@ -67,8 +67,10 @@ $(document).ready(function(){
 			{src: "simulador/mandarEmail.jpg", id: "mandarEmail"},
 			{src: "simulador/operacionesPagoRec.jpg", id: "opeVista1"},
 			{src: "simulador/PagarRecibosYrecargas.jpg", id: "prr"},
+			{src: "simulador/switch.png", id: "sw"},
 			{src: "simulador/operacionesPagoRec2.jpg", id: "opeVista2"},
-			{src: "simulador/operacionesPagoRec3.jpg", id: "opeVista3"}
+			{src: "simulador/operacionesPagoRec3.jpg", id: "opeVista3"},
+			{src: "simulador/operacionesPagoRec4.jpg", id: "opeVista4"}
 
 		];
 
@@ -89,6 +91,7 @@ $(document).ready(function(){
 		conteOperaciones = new createjs.Container();
 		conteMenu = new createjs.Container();
 		guia = new createjs.Container();
+		frecuente = new createjs.Container();
 
 		
 		
@@ -322,12 +325,56 @@ $(document).ready(function(){
 				opeVista3 = new createjs.Bitmap(preload.getResult("opeVista3"));
 				conteOperaciones.addChild(opeVista3);
 
+				ahorroS = new createjs.Bitmap(preload.getResult("ahorroS")).set({
+				 cursor: "pointer",
+				 x: 505, y: 60,
+				});
+
+				conteOperaciones.addChild(ahorroS);
+				
 				opeVista3.x = 500;
 				conteOperaciones.x = -500;
 
-				guia.x = 700; guia.y = 100;
+				guia.x = 700; guia.y = 80;
 				conteOperaciones.addChild(guia);
 
+				ahorroS.on("click", OperacionesVista3);
+
+				function OperacionesVista3(){
+
+					opeVista4 = new createjs.Bitmap(preload.getResult("opeVista4"));
+					conteOperaciones.addChild(opeVista4);
+
+					opeVista4.x = 500;
+					conteOperaciones.x = -500;
+
+					frecuente.x = 670;
+					frecuente.y = 300;
+
+					conteOperaciones.addChild(frecuente);
+
+					var fondoGris = new createjs.Shape();
+				    fondoGris.graphics.beginFill('#EDEDED').drawRect(0, 0, 60, 16);
+				    frecuente.addChild(fondoGris);
+
+				    var selector = new createjs.Bitmap(preload.getResult("sw"));
+				    frecuente.addChild(selector);
+
+				    selector.x= -36;
+
+				    selector.mask = fondoGris;
+
+				    guia.x = 730; guia.y = 300;
+					conteOperaciones.addChild(guia);
+
+				    frecuente.on("click", animSwitch);
+
+				    function animSwitch () {
+				    	createjs.Tween.get(selector, {loop: false}).to({x: 27}, 300, createjs.Ease.getPowInOut(4));
+
+
+				    }
+				}
 			}
 		}
 	}
