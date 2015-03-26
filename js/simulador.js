@@ -1,5 +1,5 @@
 
-var partes, vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, mandarEmail, btnNumCuentas, prr;
+var partes, vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, mandarEmail, btnNumCuentas, prr;
 var path = "img/";
 var myGuia;
 $(document).ready(function(){
@@ -73,7 +73,7 @@ $(document).ready(function(){
 			{src: "simulador/operacionesPagoRec4.jpg", id: "opeVista4"},
 			{src: "simulador/confirmarPago.jpg", id: "confirmarPago"},
 			{src: "simulador/operacionesPagoRec5.jpg", id: "opeVista5"},
-
+			{src: "simulador/pagosCyL.jpg", id: "pagosCyL"},
 		];
 
 		preload = new createjs.LoadQueue(true, "test/");
@@ -153,14 +153,14 @@ $(document).ready(function(){
 		console.log("animGuia");
 		var circle = new createjs.Shape();
 		circle.graphics.beginFill("#e2e2e2").drawCircle(0, 0, 10);
-		circle.alpha = 0.5;
+		circle.alpha = 0.2;
 		
 		guiaO = new createjs.Bitmap(preload.getResult("guiaO")).set({
 			 scaleX: 0.15, scaleY: 0.15, 
 			 x: -8, y: -8,
 			 //scaleX: 0.3, scaleY: 0.3, 
 			 //x: -17, y: -17,
-			 alpha: 0.5
+			 alpha: 0.3
 		});
 
 		createjs.Tween.get(guiaO, {loop: true}).to({scaleX: 0.4, scaleY: 0.4, alpha: 0, x: -23, y: -23}, 800, createjs.Ease.getPowInOut(4))
@@ -294,7 +294,7 @@ $(document).ready(function(){
 
 		conteOperaciones.addChild(prr);
 
-		guia.x = 220; guia.y = 118;
+		guia.x = 220; guia.y = 110;
 		conteOperaciones.addChild(guia);
 
 		prr.on("click", OperacionesVista1);
@@ -408,8 +408,15 @@ $(document).ready(function(){
     		opeVista1 = new createjs.Bitmap(preload.getResult("opeVista1"));
 			conteOperaciones.addChild(opeVista1);
 
+			pagosCyL = new createjs.Bitmap(preload.getResult("pagosCyL"));
+			conteOperaciones.addChild(pagosCyL);
+
+			pagosCyL.x = 1000; pagosCyL.y = 201;
 			opeVista1.x = 1000;
 			conteOperaciones.x = -1000;
+
+			guia.x = 1220; guia.y = 55;
+			conteOperaciones.addChild(guia);
     	}
 	}
 	function menu(op){
