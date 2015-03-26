@@ -66,6 +66,7 @@ $(window).load(function(){
   $('.botonMenu').click(function(){
 
     $html.toggleClass('open-slider');
+    $('.envoltura').toggleClass('open-slider');
 
     if (!$statusMenu) {
       TweenMax.to($('#raya1'), 0.26, {top:5, onComplete:function(){

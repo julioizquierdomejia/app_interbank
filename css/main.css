@@ -15,12 +15,13 @@
 /* Colores de las Bolitas */
 /* Seccion Videos */
 
+
 #section1 > .fp-slidesNav > ul > li > a.active > span{background-color: #9c5fb5;}
-#section1 > .fp-slidesNav > ul > li > a > span{border-color: #9c5fb5;}
+#section1 > .fp-slidesNav > ul > li > a > span{border-color: #9c5fb5; background-color: gray;}
 
 /* Seccion Aprende */
 #section2 > .fp-slidesNav > ul > li > a.active > span{background-color: #0039a6;}
-#section2 > .fp-slidesNav > ul > li > a > span{border-color: #0039a6;}
+#section2 > .fp-slidesNav > ul > li > a > span{border-color: #0039a6; background-color: gray;}
 
 /* Seccion FAQ */
 #section3 > .fp-slidesNav > ul > li > a.active > span{background-color: #f1ce7a;}
@@ -70,6 +71,7 @@ body, html{
 	transition: all .3s ease-out;
 	-moz-transition: all .3s ease-out;
 	
+	position: absolute;	
 
 }
 
@@ -577,7 +579,7 @@ h1.tituloPreguntas{
 	}
 
 	.fp-slidesNav{
-		margin-bottom: 90px;
+		margin-bottom: 94px;
 		display: block;
 	}
 
