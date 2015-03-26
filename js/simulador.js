@@ -1,5 +1,5 @@
 
-var  vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnMapa, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, ubicacion1, ubicacion2, ubicacion3, btnUbicanos, btnSeguridad, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, seg1, mandarEmail, animarMenu, conteUbicanos, btnTienda, btnNumCuentas, opt1, opt2, btnUbicanosOver, agilS, amex, transfDinero,btnSeguridadOver, btnPtajeta, conteSeguridad, prr;
+var  vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnMapa, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, ubicacion1, ubicacion2, ubicacion3, btnUbicanos, btnSeguridad, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, seg1, mandarEmail, animarMenu, conteUbicanos, btnTienda, btnNumCuentas, opt1, opt2, btnUbicanosOver, ahorroAsoles, aAmex, agilS, amex, transfDinero,btnSeguridadOver, btnPtajeta, conteSeguridad, prr;
 var path = "img/";
 var myGuia;
 var opcPagoFrec = false;
@@ -61,7 +61,7 @@ $(document).ready(function(){
 			{src: "simulador/seguridad.jpg", id: "btnSeguridad"},
 			{src: "simulador/seguridadOver.jpg", id: "btnSeguridadOver"},
 			{src: "simulador/compartir-2.jpg", id: "vista3"},
-			{src: "simulador/compartir-3.jpg", id: "vista4"},
+			{src: "simulador/lb.png", id: "vista4"},
 			{src: "simulador/operacionesPagoRec.jpg", id: "opeVista1"},
 			{src: "simulador/switch.png", id: "sw"},
 			{src: "simulador/operacionesPagoRec2.jpg", id: "opeVista2"},
@@ -75,7 +75,9 @@ $(document).ready(function(){
 			{src: "simulador/candado.jpg", id: "seguridad1"},
 			{src: "simulador/boton.jpg", id: "btn"},
 			{src: "simulador/operacionesPtarjeta1.jpg", id: "opt1"},
-			{src: "simulador/operacionesPtarjeta2.jpg", id: "opt2"}
+			{src: "simulador/operacionesPtarjeta2.jpg", id: "opt2"},
+			{src: "simulador/ahorroAgilSoles.jpg", id: "ahorroAsoles"},
+			{src: "simulador/ahorroAmex.jpg", id: "aAmex"}
 		];
 
 		preload = new createjs.LoadQueue(true, "test/");
@@ -179,14 +181,16 @@ $(document).ready(function(){
 		});
 		agilS = new createjs.Bitmap(preload.getResult("btn")).set({
 			 cursor: "pointer",
-			 x: 255, y: 604, scaleX: 233, scaleY: 44, alpha: 0.01
+			 x: 255, y: 120, scaleX: 233, scaleY: 50, alpha: 0.01
 		});
 		amex = new createjs.Bitmap(preload.getResult("btn")).set({
 			 cursor: "pointer",
-			 x: 255, y: 921, scaleX: 233, scaleY: 44, alpha: 0.01
+			 x: 255, y: 180, scaleX: 233, scaleY: 44, alpha: 0.01
 		});
 
 		conteCuentas.addChild(ahorroS);
+		conteCuentas.addChild(agilS);
+		conteCuentas.addChild(amex);
 
 		vista2.x = 250;
 
@@ -201,6 +205,8 @@ $(document).ready(function(){
 		createjs.Tween.get(conteLogin, {loop: false}).to({x: -250}, 700, createjs.Ease.getPowInOut(4));
 
 		ahorroS.on("click", cuentasEscena2);
+		agilS.on("click", cuentasEscena2agil);
+		amex.on("click", cuentasEscena2amex);
 
 		stage.addChild(conteCuentas);
 		stage.removeChild(conteOperaciones);
@@ -229,19 +235,94 @@ $(document).ready(function(){
 			conteCuentas.addChild(guia);
 
 			btnComp.on("click", cuentasEscena3);
-		}
-		function cuentasEscena3(){
 
-			vista4 = new createjs.Bitmap(preload.getResult("vista4")).set({
-			 cursor: "pointer"
+			function cuentasEscena3(){
+
+				vista4 = new createjs.Bitmap(preload.getResult("vista4")).set({
+				 cursor: "pointer"
+				});
+
+				conteCuentas.addChild(vista4);
+
+				vista4.x = 500;
+
+
+				vista4.on("click", cuentasEscena2);
+			}
+		}
+		function cuentasEscena2agil(){
+			vista3 = new createjs.Bitmap(preload.getResult("ahorroAsoles"));
+			btnNumCuentas = new createjs.Bitmap(preload.getResult("btn")).set({
+			 cursor: "pointer",
+			 x: 161, y: 90, scaleX: 161, scaleY: 42, alpha: 0.01
+			});
+			btnComp = new createjs.Bitmap(preload.getResult("btn")).set({
+			 cursor: "pointer",
+			 x: 715, y: 0, scaleX: 35, scaleY: 32, alpha: 0.01
 			});
 
-			conteCuentas.addChild(vista4);
+			conteCuentas.addChild(vista3);
+			//conteCuentas.addChild(btnNumCuentas);
+			conteCuentas.addChild(btnComp);
 
-			vista4.x = 750;
-			conteCuentas.x = -750;
+			conteCuentas.x = -500;
+			vista3.x = 500;
 
-			vista4.on("click", cuentasEscena2);
+			guia.x = 735; guia.y = 17; guia.alpha = 0.3;
+			conteCuentas.addChild(guia);
+
+			btnComp.on("click", cuentasEscena3);
+
+			function cuentasEscena3(){
+
+				vista4 = new createjs.Bitmap(preload.getResult("vista4")).set({
+				 cursor: "pointer"
+				});
+
+				conteCuentas.addChild(vista4);
+
+				vista4.x = 500;
+
+
+				vista4.on("click", cuentasEscena2agil);
+			}
+		}
+		function cuentasEscena2amex(){
+			vista3 = new createjs.Bitmap(preload.getResult("aAmex"));
+			btnNumCuentas = new createjs.Bitmap(preload.getResult("btn")).set({
+			 cursor: "pointer",
+			 x: 161, y: 90, scaleX: 161, scaleY: 42, alpha: 0.01
+			});
+			btnComp = new createjs.Bitmap(preload.getResult("btn")).set({
+			 cursor: "pointer",
+			 x: 715, y: 0, scaleX: 35, scaleY: 32, alpha: 0.01
+			});
+
+			conteCuentas.addChild(vista3);
+			//conteCuentas.addChild(btnNumCuentas);
+			conteCuentas.addChild(btnComp);
+
+			conteCuentas.x = -500;
+			vista3.x = 500;
+
+			guia.x = 735; guia.y = 17; guia.alpha = 0.3;
+			conteCuentas.addChild(guia);
+
+			btnComp.on("click", cuentasEscena3);
+
+			function cuentasEscena3(){
+
+				vista4 = new createjs.Bitmap(preload.getResult("vista4")).set({
+				 cursor: "pointer"
+				});
+
+				conteCuentas.addChild(vista4);
+
+				vista4.x = 500;
+
+
+				vista4.on("click", cuentasEscena2amex);
+			}
 		}
 	}
 	
