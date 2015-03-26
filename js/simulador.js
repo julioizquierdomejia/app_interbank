@@ -1,5 +1,5 @@
 
-var partes, vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, btnUbicanos, btnSeguridad, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, mandarEmail, btnNumCuentas, prr;
+var partes, vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, ubicacion1, ubicacion2, ubicacion3, btnUbicanos, btnSeguridad, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, mandarEmail, animarMenu, conteUbicanos, btnTienda, btnNumCuentas, btnUbicanosOver, btnSeguridadOver,prr;
 var path = "img/";
 var myGuia;
 $(document).ready(function(){
@@ -59,7 +59,9 @@ $(document).ready(function(){
 			{src: "simulador/operaciones.jpg", id: "btnOperaciones"},
 			{src: "simulador/operacionesOver.jpg", id: "btnOperacionesOver"},
 			{src: "simulador/ubicanos.jpg", id: "btnUbicanos"},
+			{src: "simulador/ubicanosOver.jpg", id: "btnUbicanosOver"},
 			{src: "simulador/seguridad.jpg", id: "btnSeguridad"},
+			{src: "simulador/seguridadOver.jpg", id: "btnSeguridadOver"},
 			{src: "simulador/compartir-2.jpg", id: "vista3"},
 			{src: "simulador/btnCompartir.jpg", id: "btnComp"},
 			{src: "simulador/compartir-3.jpg", id: "vista4"},
@@ -75,6 +77,10 @@ $(document).ready(function(){
 			{src: "simulador/confirmarPago.jpg", id: "confirmarPago"},
 			{src: "simulador/operacionesPagoRec5.jpg", id: "opeVista5"},
 			{src: "simulador/pagosCyL.jpg", id: "pagosCyL"},
+			{src: "simulador/ubicacion1.jpg", id: "ubicacion1"},
+			{src: "simulador/ubicacion2.jpg", id: "ubicacion2"},
+			{src: "simulador/ubicacion3.jpg", id: "ubicacion3"},
+			{src: "simulador/Tienda.jpg", id: "btnTienda"},
 		];
 
 		preload = new createjs.LoadQueue(true, "test/");
@@ -95,9 +101,7 @@ $(document).ready(function(){
 		conteMenu = new createjs.Container();
 		guia = new createjs.Container();
 		frecuente = new createjs.Container();
-
-		
-		
+		conteUbicanos = new createjs.Container();
 	}
 
 	function stop() {
@@ -170,6 +174,8 @@ $(document).ready(function(){
 		guia.addChild(circle);	
 	}
 	function login(){
+		animarMenu = true;
+
 		animGuia();
 
 		vista1 = new createjs.Bitmap(preload.getResult("login"));
@@ -196,6 +202,7 @@ $(document).ready(function(){
 		
 	}
 	function cuentas() {
+
 		vista2 = new createjs.Bitmap(preload.getResult("vista2"));
 		conteCuentas.addChild(vista2);
 
@@ -208,9 +215,6 @@ $(document).ready(function(){
 
 		vista2.x = 250;
 
-		guia.x = 450; guia.y = 93;
-		conteCuentas.addChild(guia);
-
 		//conteCuentas.x = 0;
 
 		createjs.Tween.get(conteCuentas, {loop: false}).to({x: -250}, 700, createjs.Ease.getPowInOut(4));
@@ -222,6 +226,7 @@ $(document).ready(function(){
 		stage.removeChild(conteOperaciones);
 		menu(1);
 
+		animarMenu = false;
 		function cuentasEscena2(){
 			vista3 = new createjs.Bitmap(preload.getResult("vista3"));
 			btnNumCuentas = new createjs.Bitmap(preload.getResult("btnNumCuentas")).set({
@@ -282,8 +287,6 @@ $(document).ready(function(){
 		}
 	}
 	function Operaciones(){
-		menu(2);
-		animGuia();
 
 		opeVista1 = new createjs.Bitmap(preload.getResult("opeVista1"));
 		conteOperaciones.addChild(opeVista1);
@@ -303,6 +306,9 @@ $(document).ready(function(){
 		conteOperaciones.x = 0;
 		stage.addChild(conteOperaciones);
 		stage.removeChild(conteCuentas);
+		
+		menu(2);
+		animGuia();
 
 		function OperacionesVista1(){
 
@@ -421,6 +427,41 @@ $(document).ready(function(){
 			conteOperaciones.addChild(guia);
     	}
 	}
+
+	function Ubicanos(){
+		ubicacion1 = new createjs.Bitmap(preload.getResult("ubicacion1"));
+		conteUbicanos.addChild(ubicacion1);
+		btnTienda = new createjs.Bitmap(preload.getResult("btnTienda")).set({
+		cursor: "pointer",
+		});
+		conteUbicanos.addChild(btnTienda);
+
+
+		btnTienda.y = 89;
+		guia.x = 160; guia.y = 115;
+		conteUbicanos.x = 0;
+
+		btnTienda.on("click", UbicanosV2);
+
+		stage.addChild(conteUbicanos);
+		stage.removeChild(conteOperaciones);
+		stage.removeChild(conteCuentas);
+		menu(3);
+		animGuia();
+		conteUbicanos.addChild(guia);
+
+		function UbicanosV2 () {
+			ubicacion2 = new createjs.Bitmap(preload.getResult("ubicacion2"));
+			conteUbicanos.addChild(ubicacion2);
+
+			ubicacion2.x = 250;
+			conteUbicanos.x = -250;
+		}
+	}
+
+	function Seguridad () {
+		menu(4);
+	}
 	function menu(op){
 		stage.removeChild(conteMenu);
 		switch(op){
@@ -439,8 +480,8 @@ $(document).ready(function(){
 				});
 				btnO.on("click", Operaciones);
 				btnC.on("click", cuentas);
-				btnU.on("click", Operaciones);
-				btnS.on("click", cuentas);
+				btnU.on("click", Ubicanos);
+				btnS.on("click", Seguridad);
 				break;
 			case 2:
 				btnO = new createjs.Bitmap(preload.getResult("btnOperacionesOver")).set({
@@ -457,23 +498,29 @@ $(document).ready(function(){
 				});
 				btnC.on("click", cuentas);
 				btnO.on("click", Operaciones);
-				btnU.on("click", Operaciones);
-				btnS.on("click", cuentas);
+				btnU.on("click", Ubicanos);
+				btnS.on("click", Seguridad);
 				break;
 			case 3:
-				btnC = new createjs.Bitmap(preload.getResult("btnCuentasOver")).set({
+				btnC = new createjs.Bitmap(preload.getResult("btnCuentas")).set({
 				 cursor: "pointer",
 				});
 				btnO = new createjs.Bitmap(preload.getResult("btnOperaciones")).set({
 				 cursor: "pointer",
 				});
+				btnU = new createjs.Bitmap(preload.getResult("btnUbicanosOver")).set({
+				 cursor: "pointer",
+				});
+				btnS = new createjs.Bitmap(preload.getResult("btnSeguridad")).set({
+				 cursor: "pointer",
+				});
 				btnO.on("click", Operaciones);
 				btnC.on("click", cuentas);
-				btnU.on("click", Operaciones);
-				btnS.on("click", cuentas);
+				btnU.on("click", Ubicanos);
+				btnS.on("click", Seguridad);
 				break;
 			case 4:
-				btnO = new createjs.Bitmap(preload.getResult("btnOperacionesOver")).set({
+				btnO = new createjs.Bitmap(preload.getResult("btnOperaciones")).set({
 				 cursor: "pointer",
 				});
 				btnC = new createjs.Bitmap(preload.getResult("btnCuentas")).set({
@@ -482,18 +529,15 @@ $(document).ready(function(){
 				btnU = new createjs.Bitmap(preload.getResult("btnUbicanos")).set({
 				 cursor: "pointer",
 				});
-				btnS = new createjs.Bitmap(preload.getResult("btnSeguridad")).set({
+				btnS = new createjs.Bitmap(preload.getResult("btnSeguridadOver")).set({
 				 cursor: "pointer",
 				});
 				btnC.on("click", cuentas);
 				btnO.on("click", Operaciones);
-				btnU.on("click", Operaciones);
-				btnS.on("click", cuentas);
+				btnU.on("click", Ubicanos);
+				btnS.on("click", Seguridad);
 				break;
 		}
-
-		btnU = new createjs.Bitmap(preload.getResult("btnUbicanos"));
-		btnS = new createjs.Bitmap(preload.getResult("btnSeguridad"));
 
 		conteMenu.addChild(btnC);
 		conteMenu.addChild(btnO);
@@ -507,8 +551,11 @@ $(document).ready(function(){
 
 		stage.addChild(conteMenu);
 
-		conteMenu.y = 426;
 
-		createjs.Tween.get(conteMenu, {loop: false}).wait(200).to({y:391}, 700, createjs.Ease.getPowInOut(4))
+		if (animarMenu) {
+			conteMenu.y = 426;
+			createjs.Tween.get(conteMenu, {loop: false}).wait(200).to({y:391}, 700, createjs.Ease.getPowInOut(4))
+		};
+		
 	}
 });
