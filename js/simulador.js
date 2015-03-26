@@ -1,5 +1,5 @@
 
-var  vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnMapa, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, ubicacion1, ubicacion2, ubicacion3, btnUbicanos, btnSeguridad, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, seg1, mandarEmail, animarMenu, conteUbicanos, btnTienda, btnNumCuentas, opt1, btnUbicanosOver, transfDinero,btnSeguridadOver, btnPtajeta, conteSeguridad, prr;
+var  vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnMapa, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, ubicacion1, ubicacion2, ubicacion3, btnUbicanos, btnSeguridad, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, seg1, mandarEmail, animarMenu, conteUbicanos, btnTienda, btnNumCuentas, opt1, opt2, btnUbicanosOver, agilS, amex, transfDinero,btnSeguridadOver, btnPtajeta, conteSeguridad, prr;
 var path = "img/";
 var myGuia;
 var opcPagoFrec = false;
@@ -74,7 +74,8 @@ $(document).ready(function(){
 			{src: "simulador/ubicacion3.jpg", id: "ubicacion3"},
 			{src: "simulador/candado.jpg", id: "seguridad1"},
 			{src: "simulador/boton.jpg", id: "btn"},
-			{src: "simulador/operacionesPtarjeta1.jpg", id: "opt1"}
+			{src: "simulador/operacionesPtarjeta1.jpg", id: "opt1"},
+			{src: "simulador/operacionesPtarjeta2.jpg", id: "opt2"}
 		];
 
 		preload = new createjs.LoadQueue(true, "test/");
@@ -176,6 +177,14 @@ $(document).ready(function(){
 			 cursor: "pointer",
 			 x: 255, y: 70, scaleX: 233, scaleY: 44, alpha: 0.01
 		});
+		agilS = new createjs.Bitmap(preload.getResult("btn")).set({
+			 cursor: "pointer",
+			 x: 255, y: 604, scaleX: 233, scaleY: 44, alpha: 0.01
+		});
+		amex = new createjs.Bitmap(preload.getResult("btn")).set({
+			 cursor: "pointer",
+			 x: 255, y: 921, scaleX: 233, scaleY: 44, alpha: 0.01
+		});
 
 		conteCuentas.addChild(ahorroS);
 
@@ -183,7 +192,12 @@ $(document).ready(function(){
 
 		//conteCuentas.x = 0;
 
-		createjs.Tween.get(conteCuentas, {loop: false}).to({x: -250}, 700, createjs.Ease.getPowInOut(4));
+		if (animarMenu) {
+			createjs.Tween.get(conteCuentas, {loop: false}).to({x: -250}, 700, createjs.Ease.getPowInOut(4));
+		} 
+		else{
+			conteCuentas.x = -250;
+		};
 		createjs.Tween.get(conteLogin, {loop: false}).to({x: -250}, 700, createjs.Ease.getPowInOut(4));
 
 		ahorroS.on("click", cuentasEscena2);
@@ -266,22 +280,49 @@ $(document).ready(function(){
 
 		if (opcPagoFrec) {
 
-					pagosCyL = new createjs.Bitmap(preload.getResult("pagosCyL"));
-					conteOperaciones.addChild(pagosCyL);
+			pagosCyL = new createjs.Bitmap(preload.getResult("pagosCyL"));
+			conteOperaciones.addChild(pagosCyL);
 
-					pagosCyL.x = 0; pagosCyL.y = 201;
-				};
+			pagosCyL.x = 0; pagosCyL.y = 201; pagosCyL.alpha = 0;
+
+			createjs.Tween.get(pagosCyL, {loop: false}).wait(700).to({alpha: 1}, 400, createjs.Ease.getPowInOut(4));
+
+			opcPagoFrec = false;
+		};
 
 		menu(2);
 		animGuia();
 
 		function OperacionTarjeta () {
 			opt1 = new createjs.Bitmap(preload.getResult("opt1"));
-			conteOperaciones.addChild(opt1);
+
+			pt1 = new createjs.Bitmap(preload.getResult("btn")).set({
+			 cursor: "pointer",
+			 x: 1005, y: 56, scaleX:245, scaleY:49, alpha: 0.01
+			});
+			pt2 = new createjs.Bitmap(preload.getResult("btn")).set({
+			 cursor: "pointer",
+			 x: 1005, y: 130, scaleX:245, scaleY:49, alpha: 0.01
+			});
 
 			opt1.x = 1000;
 			conteOperaciones.x = -1000;
-			
+
+			conteOperaciones.addChild(opt1);
+			conteOperaciones.addChild(pt1);
+			conteOperaciones.addChild(pt2);
+
+			pt1.on("click", OperacionTarjeta2);
+			pt2.on("click", OperacionTarjeta2);
+		}
+
+		function OperacionTarjeta2 () {
+			opt2 = new createjs.Bitmap(preload.getResult("opt2"));
+
+			opt2.x = 1250;
+			conteOperaciones.x = -1250;
+
+			conteOperaciones.addChild(opt2);
 		}
 
 		function OperacionesVista1(){
