@@ -1,5 +1,5 @@
 
-var partes, vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, mandarEmail, btnNumCuentas, prr;
+var partes, vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, btnUbicanos, btnSeguridad, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, mandarEmail, btnNumCuentas, prr;
 var path = "img/";
 var myGuia;
 $(document).ready(function(){
@@ -58,7 +58,8 @@ $(document).ready(function(){
 			{src: "simulador/cuentasOver.jpg", id: "btnCuentasOver"},
 			{src: "simulador/operaciones.jpg", id: "btnOperaciones"},
 			{src: "simulador/operacionesOver.jpg", id: "btnOperacionesOver"},
-			{src: "simulador/us.jpg", id: "btnUs"},
+			{src: "simulador/ubicanos.jpg", id: "btnUbicanos"},
+			{src: "simulador/seguridad.jpg", id: "btnSeguridad"},
 			{src: "simulador/compartir-2.jpg", id: "vista3"},
 			{src: "simulador/btnCompartir.jpg", id: "btnComp"},
 			{src: "simulador/compartir-3.jpg", id: "vista4"},
@@ -299,6 +300,7 @@ $(document).ready(function(){
 
 		prr.on("click", OperacionesVista1);
 
+		conteOperaciones.x = 0;
 		stage.addChild(conteOperaciones);
 		stage.removeChild(conteCuentas);
 
@@ -424,34 +426,84 @@ $(document).ready(function(){
 		switch(op){
 			case 1:
 				btnC = new createjs.Bitmap(preload.getResult("btnCuentasOver")).set({
-				 cursor: "default",
+				 cursor: "pointer",
+				});
+				btnO = new createjs.Bitmap(preload.getResult("btnOperaciones")).set({
+				 cursor: "pointer",
+				});
+				btnU = new createjs.Bitmap(preload.getResult("btnUbicanos")).set({
+				 cursor: "pointer",
+				});
+				btnS = new createjs.Bitmap(preload.getResult("btnSeguridad")).set({
+				 cursor: "pointer",
+				});
+				btnO.on("click", Operaciones);
+				btnC.on("click", cuentas);
+				btnU.on("click", Operaciones);
+				btnS.on("click", cuentas);
+				break;
+			case 2:
+				btnO = new createjs.Bitmap(preload.getResult("btnOperacionesOver")).set({
+				 cursor: "pointer",
+				});
+				btnC = new createjs.Bitmap(preload.getResult("btnCuentas")).set({
+				 cursor: "pointer",
+				});
+				btnU = new createjs.Bitmap(preload.getResult("btnUbicanos")).set({
+				 cursor: "pointer",
+				});
+				btnS = new createjs.Bitmap(preload.getResult("btnSeguridad")).set({
+				 cursor: "pointer",
+				});
+				btnC.on("click", cuentas);
+				btnO.on("click", Operaciones);
+				btnU.on("click", Operaciones);
+				btnS.on("click", cuentas);
+				break;
+			case 3:
+				btnC = new createjs.Bitmap(preload.getResult("btnCuentasOver")).set({
+				 cursor: "pointer",
 				});
 				btnO = new createjs.Bitmap(preload.getResult("btnOperaciones")).set({
 				 cursor: "pointer",
 				});
 				btnO.on("click", Operaciones);
+				btnC.on("click", cuentas);
+				btnU.on("click", Operaciones);
+				btnS.on("click", cuentas);
 				break;
-			case 2:
+			case 4:
 				btnO = new createjs.Bitmap(preload.getResult("btnOperacionesOver")).set({
-				 cursor: "default",
+				 cursor: "pointer",
 				});
 				btnC = new createjs.Bitmap(preload.getResult("btnCuentas")).set({
 				 cursor: "pointer",
 				});
+				btnU = new createjs.Bitmap(preload.getResult("btnUbicanos")).set({
+				 cursor: "pointer",
+				});
+				btnS = new createjs.Bitmap(preload.getResult("btnSeguridad")).set({
+				 cursor: "pointer",
+				});
 				btnC.on("click", cuentas);
+				btnO.on("click", Operaciones);
+				btnU.on("click", Operaciones);
+				btnS.on("click", cuentas);
 				break;
 		}
 
-
-		btnUs = new createjs.Bitmap(preload.getResult("btnUs"));
+		btnU = new createjs.Bitmap(preload.getResult("btnUbicanos"));
+		btnS = new createjs.Bitmap(preload.getResult("btnSeguridad"));
 
 		conteMenu.addChild(btnC);
 		conteMenu.addChild(btnO);
-		conteMenu.addChild(btnUs);
+		conteMenu.addChild(btnU);
+		conteMenu.addChild(btnS);
 
 		btnC.x = 0; btnC.y = 0;
 		btnO.x = 58; btnO.y = 0;
-		btnUs.x = 130; btnUs.y = 0;
+		btnU.x = 130; btnU.y = 0;
+		btnS.x = 189; btnS.y = 0;
 
 		stage.addChild(conteMenu);
 
