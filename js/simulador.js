@@ -1,5 +1,5 @@
 
-var partes, vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, ubicacion1, ubicacion2, ubicacion3, btnUbicanos, btnSeguridad, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, mandarEmail, animarMenu, conteUbicanos, btnTienda, btnNumCuentas, btnUbicanosOver, btnSeguridadOver,prr;
+var partes, vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnMapa, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, ubicacion1, ubicacion2, ubicacion3, btnUbicanos, btnSeguridad, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, seg1, mandarEmail, animarMenu, conteUbicanos, btnTienda, btnNumCuentas, btnUbicanosOver, btnSeguridadOver, conteSeguridad, prr;
 var path = "img/";
 var myGuia;
 $(document).ready(function(){
@@ -81,6 +81,8 @@ $(document).ready(function(){
 			{src: "simulador/ubicacion2.jpg", id: "ubicacion2"},
 			{src: "simulador/ubicacion3.jpg", id: "ubicacion3"},
 			{src: "simulador/Tienda.jpg", id: "btnTienda"},
+			{src: "simulador/bMapa.jpg", id: "bMapa"},
+			{src: "simulador/candado.jpg", id: "seguridad1"},
 		];
 
 		preload = new createjs.LoadQueue(true, "test/");
@@ -102,6 +104,7 @@ $(document).ready(function(){
 		guia = new createjs.Container();
 		frecuente = new createjs.Container();
 		conteUbicanos = new createjs.Container();
+		conteSeguridad = new createjs.Container();
 	}
 
 	function stop() {
@@ -152,7 +155,6 @@ $(document).ready(function(){
 	}
 
 	init();
-
 	
 	function animGuia () {
 		console.log("animGuia");
@@ -197,10 +199,9 @@ $(document).ready(function(){
 		stage.update();
 
         createjs.Ticker.setFPS(30);
-        createjs.Ticker.addEventListener("tick", stage)
-
-		
+        createjs.Ticker.addEventListener("tick", stage);
 	}
+
 	function cuentas() {
 
 		vista2 = new createjs.Bitmap(preload.getResult("vista2"));
@@ -249,43 +250,42 @@ $(document).ready(function(){
 			conteCuentas.addChild(guia);
 
 			btnComp.on("click", cuentasEscena3);
+		}
+		function cuentasEscena3(){
 
-			function cuentasEscena3(){
+			vista4 = new createjs.Bitmap(preload.getResult("vista4"));
 
-				vista4 = new createjs.Bitmap(preload.getResult("vista4"));
+			btnCorreo = new createjs.Bitmap(preload.getResult("btnCorreo")).set({
+			 cursor: "pointer",
+			 x: 764, y: 163,
+			});
 
-				btnCorreo = new createjs.Bitmap(preload.getResult("btnCorreo")).set({
-				 cursor: "pointer",
-				 x: 764, y: 163,
-				});
+			conteCuentas.addChild(vista4);
+			conteCuentas.addChild(btnCorreo);
 
-				conteCuentas.addChild(vista4);
-				conteCuentas.addChild(btnCorreo);
+			vista4.x = 750;
+			conteCuentas.x = -750;
 
-				vista4.x = 750;
-				conteCuentas.x = -750;
+			guia.x = 950; guia.y = 178;
+			conteCuentas.addChild(guia);
 
-				guia.x = 950; guia.y = 178;
-				conteCuentas.addChild(guia);
+			btnCorreo.on("click", cuentasEscena4);
+		}
+		function cuentasEscena4 () {
+			console.log("Entro escena 4")
+			mandarEmail = new createjs.Bitmap(preload.getResult("mandarEmail"));
 
-				btnCorreo.on("click", cuentasEscena4);
+			conteCuentas.addChild(mandarEmail);
+			conteCuentas.x = -1000
 
-				function cuentasEscena4 () {
-					console.log("Entro escena 4")
-					mandarEmail = new createjs.Bitmap(preload.getResult("mandarEmail"));
+			mandarEmail.x = 1000;
 
-					conteCuentas.addChild(mandarEmail);
-					conteCuentas.x = -1000
+			guia.x = 110; guia.y = 10; guia.alpha = 0.3;
+			conteCuentas.addChild(guia);
 
-					mandarEmail.x = 1000;
-
-					guia.x = 110; guia.y = 10; guia.alpha = 0.3;
-					conteCuentas.addChild(guia);
-
-				}
-			}
 		}
 	}
+	
 	function Operaciones(){
 
 		opeVista1 = new createjs.Bitmap(preload.getResult("opeVista1"));
@@ -306,7 +306,7 @@ $(document).ready(function(){
 		conteOperaciones.x = 0;
 		stage.addChild(conteOperaciones);
 		stage.removeChild(conteCuentas);
-		
+
 		menu(2);
 		animGuia();
 
@@ -454,12 +454,42 @@ $(document).ready(function(){
 			ubicacion2 = new createjs.Bitmap(preload.getResult("ubicacion2"));
 			conteUbicanos.addChild(ubicacion2);
 
+			btnMapa = new createjs.Bitmap(preload.getResult("bMapa")).set({
+				cursor: "pointer",
+			});
+
+			guia.x = 350; guia.y = 363;
+
 			ubicacion2.x = 250;
 			conteUbicanos.x = -250;
+			btnMapa.x =259; btnMapa.y =346;
+
+			
+
+			conteUbicanos.addChild(btnMapa);
+			conteUbicanos.addChild(guia);
+			
+			btnMapa.on("click", verMapa);
+		}
+		function verMapa () {
+			ubicacion3 = new createjs.Bitmap(preload.getResult("ubicacion3"));
+			conteUbicanos.addChild(ubicacion3);
+
+			ubicacion3.x = 500;
+			conteUbicanos.x = -500;
 		}
 	}
 
 	function Seguridad () {
+		seg1 = new createjs.Bitmap(preload.getResult("seguridad1"));
+		conteSeguridad.addChild(seg1);
+
+		conteSeguridad.x = 0;		
+
+		stage.addChild(conteSeguridad);
+		stage.removeChild(conteUbicanos);
+		stage.removeChild(conteOperaciones);
+		stage.removeChild(conteCuentas);
 		menu(4);
 	}
 	function menu(op){
