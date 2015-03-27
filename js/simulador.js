@@ -1,9 +1,10 @@
 
-var  vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnMapa, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, ubicacion1, ubicacion2, ubicacion3, btnUbicanos, btnSeguridad, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, seg1, mandarEmail, animarMenu, conteUbicanos, btnTienda, btnNumCuentas, opt1, opt2, otd2, otd4, otd5, btnUbicanosOver, vistaT3, ahorroAsoles, aAmex, agilS, amex, transfDinero,btnSeguridadOver, btnPtajeta, btnTdinero1, btnTdinero2, btnTdinero5, otd3, btnTdinero3, btnTdinero3, conteSeguridad, btnSiguiente2, btnTdinero6, otd6, btnTdinero7, opt4, opt5, otd1,prr;
+var  vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnMapa, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, ubicacion1, ubicacion2, ubicacion3, btnUbicanos, btnSeguridad, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, seg1, mandarEmail, animarMenu, conteUbicanos, btnTienda, btnNumCuentas, opt1, opt2, otd2, otd4, otd5, btnUbicanosOver, vistaT3, ahorroAsoles, aAmex, agilS, amex, transfDinero,btnSeguridadOver, btnPtajeta, btnTdinero1, btnTdinero2, btnTdinero5, otd3, btnTdinero3, btnTdinero3, conteSeguridad, btnSiguiente2, btnTdinero6, btnColor, btnColorsito, btnSiguienteSeguridad, otd6, btnTdinero7, opt4, opt5, otd1,prr;
 var path = "img/";
 var myGuia;
 var opcPagoFrec = false;
-var alphaBotones = 0.5;
+var alphaBotones = 0.01;
+var tipoDeCuenta;
 
 $(document).ready(function(){
 	var loaderBar;
@@ -87,7 +88,8 @@ $(document).ready(function(){
 			{src: "simulador/transfDinero3.jpg", id: "vistaTdinero3"},
 			{src: "simulador/transfDinero4.jpg", id: "vistaTdinero4"},
 			{src: "simulador/transfDinero5.jpg", id: "vistaTdinero5"},
-			{src: "simulador/transfDinero6.jpg", id: "vistaTdinero6"}
+			{src: "simulador/transfDinero6.jpg", id: "vistaTdinero6"},
+			{src: "simulador/btnColores.jpg", id: "btnColor"}
 		];
 
 		preload = new createjs.LoadQueue(true, "test/");
@@ -156,6 +158,7 @@ $(document).ready(function(){
 	function login(){
 		animarMenu = true;
 
+
 		animGuia();
 
 		vista1 = new createjs.Bitmap(preload.getResult("login"));
@@ -166,11 +169,11 @@ $(document).ready(function(){
 			 x: 20, y: 236, scaleX:210, scaleY:32, alpha: alphaBotones
 		})
 
+		conteLogin.x = 0;
+
 		conteLogin.addChild(btnSiguiente);
 
 		btnSiguiente.on("click", cuentas);
-
-		stage.addChild(conteLogin);
 
 		guia.x = 200; guia.y = 253;
 		conteLogin.addChild(guia);
@@ -178,9 +181,19 @@ $(document).ready(function(){
 
         createjs.Ticker.setFPS(30);
         createjs.Ticker.addEventListener("tick", stage);
+
+
+		stage.addChild(conteLogin);
+		stage.removeChild(conteUbicanos);
+		stage.removeChild(conteOperaciones);
+		stage.removeChild(conteCuentas);
+		stage.removeChild(conteSeguridad);
+		stage.removeChild(conteMenu);
 	}
 
 	function cuentas() {
+
+		tipoDeCuenta = 1;
 
 		vista2 = new createjs.Bitmap(preload.getResult("vista2"));
 		conteCuentas.addChild(vista2);
@@ -204,7 +217,9 @@ $(document).ready(function(){
 
 		vista2.x = 250;
 
-		//conteCuentas.x = 0;
+		conteCuentas.x = 0;
+
+		console.log(animarMenu);
 
 		if (animarMenu) {
 			createjs.Tween.get(conteCuentas, {loop: false}).to({x: -250}, 700, createjs.Ease.getPowInOut(4));
@@ -212,6 +227,7 @@ $(document).ready(function(){
 		else{
 			conteCuentas.x = -250;
 		};
+
 		createjs.Tween.get(conteLogin, {loop: false}).to({x: -250}, 700, createjs.Ease.getPowInOut(4));
 
 		ahorroS.on("click", cuentasEscena2);
@@ -224,10 +240,15 @@ $(document).ready(function(){
 
 		animarMenu = false;
 		function cuentasEscena2(){
+
+			conteCuentas.removeChild(btnColorsito);
+			conteCuentas.removeChild(btnColor);
+			conteCuentas.removeChild(vista4);
+
 			vista3 = new createjs.Bitmap(preload.getResult("vista3"));
 			btnNumCuentas = new createjs.Bitmap(preload.getResult("btn")).set({
 			 cursor: "pointer",
-			 x: 161, y: 90, scaleX: 161, scaleY: 42, alpha: alphaBotones
+			 x: 542, y: 60, scaleX: 120, scaleY: 20, alpha: alphaBotones
 			});
 			btnComp = new createjs.Bitmap(preload.getResult("btn")).set({
 			 cursor: "pointer",
@@ -235,7 +256,7 @@ $(document).ready(function(){
 			});
 
 			conteCuentas.addChild(vista3);
-			//conteCuentas.addChild(btnNumCuentas);
+			conteCuentas.addChild(btnNumCuentas);
 			conteCuentas.addChild(btnComp);
 
 			conteCuentas.x = -500;
@@ -245,6 +266,7 @@ $(document).ready(function(){
 			conteCuentas.addChild(guia);
 
 			btnComp.on("click", cuentasEscena3);
+			btnNumCuentas.on("click", colores);
 
 			function cuentasEscena3(){
 
@@ -260,11 +282,39 @@ $(document).ready(function(){
 				vista4.on("click", cuentasEscena2);
 			}
 		}
+
+		function colores () {
+
+			btnColor = new createjs.Bitmap(preload.getResult("btnColor"))
+			btnColorsito = new createjs.Bitmap(preload.getResult("btn")).set({
+			 cursor: "pointer",
+			 x: 500, y: 0, scaleX: 250, scaleY: 426, alpha: alphaBotones
+			});
+
+			btnColor.x = 542; btnColor.y = 60;
+
+			conteCuentas.addChild(btnColorsito);
+			conteCuentas.addChild(btnColor);
+
+			console.log("Tipo de cuenta ---->    " + tipoDeCuenta);
+
+			switch (tipoDeCuenta){
+				case 1: btnColorsito.on("click", cuentasEscena2); break;
+				case 2: btnColorsito.on("click", cuentasEscena2agil); break;
+				case 3: btnColorsito.on("click", cuentasEscena2amex); break;
+			}
+		}
 		function cuentasEscena2agil(){
+
+			conteCuentas.removeChild(btnColorsito);
+			conteCuentas.removeChild(btnColor);
+
+			tipoDeCuenta =2;
+
 			vista3 = new createjs.Bitmap(preload.getResult("ahorroAsoles"));
 			btnNumCuentas = new createjs.Bitmap(preload.getResult("btn")).set({
 			 cursor: "pointer",
-			 x: 161, y: 90, scaleX: 161, scaleY: 42, alpha: alphaBotones
+			 x: 542, y: 70, scaleX: 80, scaleY: 20, alpha: alphaBotones
 			});
 			btnComp = new createjs.Bitmap(preload.getResult("btn")).set({
 			 cursor: "pointer",
@@ -272,7 +322,7 @@ $(document).ready(function(){
 			});
 
 			conteCuentas.addChild(vista3);
-			//conteCuentas.addChild(btnNumCuentas);
+			conteCuentas.addChild(btnNumCuentas);
 			conteCuentas.addChild(btnComp);
 
 			conteCuentas.x = -500;
@@ -282,6 +332,7 @@ $(document).ready(function(){
 			conteCuentas.addChild(guia);
 
 			btnComp.on("click", cuentasEscena3);
+			btnNumCuentas.on("click", colores);
 
 			function cuentasEscena3(){
 
@@ -298,10 +349,16 @@ $(document).ready(function(){
 			}
 		}
 		function cuentasEscena2amex(){
+
+			conteCuentas.removeChild(btnColorsito);
+			conteCuentas.removeChild(btnColor);
+
+			tipoDeCuenta =3;
+
 			vista3 = new createjs.Bitmap(preload.getResult("aAmex"));
 			btnNumCuentas = new createjs.Bitmap(preload.getResult("btn")).set({
 			 cursor: "pointer",
-			 x: 161, y: 90, scaleX: 161, scaleY: 42, alpha: alphaBotones
+			 x: 542, y: 70, scaleX: 150, scaleY: 20, alpha: alphaBotones
 			});
 			btnComp = new createjs.Bitmap(preload.getResult("btn")).set({
 			 cursor: "pointer",
@@ -309,7 +366,7 @@ $(document).ready(function(){
 			});
 
 			conteCuentas.addChild(vista3);
-			//conteCuentas.addChild(btnNumCuentas);
+			conteCuentas.addChild(btnNumCuentas);
 			conteCuentas.addChild(btnComp);
 
 			conteCuentas.x = -500;
@@ -319,6 +376,7 @@ $(document).ready(function(){
 			conteCuentas.addChild(guia);
 
 			btnComp.on("click", cuentasEscena3);
+			btnNumCuentas.on("click", colores);
 
 			function cuentasEscena3(){
 
@@ -749,9 +807,17 @@ $(document).ready(function(){
 
 	function Seguridad () {
 		seg1 = new createjs.Bitmap(preload.getResult("seguridad1"));
-		conteSeguridad.addChild(seg1);
+		btnSiguienteSeguridad = new createjs.Bitmap(preload.getResult("btn")).set({
+				cursor: "pointer",
+				x:30, y:148, scaleX:190, scaleY:33, alpha: alphaBotones
+			});
 
 		conteSeguridad.x = 0;		
+
+		conteSeguridad.addChild(seg1);
+		conteSeguridad.addChild(btnSiguienteSeguridad);
+
+		btnSiguienteSeguridad.on("click", login);
 
 		stage.addChild(conteSeguridad);
 		stage.removeChild(conteUbicanos);
