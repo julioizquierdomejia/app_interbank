@@ -1,6 +1,7 @@
 
 var  vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnMapa, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, ubicacion1, ubicacion2, ubicacion3, btnUbicanos, btnSeguridad, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, seg1, mandarEmail, animarMenu, conteUbicanos, btnTienda, btnNumCuentas, opt1, opt2, otd2, otd4, otd5, btnUbicanosOver, vistaT3, ahorroAsoles, aAmex, agilS, amex, transfDinero,btnSeguridadOver, btnPtajeta, btnTdinero1, btnTdinero2, btnTdinero5, otd3, btnTdinero3, btnTdinero3, conteSeguridad, btnSiguiente2, btnTdinero6, btnColor, btnColorsito, btnSiguienteSeguridad, otd6, btnTdinero7, opt4, opt5, otd1,prr;
-var path = "img/";
+var $os = 'android';
+var path;
 var myGuia;
 var opcPagoFrec = false;
 var alphaBotones = 0.01;
@@ -20,6 +21,13 @@ $(document).ready(function(){
 	var oldItem;
 
 	function init() {
+
+		if ($os == 'android') {
+			path = "img/simulador_android/";
+		} else{
+			path = "img/simulador_apple/";
+		};
+
 		canvas = document.getElementById("myCanvas");
 		stage = new createjs.Stage(canvas);
 		stage.enableMouseOver(10);
@@ -51,45 +59,45 @@ $(document).ready(function(){
 		stage.addChild(loaderBar);
 
 		manifest = [
-			{src: "simulador/login.jpg", id: "login"},
-			{src: "simulador/compartir-1.jpg", id: "vista2"},
-			{src: "simulador/guia.png", id: "guiaO"},
-			{src: "simulador/cuentas.jpg", id: "btnCuentas"},
-			{src: "simulador/cuentasOver.jpg", id: "btnCuentasOver"},
-			{src: "simulador/operaciones.jpg", id: "btnOperaciones"},
-			{src: "simulador/operacionesOver.jpg", id: "btnOperacionesOver"},
-			{src: "simulador/ubicanos.jpg", id: "btnUbicanos"},
-			{src: "simulador/ubicanosOver.jpg", id: "btnUbicanosOver"},
-			{src: "simulador/seguridad.jpg", id: "btnSeguridad"},
-			{src: "simulador/seguridadOver.jpg", id: "btnSeguridadOver"},
-			{src: "simulador/compartir-2.jpg", id: "vista3"},
-			{src: "simulador/lb.png", id: "vista4"},
-			{src: "simulador/operacionesPagoRec.jpg", id: "opeVista1"},
-			{src: "simulador/switch.png", id: "sw"},
-			{src: "simulador/operacionesPagoRec2.jpg", id: "opeVista2"},
-			{src: "simulador/operacionesPagoRec3.jpg", id: "opeVista3"},
-			{src: "simulador/operacionesPagoRec4.jpg", id: "opeVista4"},
-			{src: "simulador/operacionesPagoRec5.jpg", id: "opeVista5"},
-			{src: "simulador/pagosCyL.jpg", id: "pagosCyL"},
-			{src: "simulador/ubicacion1.jpg", id: "ubicacion1"},
-			{src: "simulador/ubicacion2.jpg", id: "ubicacion2"},
-			{src: "simulador/ubicacion3.jpg", id: "ubicacion3"},
-			{src: "simulador/candado.jpg", id: "seguridad1"},
-			{src: "simulador/boton.jpg", id: "btn"},
-			{src: "simulador/operacionesPtarjeta1.jpg", id: "opt1"},
-			{src: "simulador/operacionesPtarjeta2.jpg", id: "opt2"},
-			{src: "simulador/ahorroAgilSoles.jpg", id: "ahorroAsoles"},
-			{src: "simulador/ahorroAmex.jpg", id: "aAmex"},
-			{src: "simulador/oTarjeta3.jpg", id: "vistaT3"},
-			{src: "simulador/oTarjeta4.jpg", id: "vistaT4"},
-			{src: "simulador/oTarjeta5.jpg", id: "vistaT5"},
-			{src: "simulador/transfDinero1.jpg", id: "vistaTdinero1"},
-			{src: "simulador/transfDinero2.jpg", id: "vistaTdinero2"},
-			{src: "simulador/transfDinero3.jpg", id: "vistaTdinero3"},
-			{src: "simulador/transfDinero4.jpg", id: "vistaTdinero4"},
-			{src: "simulador/transfDinero5.jpg", id: "vistaTdinero5"},
-			{src: "simulador/transfDinero6.jpg", id: "vistaTdinero6"},
-			{src: "simulador/btnColores.jpg", id: "btnColor"}
+			{src: "login.jpg", id: "login"},
+			{src: "compartir-1.jpg", id: "vista2"},
+			{src: "guia.png", id: "guiaO"},
+			{src: "cuentas.jpg", id: "btnCuentas"},
+			{src: "cuentasOver.jpg", id: "btnCuentasOver"},
+			{src: "operaciones.jpg", id: "btnOperaciones"},
+			{src: "operacionesOver.jpg", id: "btnOperacionesOver"},
+			{src: "ubicanos.jpg", id: "btnUbicanos"},
+			{src: "ubicanosOver.jpg", id: "btnUbicanosOver"},
+			{src: "seguridad.jpg", id: "btnSeguridad"},
+			{src: "seguridadOver.jpg", id: "btnSeguridadOver"},
+			{src: "compartir-2.jpg", id: "vista3"},
+			{src: "lb.png", id: "vista4"},
+			{src: "operacionesPagoRec.jpg", id: "opeVista1"},
+			{src: "switch.png", id: "sw"},
+			{src: "operacionesPagoRec2.jpg", id: "opeVista2"},
+			{src: "operacionesPagoRec3.jpg", id: "opeVista3"},
+			{src: "operacionesPagoRec4.jpg", id: "opeVista4"},
+			{src: "operacionesPagoRec5.jpg", id: "opeVista5"},
+			{src: "pagosCyL.jpg", id: "pagosCyL"},
+			{src: "ubicacion1.jpg", id: "ubicacion1"},
+			{src: "ubicacion2.jpg", id: "ubicacion2"},
+			{src: "ubicacion3.jpg", id: "ubicacion3"},
+			{src: "candado.jpg", id: "seguridad1"},
+			{src: "boton.jpg", id: "btn"},
+			{src: "operacionesPtarjeta1.jpg", id: "opt1"},
+			{src: "operacionesPtarjeta2.jpg", id: "opt2"},
+			{src: "ahorroAgilSoles.jpg", id: "ahorroAsoles"},
+			{src: "ahorroAmex.jpg", id: "aAmex"},
+			{src: "oTarjeta3.jpg", id: "vistaT3"},
+			{src: "oTarjeta4.jpg", id: "vistaT4"},
+			{src: "oTarjeta5.jpg", id: "vistaT5"},
+			{src: "transfDinero1.jpg", id: "vistaTdinero1"},
+			{src: "transfDinero2.jpg", id: "vistaTdinero2"},
+			{src: "transfDinero3.jpg", id: "vistaTdinero3"},
+			{src: "transfDinero4.jpg", id: "vistaTdinero4"},
+			{src: "transfDinero5.jpg", id: "vistaTdinero5"},
+			{src: "transfDinero6.jpg", id: "vistaTdinero6"},
+			{src: "btnColores.jpg", id: "btnColor"}
 		];
 
 		preload = new createjs.LoadQueue(true, "test/");
