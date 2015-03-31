@@ -4,7 +4,7 @@ var $os = 'apple';
 var path;
 var myGuia;
 var opcPagoFrec = false;
-var alphaBotones = 0.01;
+var alphaBotones = 0.5;
 var tipoDeCuenta;
 
 $(document).ready(function(){
@@ -412,14 +412,26 @@ $(document).ready(function(){
 				 cursor: "pointer",
 				 x: 5, y: 33, scaleX: 246, scaleY: 46, alpha: alphaBotones
 				});
-		prr = new createjs.Bitmap(preload.getResult("btn")).set({
-				 cursor: "pointer",
-				 x: 5, y: 82, scaleX:246, scaleY: 47, alpha: alphaBotones
-				});
-		transfDinero = new createjs.Bitmap(preload.getResult("btn")).set({
-				 cursor: "pointer",
-				 x: 5, y: 134, scaleX:246, scaleY: 47, alpha: alphaBotones
-				});
+
+		if ($os == 'android') {
+			prr = new createjs.Bitmap(preload.getResult("btn")).set({
+					 cursor: "pointer",
+					 x: 5, y: 82, scaleX:246, scaleY: 47, alpha: alphaBotones
+					});
+			transfDinero = new createjs.Bitmap(preload.getResult("btn")).set({
+					 cursor: "pointer",
+					 x: 5, y: 134, scaleX:246, scaleY: 47, alpha: alphaBotones
+					});
+		} else{
+			prr = new createjs.Bitmap(preload.getResult("btn")).set({
+					 cursor: "pointer",
+					 x: 5, y: 88, scaleX:246, scaleY: 47, alpha: alphaBotones
+					});
+			transfDinero = new createjs.Bitmap(preload.getResult("btn")).set({
+					 cursor: "pointer",
+					 x: 5, y: 145, scaleX:246, scaleY: 47, alpha: alphaBotones
+					});
+		};
 
 		
 
@@ -453,14 +465,27 @@ $(document).ready(function(){
 		function OperacionTarjeta () {
 			opt1 = new createjs.Bitmap(preload.getResult("opt1"));
 
-			pt1 = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 1005, y: 56, scaleX:245, scaleY:49, alpha: alphaBotones
-			});
-			pt2 = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 1005, y: 130, scaleX:245, scaleY:49, alpha: alphaBotones
-			});
+			if ($os == 'android') {
+				pt1 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1005, y: 56, scaleX:245, scaleY:49, alpha: alphaBotones
+				});
+				pt2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1005, y: 130, scaleX:245, scaleY:49, alpha: alphaBotones
+				});
+			} else{
+				pt1 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1005, y: 67, scaleX:245, scaleY:49, alpha: alphaBotones
+				});
+				pt2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1005, y: 153, scaleX:245, scaleY:49, alpha: alphaBotones
+				});
+			};
+
+			
 
 			opt1.x = 1000;
 			conteOperaciones.x = -1000;
@@ -475,14 +500,26 @@ $(document).ready(function(){
 
 		function OperacionTarjeta2 () {
 			opt2 = new createjs.Bitmap(preload.getResult("opt2"));
-			as2 = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 1255, y: 60, scaleX:245, scaleY:40, alpha: alphaBotones
-			});
-			aa2 = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 1255, y: 108, scaleX:245, scaleY:45, alpha: alphaBotones
-			});
+
+			if ($os == 'android') {
+				as2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1255, y: 60, scaleX:245, scaleY:40, alpha: alphaBotones
+				});
+				aa2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1255, y: 108, scaleX:245, scaleY:45, alpha: alphaBotones
+				});
+			} else{
+				as2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1255, y: 73, scaleX:245, scaleY:40, alpha: alphaBotones
+				});
+				aa2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1255, y: 130, scaleX:245, scaleY:45, alpha: alphaBotones
+				});
+			};
 
 
 			opt2.x = 1250;
@@ -499,10 +536,20 @@ $(document).ready(function(){
 
 		function OperacionTarjeta3 () {
 			opt3 = new createjs.Bitmap(preload.getResult("vistaT3"));
-			btnSiguiente2 = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 1520, y: 227, scaleX:210, scaleY:28, alpha: alphaBotones
-			});
+
+
+
+			if ($os == 'android') {
+				btnSiguiente2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1520, y: 227, scaleX:210, scaleY:28, alpha: alphaBotones
+				});
+			} else{
+				btnSiguiente2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1520, y: 320, scaleX:210, scaleY:35, alpha: alphaBotones
+				});
+			};
 
 			opt3.x = 1500;
 			conteOperaciones.x = -1500;
