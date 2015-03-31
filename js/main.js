@@ -123,7 +123,7 @@ $(window).load(function(){
   })
 
  
-  /*
+
   $(".iframe_video").each(function() {
       var item = $(this).attr('data-div');
       var video = $(this).attr('data-video');
@@ -150,7 +150,7 @@ $(window).load(function(){
         player.stopVideo();
       });
   });
-*/
+
 
 });
 
