@@ -11,6 +11,9 @@ $(window).load(function(){
   var videoArray = [];
   var isDevice = false;
 
+  //posicionamos los puntos de navegacion
+  //var altoBoton = $('.callToInternas').height();
+  //$('.fp-slidesNav').css('margin-bottom',altoBoton + 'px')
   
   //Detectamos el sistema operativo para saber
   //que boton mostrar parea descargar la app
@@ -28,7 +31,7 @@ $(window).load(function(){
     anchors: ['home', 'conoce', 'aprende', 'preguntas'],
     verticalCentered: false,
     slidesNavigation: true,
-    controlArrows: false,
+    controlArrows: true,
     loopHorizontal: false,
     easingcss3: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)',
 
@@ -149,6 +152,16 @@ $(window).load(function(){
       $('.slidervideo').on('click', '.flex-direction-nav a', function() {
         player.stopVideo();
       });
+
+      // when video ends
+      /*
+      function onPlayerStateChange(event) {  
+          if(event.data === 0) {          
+              alert('done');
+          }
+      }
+      */
+
   });
 
 

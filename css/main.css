@@ -140,12 +140,18 @@ body, html{
 
 .head > img{padding: 10px 14px;}
 
+.linkLogo{
+	display: block;
+	padding: 10px 14px;
+}
 
 .botonMenu{
 	width: 44px;
 	height: 45px;
 	float: right;
-	position: relative;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 .botonMenu .raya{
@@ -333,6 +339,10 @@ h1.tituloPreguntas{
 	height: auto;
 }
 
+#section1 .callToInternas{
+	bottom: 22px;
+}
+
 .arrowGreen{
 	width: 50%;
 	padding: 22px 0px 0px 40px;
@@ -375,8 +385,13 @@ h1.tituloPreguntas{
 	display: none!important;
 }
 
+.fp-controlArrow{
+	top:40%!important;
+}
+
+
 .fp-slidesNav{
-	margin-bottom: 56px;
+	margin-bottom: 62px;
 	display: block;
 }
 
@@ -513,8 +528,46 @@ h1.tituloPreguntas{
   background-position: -17px -18px;
 }
 
+#section2 > .fp-controlArrow.fp-next, #section3 > .fp-controlArrow.fp-next {
+	display: none!important;
+}
+
+#section2 > .fp-controlArrow.fp-prev, #section3 > .fp-controlArrow.fp-prev {
+	display: none!important;
+}
+
+/*iPhone 5*/
+@media screen and (device-aspect-ratio: 40/71) {
+	#section1 .fp-slidesNav{
+		margin-bottom: 70px;
+	}
+	
+	.iframe_video {
+		width: 100%;
+		height: 180px;
+		margin-left: 0;
+	}
+
+	.callToInternas{
+		width: 70%;
+		height: 14%;
+		display: block;
+		margin-left: -35%;
+		left: 50%;
+		bottom: 16px;
+		position: absolute;
+		border-radius: 8px;
+		color: white;
+		z-index: 20;
+	}
+}
+
 
 @media only screen and (min-device-width : 321px) and (max-device-width : 720px) {
+
+	
+
+
 	h2.subTituloHome{
 		font-size: 23px;
 		padding: 70px 0px 0px 14px;
