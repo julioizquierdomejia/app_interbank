@@ -76,58 +76,75 @@ $(window).load(function(){
       switch ($pos) {
         //Galeria de videos
         case '2-0':
+        alert('Aqui Lanzamos : ' + "ga('send', 'event', 'boton_slide', 'click', 'opcion _video1_v2');")
             ga('send', 'event', 'boton_slide', 'click', 'opcion _video1_v2');
             break;
         case '2-1':
+        alert('Aqui Lanzamos' + " : ga('send', 'event', 'boton_slide', 'click', 'opcion_video2_v2');")
             ga('send', 'event', 'boton_slide', 'click', 'opcion_video2_v2');
             break;
-        case '2-2':            
+        case '2-2':
+        alert('Aqui Lanzamos' + " : ga('send', 'event', 'boton_slide', 'click', 'opcion_video3_v2');")
             ga('send', 'event', 'boton_slide', 'click', 'opcion_video3_v2');
             break;
         case '2-3':
+        alert('Aqui Lanzamos' + " : ga('send', 'event', 'boton_slide', 'click', 'opcion_video4_v2');")
             ga('send', 'event', 'boton_slide', 'click', 'opcion_video4_v2');
             break;
         case '2-4':
+        alert('Aqui Lanzamos' + " : ga('send', 'event', 'boton_slide', 'click', 'opcion_video5_v2');")
             ga('send', 'event', 'boton_slide', 'click', 'opcion_video5_v2');
             break;
         case '2-5':
+        alert('Aqui Lanzamos' + " : ga('send', 'event', 'boton_slide', 'click', 'opcion_video6_v2');")
             ga('send', 'event', 'boton_slide', 'click', 'opcion_video6_v2');
             break;
 
         //Aprende
         case '3-0':
+        alert('Aqui Lanzamos' + " : ga('send', 'pageview', '/aprende_v2/consulta_tu_saldo');")
             ga('send', 'pageview', '/aprende_v2/consulta_tu_saldo');
             break;
         case '3-1':
+        alert('Aqui Lanzamos' + " : ga('send', 'pageview', '/aprende_v2/envia_tu_numero_cuenta');")
             ga('send', 'pageview', '/aprende_v2/envia_tu_numero_cuenta');
             break;
-        case '3-2':            
+        case '3-2':
+        alert('Aqui Lanzamos' + " : ga('send', 'pageview', '/aprende_v2/paga_tarjetas_credito');")
             ga('send', 'pageview', '/aprende_v2/paga_tarjetas_credito');
             break;
         case '3-3':
+        alert('Aqui Lanzamos' + " : ga('send', 'pageview', '/aprende_v2/paga_tus_recibos');")
             ga('send', 'pageview', '/aprende_v2/paga_tus_recibos');
             break;
         case '3-4':
+        alert('Aqui Lanzamos' + " : ga('send', 'pageview', '/aprende_v2/transfiere_dinero');")
             ga('send', 'pageview', '/aprende_v2/transfiere_dinero');
             break;
         case '3-5':
+        alert('Aqui Lanzamos' + " . ga('send', 'pageview', '/aprende_v2/graba_tus_operaciones');")
             ga('send', 'pageview', '/aprende_v2/graba_tus_operaciones');
             break;
 
         //Preguntas Frecuentes
         case '4-0':
+        alert('Aqui Lanzamos' + " : ga('send', 'pageview', '/preguntas_v2/soy_nuevo_usuario');")
             ga('send', 'pageview', '/preguntas_v2/soy_nuevo_usuario');
             break;
         case '4-1':
+        alert('Aqui Lanzamos' + " : ga('send', 'pageview', '/preguntas_v2/clave_web');")
             ga('send', 'pageview', '/preguntas_v2/clave_web');
             break;
-        case '4-2':            
+        case '4-2':
+        alert('Aqui Lanzamos' + ": ga('send', 'pageview', '/preguntas_v2/clave_sms');")
             ga('send', 'pageview', '/preguntas_v2/clave_sms');
             break;
         case '4-3':
+        alert('Aqui Lanzamos' + ": ga('send', 'pageview', '/preguntas_v2/como_uso_token');")
             ga('send', 'pageview', '/preguntas_v2/como_uso_token');
             break;
         case '4-4':
+        alert('Aqui Lanzamos' + " ga('send', 'pageview', '/preguntas_v2/olvide_mi_clave_web');")
             ga('send', 'pageview', '/preguntas_v2/olvide_mi_clave_web');
             break;
       }
@@ -264,21 +281,27 @@ $(window).load(function(){
                           switch (item) {
                             //Galeria de videos
                             case 'video1':
+                            alert('se hizo click al Video 1 y se lanzo el GA')
                                 ga('send','event', 'video_consultas', 'click_play' , 'video1_v2');
                                 break;
                             case 'video2':
+                            alert('se hizo click al Video 2 y se lanzo el GA')
                                 ga('send','event', 'video_operaciones', 'click_play' , 'video2_v2');
                                 break;
                             case 'video3':
+                            alert('se hizo click al Video 3 y se lanzo el GA')
                                 ga('send','event', 'video_numero_de_cuenta', 'click_play' , 'video3_v2');
                                 break;
                             case 'video4':
+                            alert('se hizo click al Video 4 y se lanzo el GA')
                                 ga('send','event', 'video_paga_tarjetas', 'click_play' , 'video4_v2 ');
                                 break;
                             case 'video5':
+                            alert('se hizo click al Video 5 y se lanzo el GA')
                                 ga('send','event', 'video_transfiere_dinero', 'click_play' , 'video5_v2');
                                 break;
                             case 'video6':
+                            alert('se hizo click al Video 6 y se lanzo el GA')
                                 ga('send','event', 'paga_recibos', 'click_play' , 'video6_v2');
                                 break;
 
