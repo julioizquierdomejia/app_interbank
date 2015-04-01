@@ -72,6 +72,66 @@ $(window).load(function(){
       var $alturaVideo = $('.iframe_video').position();
       $('.fp-controlArrow').css('top','200');
 
+      var $pos = index + '-' + slideIndex
+      switch ($pos) {
+        //Galeria de videos
+        case '2-0':
+            ga('send', 'event', 'boton_slide', 'click', 'opcion _video1_v2');
+            break;
+        case '2-1':
+            ga('send', 'event', 'boton_slide', 'click', 'opcion_video2_v2');
+            break;
+        case '2-2':            
+            ga('send', 'event', 'boton_slide', 'click', 'opcion_video3_v2');
+            break;
+        case '2-3':
+            ga('send', 'event', 'boton_slide', 'click', 'opcion_video4_v2');
+            break;
+        case '2-4':
+            ga('send', 'event', 'boton_slide', 'click', 'opcion_video5_v2');
+            break;
+        case '2-5':
+            ga('send', 'event', 'boton_slide', 'click', 'opcion_video6_v2');
+            break;
+
+        //Aprende
+        case '3-0':
+            ga('send', 'pageview', '/aprende_v2/consulta_tu_saldo');
+            break;
+        case '3-1':
+            ga('send', 'pageview', '/aprende_v2/envia_tu_numero_cuenta');
+            break;
+        case '3-2':            
+            ga('send', 'pageview', '/aprende_v2/paga_tarjetas_credito');
+            break;
+        case '3-3':
+            ga('send', 'pageview', '/aprende_v2/paga_tus_recibos');
+            break;
+        case '3-4':
+            ga('send', 'pageview', '/aprende_v2/transfiere_dinero');
+            break;
+        case '3-5':
+            ga('send', 'pageview', '/aprende_v2/graba_tus_operaciones');
+            break;
+
+        //Preguntas Frecuentes
+        case '4-0':
+            ga('send', 'pageview', '/preguntas_v2/soy_nuevo_usuario');
+            break;
+        case '4-1':
+            ga('send', 'pageview', '/preguntas_v2/clave_web');
+            break;
+        case '4-2':            
+            ga('send', 'pageview', '/preguntas_v2/clave_sms');
+            break;
+        case '4-3':
+            ga('send', 'pageview', '/preguntas_v2/como_uso_token');
+            break;
+        case '4-4':
+            ga('send', 'pageview', '/preguntas_v2/olvide_mi_clave_web');
+            break;
+      }
+
     },
     
     onLeave: function(index, newIndex, direction){
@@ -145,6 +205,9 @@ $(window).load(function(){
   // se cierra y ejecuta la navegacion
   $('.contextual > li').click(function(){
     $html.toggleClass('open-slider');
+
+    $('.tresrayas').toggleClass('dnone');
+    $('.equis').toggleClass('dblock');
 
     if (!$statusMenu) {
       TweenMax.to($('#raya1'), 0.26, {top:5, delay:1, onComplete:function(){
