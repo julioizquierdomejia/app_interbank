@@ -256,7 +256,7 @@ $(window).load(function(){
                           break;
                       case 0:
                           console.log ('ended');
-                          player.currentTime = 0;
+                          player.playVideo(videoId)
                           break;
                       case 1:
                           console.log ('playing');
