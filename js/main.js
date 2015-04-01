@@ -17,11 +17,43 @@ $(window).load(function(){
   if ($os == 'iOS') {
     $('.appleButton').css('display','block');
     $('.googleButton').css('display','none');
+
+    $('.callTo').on('click', function() {
+      ga('send', 'event', 'boton descargar', 'click', 'app_store_home_v2');
+      alert('app_store_home_v2')
+    });
+
+    $('.callConoce').on('click', function() {
+      ga('send', 'event', 'boton descargar', 'click', 'app_store_conoce_v2');
+      alert('app_store_home_v2')
+    });
+
+    $('.callAprende').on('click', function() {
+      ga('send', 'event', 'boton descargar', 'click', 'app_store_aprende_v2');
+      alert('app_store_home_v2')
+    });
+
   };
 
   if ($os == 'Android') {
     $('.appleButton').css('display','none');
     $('.googleButton').css('display','block');
+
+    $('.callTo').on('click', function() {
+      ga('send', 'event', 'boton descargar', 'click', 'google_play_home-v2');
+      alert('google_play_home-v2')
+    });
+
+    $('.callConoce').on('click', function() {
+      ga('send', 'event', 'boton descargar', 'click', 'google_play_conoce_v2');
+      alert('google_play_home-v2')
+    });
+
+    $('.callAprende').on('click', function() {
+      ga('send', 'event', 'boton descargar', 'click', 'google_play_aprende_v2');
+      alert('app_store_home_v2')
+    });
+
   };
   
   $('#fullpage').fullpage({

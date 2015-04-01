@@ -9,33 +9,8 @@
 	<link rel="stylesheet" href="css/font-face.css" />
 	<link rel="stylesheet" href="css/main.css" /> <!-- css de proyecto -->
 
-	<!-- jQuery -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-	
-	<!-- TweenMax -->
-	<script type="text/javascript" src='js/greensock/TweenMax.min.js'></script>
-
 	<!-- FullPAge-js -->
 	<link rel="stylesheet" href="js/fullPage/jquery.fullPage.css" />
-	<script type="text/javascript" src="js/fullPage/vendors/jquery.slimscroll.min.js"></script>
-	<script type="text/javascript" src="js/fullPage/jquery.fullPage.js"></script>
-	<script type="text/javascript" src="js/fullPage/examples.js"></script>
-
-	
-	<script src="https://www.youtube.com/iframe_api" type="text/javascript"></script>
-	<script type="text/javascript" src='js/main.js'></script>
-
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		 
-		ga('create', 'UA-61394817-1', 'auto');
-		ga('send', 'pageview');
-	 
-	</script>
 	
 </head>
 <body>
@@ -49,10 +24,14 @@
 	<!-- El Menu Contextual -->
 	<div class="menuContextual">
 		<ul class="contextual">
-			<li class="opc"><a href="#home">Inicio</a></li>
-			<li class="opc"><a href="#conoce">Conoce</a></li>
-			<li class="opc"><a href="#aprende">Aprende</a></li>
-			<li class="opc"><a href="#preguntas">¿Preguntas?</a></li>
+			<li class="opc">
+			<a href="#home" onclick="ga('send', 'pageview', '/home_v2');">Inicio</a></li>
+			<li class="opc">
+			<a href="#conoce" onclick="ga('send', 'pageview', '/conoce_v2');">Conoce</a></li>
+			<li class="opc">
+			<a href="#aprende" onclick="ga('send', 'pageview', '/aprende_v2');">Aprende</a></li>
+			<li class="opc">
+			<a href="#preguntas" onclick="ga('send', 'pageview', '/preguntas_v2');">¿Preguntas?</a></li>
 		</ul>
 	</div>
 
@@ -117,7 +96,7 @@ frecuentes en la nueva Interbank APP!</h2>
 			<div class="slide" id="slide4" data-anchor="slide4">
 				<h1 class="tituloVideos">Paga tus tarjetas <br>en segundos</h1>
 				<h2 class="subTituloVideo">¡Más fácil que hacer un autolike, <br>
-				es pagar tus tarjetas sin costo con la nueva Interbank APP!</h2>
+				es pagar tus tarjetas sin costo con la nueva <br> Interbank APP!</h2>
 				
 				<div id="video4" data-div="video4" data-video="tQwzxCKPI6k" class="iframe_video"></div>
 			</div>
@@ -137,7 +116,7 @@ frecuentes en la nueva Interbank APP!</h2>
 			</div>
 
 			
-		    <a class="callToInternas">
+		    <a class="callToInternas callConoce">
 				<img class='appleButton' src="img/appleButton.png" width="202" height="57">
 				<img class='googleButton' src="img/googleButton.png" width="202" height="57">
 			</a>
@@ -250,7 +229,7 @@ frecuentes en la nueva Interbank APP!</h2>
 				<div class="clear"></div>
 			</div>
 			-->
-			<a class="callToInternas">
+			<a class="callToInternas callAprende">
 				<img class='appleButton' src="img/appleButton.png" width="202" height="57">
 				<img class='googleButton' src="img/googleButton.png" width="202" height="57">
 			</a>
@@ -337,5 +316,35 @@ frecuentes en la nueva Interbank APP!</h2>
 		</div>
 
 	</div>
+
+
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+<!-- TweenMax -->
+<script type="text/javascript" src='js/greensock/TweenMax.min.js'></script>
+
+<!-- FullPAge-js -->
+<link rel="stylesheet" href="js/fullPage/jquery.fullPage.css" />
+<script type="text/javascript" src="js/fullPage/vendors/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="js/fullPage/jquery.fullPage.js"></script>
+<script type="text/javascript" src="js/fullPage/examples.js"></script>
+
+
+<script src="https://www.youtube.com/iframe_api" type="text/javascript"></script>
+<script type="text/javascript" src='js/main.js'></script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	 
+	ga('create', 'UA-61394817-1', 'auto');
+	ga('send', 'pageview');
+ 
+</script>
+
 </body>
 </html>
