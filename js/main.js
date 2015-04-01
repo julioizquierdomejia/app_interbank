@@ -256,6 +256,7 @@ $(window).load(function(){
                           break;
                       case 0:
                           console.log ('ended');
+                          player.currentTime = 0;
                           break;
                       case 1:
                           console.log ('playing');
@@ -285,7 +286,6 @@ $(window).load(function(){
                           break;
                       case 2:
                           console.log ('paused');
-                          player.playVideo();
                           break;
                       case 3:
                           console.log ('buffering');
