@@ -2,6 +2,7 @@ $(document).ready(function() {});
 
 $(window).load(function(){
 
+
   //variables
   var $html = $("html");
   var $statusMenu = false;
@@ -10,10 +11,6 @@ $(window).load(function(){
   var $meVideo;
   var videoArray = [];
   var isDevice = false;
-
-  //posicionamos los puntos de navegacion
-  //var altoBoton = $('.callToInternas').height();
-  //$('.fp-slidesNav').css('margin-bottom',altoBoton + 'px')
   
   //Detectamos el sistema operativo para saber
   //que boton mostrar parea descargar la app
@@ -40,6 +37,8 @@ $(window).load(function(){
       for (i = 0; i < videoArray.length; i++) { 
           videoArray[i].pauseVideo();
       }
+      var $alturaVideo = $('.iframe_video').position();
+      $('.fp-controlArrow').css('top','200');
 
     },
     
@@ -56,8 +55,16 @@ $(window).load(function(){
       }
 
   }
+ 
 
   });
+
+  //posicionamiento de objetos Verticalemnte
+  var $alturaVideo = $('.iframe_video').position();
+  //$('.fp-controlArrow').css('top','200');
+  $(".section").on( ".fp-controlArrow", function() {
+      $(this).css('top','200');
+  })
 
 
   TweenMax.to($('.warning > img'), 1, {css:{rotation:90}, yoyo:true, repeat:3, delay:1.5, onComplete:function(){
@@ -71,6 +78,11 @@ $(window).load(function(){
     $html.toggleClass('open-slider');
     $('.envoltura').toggleClass('open-slider');
 
+    $('.tresrayas').toggleClass('dnone');
+    $('.equis').toggleClass('dblock');
+    
+
+    /*
     if (!$statusMenu) {
       TweenMax.to($('#raya1'), 0.26, {top:5, onComplete:function(){
         TweenMax.to($('#raya1'), 0.26, {rotation:-45})
@@ -93,6 +105,7 @@ $(window).load(function(){
 
       $statusMenu = false; 
     };
+    */
 
   })
 
