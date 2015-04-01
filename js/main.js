@@ -247,7 +247,55 @@ $(window).load(function(){
           playerVars: { 
                 'showinfo': 0,
                 'modestbranding': 1,
-            }
+            },
+           events: {
+              'onStateChange': function (event) {
+                  switch (event.data) {
+                      case -1:
+                          console.log ('unstarted');
+                          break;
+                      case 0:
+                          console.log ('ended');
+                          break;
+                      case 1:
+                          console.log ('playing');
+
+                          switch (item) {
+                            //Galeria de videos
+                            case 'video1':
+                                ga('send','event', 'video_consultas', 'click_play' , 'video1_v2');
+                                break;
+                            case 'video2':
+                                ga('send','event', 'video_operaciones', 'click_play' , 'video2_v2');
+                                break;
+                            case 'video3':
+                                ga('send','event', 'video_numero_de_cuenta', 'click_play' , 'video3_v2');
+                                break;
+                            case 'video4':
+                                ga('send','event', 'video_paga_tarjetas', 'click_play' , 'video4_v2 ');
+                                break;
+                            case 'video5':
+                                ga('send','event', 'video_transfiere_dinero', 'click_play' , 'video5_v2');
+                                break;
+                            case 'video6':
+                                ga('send','event', 'paga_recibos', 'click_play' , 'video6_v2');
+                                break;
+
+                            }
+                          break;
+                      case 2:
+                          console.log ('paused');
+                          player.playVideo();
+                          break;
+                      case 3:
+                          console.log ('buffering');
+                          break;
+                      case 5:
+                          console.log ('video cued');
+                          break;
+                  }
+              }
+          }
       });
 
       $meVideo = player;
