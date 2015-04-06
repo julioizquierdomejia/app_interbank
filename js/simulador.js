@@ -1,9 +1,10 @@
 
-var  vista1, conteCuentas, frecuente, conteLogin, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnMapa, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, ubicacion1, ubicacion2, ubicacion3, btnUbicanos, btnSeguridad, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, seg1, mandarEmail, animarMenu, conteUbicanos, btnTienda, btnNumCuentas, opt1, opt2, otd2, otd4, otd5, btnUbicanosOver, vistaT3, ahorroAsoles, aAmex, agilS, amex, transfDinero,btnSeguridadOver, btnPtajeta, btnTdinero1, btnTdinero2, btnTdinero5, otd3, btnTdinero3, btnTdinero3, conteSeguridad, btnSiguiente2, btnTdinero6, btnColor, btnColorsito, btnSiguienteSeguridad, otd6, btnTdinero7, opt4, opt5, otd1,prr;
-var path = "img/";
+var  vista1, conteCuentas, frecuente, conteLogin, btnAtras1, opeVista1, opeVista3, opeVista4, conteOperaciones, btnSiguiente, vista2, guia, guiaO, ahorroS, btnCuentas, btnMapa, btnCuentasOver, btnOperaciones, opeVista2, btnOperacionesOver, btnUs, conteMenu, vista3, pagosCyL, ubicacion1, ubicacion2, ubicacion3, btnUbicanos, btnSeguridad, btnComp, opeVista5, confirmarPago, vista4, btnCorreo, seg1, mandarEmail, animarMenu, conteUbicanos, btnTienda, btnNumCuentas, opt1, opt2, otd2, otd4, otd5, btnUbicanosOver, vistaT3, ahorroAsoles, aAmex, agilS, amex, transfDinero,btnSeguridadOver, btnPtajeta, btnTdinero1, btnTdinero2, btnTdinero5, otd3, btnTdinero3, btnTdinero3, conteSeguridad, btnSiguiente2, btnTdinero6, btnColor, btnColorsito, btnSiguienteSeguridad, otd6, btnTdinero7, opt4, opt5, otd1,prr,btnAtras2 ,btnAtras3 ,btnAtras4 ,btnAtras5 ,btnAtras6 ,btnAtras7 ,btnAtras8 ,btnAtras9 ,btnAtras10 ,btnAtras11,btnAtras12, btnAtras13 , btnAtras14 , btnAtras15, btnAtras16, btnAtras17, btnAtras18;
+var $os = 'apple';
+var path;
 var myGuia;
 var opcPagoFrec = false;
-var alphaBotones = 0.01;
+var alphaBotones = 0.5;
 var tipoDeCuenta;
 
 $(document).ready(function(){
@@ -20,6 +21,13 @@ $(document).ready(function(){
 	var oldItem;
 
 	function init() {
+
+		if ($os == 'android') {
+			path = "img/simulador_android/";
+		} else{
+			path = "img/simulador_apple/";
+		};
+
 		canvas = document.getElementById("myCanvas");
 		stage = new createjs.Stage(canvas);
 		stage.enableMouseOver(10);
@@ -51,45 +59,45 @@ $(document).ready(function(){
 		stage.addChild(loaderBar);
 
 		manifest = [
-			{src: "simulador/login.jpg", id: "login"},
-			{src: "simulador/compartir-1.jpg", id: "vista2"},
-			{src: "simulador/guia.png", id: "guiaO"},
-			{src: "simulador/cuentas.jpg", id: "btnCuentas"},
-			{src: "simulador/cuentasOver.jpg", id: "btnCuentasOver"},
-			{src: "simulador/operaciones.jpg", id: "btnOperaciones"},
-			{src: "simulador/operacionesOver.jpg", id: "btnOperacionesOver"},
-			{src: "simulador/ubicanos.jpg", id: "btnUbicanos"},
-			{src: "simulador/ubicanosOver.jpg", id: "btnUbicanosOver"},
-			{src: "simulador/seguridad.jpg", id: "btnSeguridad"},
-			{src: "simulador/seguridadOver.jpg", id: "btnSeguridadOver"},
-			{src: "simulador/compartir-2.jpg", id: "vista3"},
-			{src: "simulador/lb.png", id: "vista4"},
-			{src: "simulador/operacionesPagoRec.jpg", id: "opeVista1"},
-			{src: "simulador/switch.png", id: "sw"},
-			{src: "simulador/operacionesPagoRec2.jpg", id: "opeVista2"},
-			{src: "simulador/operacionesPagoRec3.jpg", id: "opeVista3"},
-			{src: "simulador/operacionesPagoRec4.jpg", id: "opeVista4"},
-			{src: "simulador/operacionesPagoRec5.jpg", id: "opeVista5"},
-			{src: "simulador/pagosCyL.jpg", id: "pagosCyL"},
-			{src: "simulador/ubicacion1.jpg", id: "ubicacion1"},
-			{src: "simulador/ubicacion2.jpg", id: "ubicacion2"},
-			{src: "simulador/ubicacion3.jpg", id: "ubicacion3"},
-			{src: "simulador/candado.jpg", id: "seguridad1"},
-			{src: "simulador/boton.jpg", id: "btn"},
-			{src: "simulador/operacionesPtarjeta1.jpg", id: "opt1"},
-			{src: "simulador/operacionesPtarjeta2.jpg", id: "opt2"},
-			{src: "simulador/ahorroAgilSoles.jpg", id: "ahorroAsoles"},
-			{src: "simulador/ahorroAmex.jpg", id: "aAmex"},
-			{src: "simulador/oTarjeta3.jpg", id: "vistaT3"},
-			{src: "simulador/oTarjeta4.jpg", id: "vistaT4"},
-			{src: "simulador/oTarjeta5.jpg", id: "vistaT5"},
-			{src: "simulador/transfDinero1.jpg", id: "vistaTdinero1"},
-			{src: "simulador/transfDinero2.jpg", id: "vistaTdinero2"},
-			{src: "simulador/transfDinero3.jpg", id: "vistaTdinero3"},
-			{src: "simulador/transfDinero4.jpg", id: "vistaTdinero4"},
-			{src: "simulador/transfDinero5.jpg", id: "vistaTdinero5"},
-			{src: "simulador/transfDinero6.jpg", id: "vistaTdinero6"},
-			{src: "simulador/btnColores.jpg", id: "btnColor"}
+			{src: "login.jpg", id: "login"},
+			{src: "compartir-1.jpg", id: "vista2"},
+			{src: "guia.png", id: "guiaO"},
+			{src: "cuentas.jpg", id: "btnCuentas"},
+			{src: "cuentasOver.jpg", id: "btnCuentasOver"},
+			{src: "operaciones.jpg", id: "btnOperaciones"},
+			{src: "operacionesOver.jpg", id: "btnOperacionesOver"},
+			{src: "ubicanos.jpg", id: "btnUbicanos"},
+			{src: "ubicanosOver.jpg", id: "btnUbicanosOver"},
+			{src: "seguridad.jpg", id: "btnSeguridad"},
+			{src: "seguridadOver.jpg", id: "btnSeguridadOver"},
+			{src: "compartir-2.jpg", id: "vista3"},
+			{src: "lb.png", id: "vista4"},
+			{src: "operacionesPagoRec.jpg", id: "opeVista1"},
+			{src: "switch.png", id: "sw"},
+			{src: "operacionesPagoRec2.jpg", id: "opeVista2"},
+			{src: "operacionesPagoRec3.jpg", id: "opeVista3"},
+			{src: "operacionesPagoRec4.jpg", id: "opeVista4"},
+			{src: "operacionesPagoRec5.jpg", id: "opeVista5"},
+			{src: "pagosCyL.jpg", id: "pagosCyL"},
+			{src: "ubicacion1.jpg", id: "ubicacion1"},
+			{src: "ubicacion2.jpg", id: "ubicacion2"},
+			{src: "ubicacion3.jpg", id: "ubicacion3"},
+			{src: "candado.jpg", id: "seguridad1"},
+			{src: "boton.jpg", id: "btn"},
+			{src: "operacionesPtarjeta1.jpg", id: "opt1"},
+			{src: "operacionesPtarjeta2.jpg", id: "opt2"},
+			{src: "ahorroAgilSoles.jpg", id: "ahorroAsoles"},
+			{src: "ahorroAmex.jpg", id: "aAmex"},
+			{src: "oTarjeta3.jpg", id: "vistaT3"},
+			{src: "oTarjeta4.jpg", id: "vistaT4"},
+			{src: "oTarjeta5.jpg", id: "vistaT5"},
+			{src: "transfDinero1.jpg", id: "vistaTdinero1"},
+			{src: "transfDinero2.jpg", id: "vistaTdinero2"},
+			{src: "transfDinero3.jpg", id: "vistaTdinero3"},
+			{src: "transfDinero4.jpg", id: "vistaTdinero4"},
+			{src: "transfDinero5.jpg", id: "vistaTdinero5"},
+			{src: "transfDinero6.jpg", id: "vistaTdinero6"},
+			{src: "btnColores.jpg", id: "btnColor"}
 		];
 
 		preload = new createjs.LoadQueue(true, "test/");
@@ -250,14 +258,19 @@ $(document).ready(function(){
 			 cursor: "pointer",
 			 x: 542, y: 60, scaleX: 120, scaleY: 20, alpha: alphaBotones
 			});
-			btnComp = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 715, y: 0, scaleX: 35, scaleY: 32, alpha: alphaBotones
-			});
+
+			if($os=='android'){
+				btnAtras1 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}else{
+				btnAtras1 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}
+
+			btnComp = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 715, y:0, scaleX: 35, scaleY: 32, alpha: alphaBotones});
 
 			conteCuentas.addChild(vista3);
 			conteCuentas.addChild(btnNumCuentas);
 			conteCuentas.addChild(btnComp);
+			conteCuentas.addChild(btnAtras1);
 
 			conteCuentas.x = -500;
 			vista3.x = 500;
@@ -265,8 +278,11 @@ $(document).ready(function(){
 			guia.x = 735; guia.y = 17; 
 			conteCuentas.addChild(guia);
 
+			
+
 			btnComp.on("click", cuentasEscena3);
 			btnNumCuentas.on("click", colores);
+			btnAtras1.on("click", cuentas);
 
 			function cuentasEscena3(){
 
@@ -321,9 +337,16 @@ $(document).ready(function(){
 			 x: 715, y: 0, scaleX: 35, scaleY: 32, alpha: alphaBotones
 			});
 
+			if($os=='android'){
+				btnAtras2 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}else{
+				btnAtras2 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}
+
 			conteCuentas.addChild(vista3);
 			conteCuentas.addChild(btnNumCuentas);
 			conteCuentas.addChild(btnComp);
+			conteCuentas.addChild(btnAtras2);
 
 			conteCuentas.x = -500;
 			vista3.x = 500;
@@ -333,6 +356,7 @@ $(document).ready(function(){
 
 			btnComp.on("click", cuentasEscena3);
 			btnNumCuentas.on("click", colores);
+			btnAtras2.on("click", cuentas);
 
 			function cuentasEscena3(){
 
@@ -365,9 +389,16 @@ $(document).ready(function(){
 			 x: 715, y: 0, scaleX: 35, scaleY: 32, alpha: alphaBotones
 			});
 
+			if($os=='android'){
+				btnAtras3 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}else{
+				btnAtras3 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}
+
 			conteCuentas.addChild(vista3);
 			conteCuentas.addChild(btnNumCuentas);
 			conteCuentas.addChild(btnComp);
+			conteCuentas.addChild(btnAtras3);
 
 			conteCuentas.x = -500;
 			vista3.x = 500;
@@ -377,6 +408,7 @@ $(document).ready(function(){
 
 			btnComp.on("click", cuentasEscena3);
 			btnNumCuentas.on("click", colores);
+			btnAtras3.on("click", cuentas);
 
 			function cuentasEscena3(){
 
@@ -404,14 +436,26 @@ $(document).ready(function(){
 				 cursor: "pointer",
 				 x: 5, y: 33, scaleX: 246, scaleY: 46, alpha: alphaBotones
 				});
-		prr = new createjs.Bitmap(preload.getResult("btn")).set({
-				 cursor: "pointer",
-				 x: 5, y: 82, scaleX:246, scaleY: 47, alpha: alphaBotones
-				});
-		transfDinero = new createjs.Bitmap(preload.getResult("btn")).set({
-				 cursor: "pointer",
-				 x: 5, y: 134, scaleX:246, scaleY: 47, alpha: alphaBotones
-				});
+
+		if ($os == 'android') {
+			prr = new createjs.Bitmap(preload.getResult("btn")).set({
+					 cursor: "pointer",
+					 x: 5, y: 82, scaleX:246, scaleY: 47, alpha: alphaBotones
+					});
+			transfDinero = new createjs.Bitmap(preload.getResult("btn")).set({
+					 cursor: "pointer",
+					 x: 5, y: 134, scaleX:246, scaleY: 47, alpha: alphaBotones
+					});
+		} else{
+			prr = new createjs.Bitmap(preload.getResult("btn")).set({
+					 cursor: "pointer",
+					 x: 5, y: 88, scaleX:246, scaleY: 47, alpha: alphaBotones
+					});
+			transfDinero = new createjs.Bitmap(preload.getResult("btn")).set({
+					 cursor: "pointer",
+					 x: 5, y: 145, scaleX:246, scaleY: 47, alpha: alphaBotones
+					});
+		};
 
 		
 
@@ -445,14 +489,27 @@ $(document).ready(function(){
 		function OperacionTarjeta () {
 			opt1 = new createjs.Bitmap(preload.getResult("opt1"));
 
-			pt1 = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 1005, y: 56, scaleX:245, scaleY:49, alpha: alphaBotones
-			});
-			pt2 = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 1005, y: 130, scaleX:245, scaleY:49, alpha: alphaBotones
-			});
+			if ($os == 'android') {
+				pt1 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1005, y: 56, scaleX:245, scaleY:49, alpha: alphaBotones
+				});
+				pt2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1005, y: 130, scaleX:245, scaleY:49, alpha: alphaBotones
+				});
+			} else{
+				pt1 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1005, y: 67, scaleX:245, scaleY:49, alpha: alphaBotones
+				});
+				pt2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1005, y: 153, scaleX:245, scaleY:49, alpha: alphaBotones
+				});
+			};
+
+			
 
 			opt1.x = 1000;
 			conteOperaciones.x = -1000;
@@ -467,14 +524,32 @@ $(document).ready(function(){
 
 		function OperacionTarjeta2 () {
 			opt2 = new createjs.Bitmap(preload.getResult("opt2"));
-			as2 = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 1255, y: 60, scaleX:245, scaleY:40, alpha: alphaBotones
-			});
-			aa2 = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 1255, y: 108, scaleX:245, scaleY:45, alpha: alphaBotones
-			});
+
+			if ($os == 'android') {
+				as2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1255, y: 60, scaleX:245, scaleY:40, alpha: alphaBotones
+				});
+				aa2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1255, y: 108, scaleX:245, scaleY:45, alpha: alphaBotones
+				});
+			} else{
+				as2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1255, y: 73, scaleX:245, scaleY:40, alpha: alphaBotones
+				});
+				aa2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1255, y: 130, scaleX:245, scaleY:45, alpha: alphaBotones
+				});
+			};
+
+			if($os=='android'){
+				btnAtras4 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 1250, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}else{
+				btnAtras4 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 1250, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}
 
 
 			opt2.x = 1250;
@@ -483,39 +558,75 @@ $(document).ready(function(){
 			conteOperaciones.addChild(opt2);
 			conteOperaciones.addChild(as2);
 			conteOperaciones.addChild(aa2);
+			conteOperaciones.addChild(btnAtras4);
 
 
 			as2.on("click", OperacionTarjeta3);
 			aa2.on("click", OperacionTarjeta3);
+			btnAtras4.on("click", OperacionTarjeta);
 		}
 
 		function OperacionTarjeta3 () {
 			opt3 = new createjs.Bitmap(preload.getResult("vistaT3"));
-			btnSiguiente2 = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 1520, y: 227, scaleX:210, scaleY:28, alpha: alphaBotones
-			});
+
+			if ($os == 'android') {
+				btnSiguiente2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1520, y: 227, scaleX:210, scaleY:28, alpha: alphaBotones
+				});
+			} else{
+				console.log("estoy a ki ---")
+				btnSiguiente2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1525, y: 320, scaleX:205, scaleY:35, alpha: alphaBotones
+				});
+			};
+
+			if($os=='android'){
+				btnAtras5 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 1500, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			guia.x = 1700; guia.y = 241;
+			}else{
+				btnAtras5 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 1500, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			guia.x = 1700; guia.y = 340;
+			}
 
 			opt3.x = 1500;
 			conteOperaciones.x = -1500;
 
-			guia.x = 1700; guia.y = 241;
 
 			conteOperaciones.addChild(opt3);
 			conteOperaciones.addChild(btnSiguiente2);
 			conteOperaciones.addChild(guia);
+			conteOperaciones.addChild(btnAtras5);
 
 			btnSiguiente2.on("click", OperacionTarjeta4);
+			btnAtras5.on("click", OperacionTarjeta2);
 		}
 
 		function OperacionTarjeta4(){
 			opt4 = new createjs.Bitmap(preload.getResult("vistaT4"));
-			btnSiguiente3 = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 1770, y: 351, scaleX:210, scaleY:28, alpha: alphaBotones
-			});
 
+			if ($os == 'android') {
+				btnSiguiente3 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1770, y: 351, scaleX:210, scaleY:28, alpha: alphaBotones
+				});
+			} else{
+				btnSiguiente3 = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 1780, y: 340, scaleX:205, scaleY:32, alpha: alphaBotones
+				});
+			};
+
+			if($os=='android'){
+				btnAtras6 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 1750, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
 			guia.x = 1950; guia.y = 367;
+			}else{
+				btnAtras6 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 1750, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			guia.x = 1950; guia.y = 362;
+			}
+
+
 
 			opt4.x = 1750;
 			conteOperaciones.x = -1750;
@@ -523,11 +634,22 @@ $(document).ready(function(){
 			conteOperaciones.addChild(opt4);
 			conteOperaciones.addChild(btnSiguiente3);
 			conteOperaciones.addChild(guia);
+			conteOperaciones.addChild(btnAtras6);
 
 			btnSiguiente3.on("click", OperacionTarjeta5);
+
+			btnAtras6.on("click", OperacionTarjeta3);
 		}
 
 		function OperacionTarjeta5(){
+			if($os=='android'){
+				btnAtras7 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 2000, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}else{
+				btnAtras7 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}
+
+			conteOperaciones.addChild(btnAtras7);
+
 			opt5 = new createjs.Bitmap(preload.getResult("vistaT5"));
 
 			opt5.x = 2000;
@@ -544,20 +666,36 @@ $(document).ready(function(){
 			opeVista2 = new createjs.Bitmap(preload.getResult("opeVista2"));
 			conteOperaciones.addChild(opeVista2);
 
+			if($os=='android'){
+				btnAtras10 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 250, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}else{
+				btnAtras10 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 250, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}
+
 			opeVista2.x = 250;
 			conteOperaciones.x = -250;
 
-			btnSiguiente = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 270, y: 346, scaleX:210, scaleY:32, alpha: alphaBotones
-			});
-			
+			if ($os == 'android') {
+				btnSiguiente = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 270, y: 346, scaleX:210, scaleY:32, alpha: alphaBotones
+				});
+				guia.x = 450; guia.y = 363;
+			} else{
+				btnSiguiente = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 275, y: 340, scaleX:198, scaleY:32, alpha: alphaBotones
+				});
+				guia.x = 450; guia.y = 358;
+			};
+
 			conteOperaciones.addChild(btnSiguiente);
 
-			guia.x = 450; guia.y = 363;
 			conteOperaciones.addChild(guia);
+			conteOperaciones.addChild(btnAtras10);
 
 			btnSiguiente.on("click", OperacionesVista2);
+			btnAtras10.on("click", Operaciones);
 		}
 
 		function OperacionesVista2(){
@@ -565,20 +703,36 @@ $(document).ready(function(){
 			opeVista3 = new createjs.Bitmap(preload.getResult("opeVista3"));
 			conteOperaciones.addChild(opeVista3);
 
-			ahorroS = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 505, y: 60, scaleX: 233, scaleY: 44, alpha: alphaBotones
-			});
+			if ($os == 'android') {
+				ahorroS = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 505, y: 60, scaleX: 233, scaleY: 44, alpha: alphaBotones
+				});
+			} else{
+				ahorroS = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 505, y: 65, scaleX: 233, scaleY: 44, alpha: alphaBotones
+				});
+			};
+
+			if($os=='android'){
+				btnAtras8 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+				guia.x = 700; guia.y = 85;
+			}else{
+				btnAtras8 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+				guia.x = 700; guia.y = 85;
+			}
 
 			conteOperaciones.addChild(ahorroS);
 			
 			opeVista3.x = 500;
 			conteOperaciones.x = -500;
 
-			guia.x = 700; guia.y = 80;
 			conteOperaciones.addChild(guia);
+			conteOperaciones.addChild(btnAtras8);
 
 			ahorroS.on("click", OperacionesVista3);
+			btnAtras8.on("click", OperacionesVista1);
 		}
 
 		function OperacionesVista3(){
@@ -586,10 +740,25 @@ $(document).ready(function(){
 			opeVista4 = new createjs.Bitmap(preload.getResult("opeVista4"));
 			conteOperaciones.addChild(opeVista4);
 
-			confirmarPago = new createjs.Bitmap(preload.getResult("btn")).set({
-			 cursor: "pointer",
-			 x: 520, y: 352, scaleX: 210, scaleY: 28, alpha: alphaBotones
-			});
+			if ($os == 'android') {
+				confirmarPago = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 520, y: 352, scaleX: 210, scaleY: 28, alpha: alphaBotones
+				});
+			} else{
+				confirmarPago = new createjs.Bitmap(preload.getResult("btn")).set({
+				 cursor: "pointer",
+				 x: 530, y: 340, scaleX: 190, scaleY: 28, alpha: alphaBotones
+				});
+			};
+
+			if($os=='android'){
+				btnAtras9 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}else{
+				btnAtras9 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}
+
+			
 			conteOperaciones.addChild(confirmarPago);
 
 			opeVista4.x = 500;
@@ -600,6 +769,7 @@ $(document).ready(function(){
 
 			conteOperaciones.addChild(frecuente);
 			conteOperaciones.addChild(confirmarPago);
+			conteOperaciones.addChild(btnAtras9);
 
 			var fondoGris = new createjs.Shape().set({
 			 cursor: "pointer"
@@ -618,11 +788,16 @@ $(document).ready(function(){
 			conteOperaciones.addChild(guia);
 
 		    frecuente.on("click", animSwitch);
+			btnAtras9.on("click", OperacionesVista2);
 
 			function animSwitch () {
 		    	createjs.Tween.get(selector, {loop: false}).to({x: 27}, 300, createjs.Ease.getPowInOut(4));
 
-		    	guia.x = 705; guia.y = 366;
+		    	if($os=='android'){
+		    		guia.x = 705; guia.y = 366;
+		    	}else{
+		    		guia.x = 700; guia.y = 353;
+		    	}
 
 		    	confirmarPago.on("click", OperacionesVista4);
 
@@ -635,6 +810,13 @@ $(document).ready(function(){
 	    	opcPagoFrec =true;
 
     		opeVista5 = new createjs.Bitmap(preload.getResult("opeVista5"));
+
+    		if($os=='android'){
+				btnAtras11 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}else{
+				btnAtras11 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}
+
 			conteOperaciones.addChild(opeVista5);
 
 			opeVista5.x = 750;
@@ -646,14 +828,32 @@ $(document).ready(function(){
 
     	function operacionesTransferir1 () {
     		otd1 = new createjs.Bitmap(preload.getResult("vistaTdinero1"));
-			btnTdinero1 = new createjs.Bitmap(preload.getResult("btn")).set({
-			cursor: "pointer",
-			x: 2250, y: 58,scaleX: 250, scaleY: 49, alpha: alphaBotones
-			});
-			btnTdinero2 = new createjs.Bitmap(preload.getResult("btn")).set({
-			cursor: "pointer",
-			x: 2250, y: 110,scaleX: 250, scaleY: 49, alpha: alphaBotones
-			});
+
+    		if ($os == 'android') {
+				btnTdinero1 = new createjs.Bitmap(preload.getResult("btn")).set({
+				cursor: "pointer",
+				x: 2250, y: 58,scaleX: 250, scaleY: 49, alpha: alphaBotones
+				});
+				btnTdinero2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				cursor: "pointer",
+				x: 2250, y: 110,scaleX: 250, scaleY: 49, alpha: alphaBotones
+				});
+			} else{
+				btnTdinero1 = new createjs.Bitmap(preload.getResult("btn")).set({
+				cursor: "pointer",
+				x: 2250, y: 70,scaleX: 250, scaleY: 49, alpha: alphaBotones
+				});
+				btnTdinero2 = new createjs.Bitmap(preload.getResult("btn")).set({
+				cursor: "pointer",
+				x: 2250, y: 130,scaleX: 250, scaleY: 49, alpha: alphaBotones
+				});
+			};
+
+			if($os=='android'){
+				btnAtras12 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 2250, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}else{
+				btnAtras12 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 2250, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}
 			
     		otd1.x = 2250;
 			conteOperaciones.x = -2250;
@@ -661,22 +861,42 @@ $(document).ready(function(){
 			conteOperaciones.addChild(otd1);
 			conteOperaciones.addChild(btnTdinero1);
 			conteOperaciones.addChild(btnTdinero2);
+			conteOperaciones.addChild(btnAtras12);
 
 
 			btnTdinero1.on("click", operacionesTransferir2);
 			btnTdinero2.on("click", operacionesTransferir2);
+			btnAtras12.on("click", Operaciones);
     	}
 
     	function operacionesTransferir2 () {
     		otd2 = new createjs.Bitmap(preload.getResult("vistaTdinero2"));
-			btnTdinero3 = new createjs.Bitmap(preload.getResult("btn")).set({
-			cursor: "pointer",
-			x: 2500, y: 56,scaleX: 250, scaleY: 45, alpha: alphaBotones
-			});
-			btnTdinero4 = new createjs.Bitmap(preload.getResult("btn")).set({
-			cursor: "pointer",
-			x: 2500, y: 115,scaleX: 250, scaleY: 47, alpha: alphaBotones
-			});
+
+    		if ($os == 'android') {
+				btnTdinero3 = new createjs.Bitmap(preload.getResult("btn")).set({
+				cursor: "pointer",
+				x: 2500, y: 56,scaleX: 250, scaleY: 45, alpha: alphaBotones
+				});
+				btnTdinero4 = new createjs.Bitmap(preload.getResult("btn")).set({
+				cursor: "pointer",
+				x: 2500, y: 115,scaleX: 250, scaleY: 47, alpha: alphaBotones
+				});
+			} else{
+				btnTdinero3 = new createjs.Bitmap(preload.getResult("btn")).set({
+				cursor: "pointer",
+				x: 2500, y: 70,scaleX: 250, scaleY: 45, alpha: alphaBotones
+				});
+				btnTdinero4 = new createjs.Bitmap(preload.getResult("btn")).set({
+				cursor: "pointer",
+				x: 2500, y: 160,scaleX: 250, scaleY: 47, alpha: alphaBotones
+				});
+			};
+
+			if($os=='android'){
+				btnAtras12 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 2500, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}else{
+				btnAtras12 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 2500, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}
 
     		otd2.x = 2500;
 			conteOperaciones.x = -2500;
@@ -684,10 +904,12 @@ $(document).ready(function(){
 			conteOperaciones.addChild(otd2);
 			conteOperaciones.addChild(btnTdinero3);
 			conteOperaciones.addChild(btnTdinero4);
+			conteOperaciones.addChild(btnAtras12);
 
 
 			btnTdinero3.on("click", operacionesTransferir3);
 			btnTdinero4.on("click", operacionesTransferir3);
+			btnAtras12.on("click", operacionesTransferir1);
     	}
 
     	function operacionesTransferir3 () {
@@ -697,6 +919,12 @@ $(document).ready(function(){
 			x: 2770, y: 347,scaleX:210, scaleY:28, alpha: alphaBotones
 			});
 
+			if($os=='android'){
+				btnAtras13 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 2750, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}else{
+				btnAtras13 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 2750, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}
+
     		otd3.x = 2750;
 			conteOperaciones.x = -2750;
 		    guia.x = 2950; guia.y = 360;
@@ -704,45 +932,83 @@ $(document).ready(function(){
 			conteOperaciones.addChild(otd3);
 			conteOperaciones.addChild(btnTdinero5);
 			conteOperaciones.addChild(guia);
+			conteOperaciones.addChild(btnAtras13);
 
 
 			btnTdinero5.on("click", operacionesTransferir4);
+			btnAtras13.on("click", operacionesTransferir2);
     	}
     	function operacionesTransferir4() {
     		otd4 = new createjs.Bitmap(preload.getResult("vistaTdinero4"));
-			btnTdinero6 = new createjs.Bitmap(preload.getResult("btn")).set({
-			cursor: "pointer",
-			x: 3020, y: 176,scaleX:210, scaleY:28, alpha: alphaBotones
-			});
+
+    		if ($os == 'android') {
+				btnTdinero6 = new createjs.Bitmap(preload.getResult("btn")).set({
+				cursor: "pointer",
+				x: 3020, y: 176,scaleX:210, scaleY:28, alpha: alphaBotones
+				});
+			} else{
+				btnTdinero6 = new createjs.Bitmap(preload.getResult("btn")).set({
+				cursor: "pointer",
+				x: 3028, y: 193,scaleX:200, scaleY:28, alpha: alphaBotones
+				});
+			};
+
+			if($os=='android'){
+				btnAtras14 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 3000, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+
+		    	guia.x = 3200; guia.y = 190;
+			}else{
+				btnAtras14 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 3000, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+
+		   	 guia.x = 3200; guia.y = 210;
+			}
 
     		otd4.x = 3000;
 			conteOperaciones.x = -3000;
-		    guia.x = 3200; guia.y = 190;
 
 			conteOperaciones.addChild(otd4);
 			conteOperaciones.addChild(btnTdinero6);
 			conteOperaciones.addChild(guia);
+			conteOperaciones.addChild(btnAtras14);
 
 
 			btnTdinero6.on("click", operacionesTransferir5);
+			btnAtras14.on("click", operacionesTransferir3);
     	}
     	function operacionesTransferir5() {
     		otd5 = new createjs.Bitmap(preload.getResult("vistaTdinero5"));
-			btnTdinero7 = new createjs.Bitmap(preload.getResult("btn")).set({
-			cursor: "pointer",
-			x: 3270, y: 352,scaleX:210, scaleY:28, alpha: alphaBotones
-			});
+
+    		if ($os == 'android') {
+				btnTdinero7 = new createjs.Bitmap(preload.getResult("btn")).set({
+				cursor: "pointer",
+				x: 3270, y: 352,scaleX:210, scaleY:28, alpha: alphaBotones
+				});
+			} else{
+				btnTdinero7 = new createjs.Bitmap(preload.getResult("btn")).set({
+				cursor: "pointer",
+				x: 3278, y: 335,scaleX:200, scaleY:32, alpha: alphaBotones
+				});
+			};
+
+			if($os=='android'){
+				btnAtras15 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 3250, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+		    	guia.x = 3450; guia.y = 365;
+			}else{
+				btnAtras15 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 3250, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+		    	guia.x = 3450; guia.y = 355;
+			}
 
     		otd5.x = 3250;
 			conteOperaciones.x = -3250;
-		    guia.x = 3450; guia.y = 366;
 
 			conteOperaciones.addChild(otd5);
 			conteOperaciones.addChild(btnTdinero7);
 			conteOperaciones.addChild(guia);
+			conteOperaciones.addChild(btnAtras15);
 
 
 			btnTdinero7.on("click", operacionesTransferir6);
+			btnAtras15.on("click", operacionesTransferir4);
     	}
     	function operacionesTransferir6 () {
     		otd6 = new createjs.Bitmap(preload.getResult("vistaTdinero6"));
@@ -759,16 +1025,38 @@ $(document).ready(function(){
 	function Ubicanos(){
 		ubicacion1 = new createjs.Bitmap(preload.getResult("ubicacion1"));
 		conteUbicanos.addChild(ubicacion1);
-		btnTienda = new createjs.Bitmap(preload.getResult("btn")).set({
-		cursor: "pointer",
-		y: 89,scaleX: 250, scaleY: 49, alpha: alphaBotones
-		});
-		conteUbicanos.addChild(btnTienda);
+		if($os=='android'){
+			btnTienda = new createjs.Bitmap(preload.getResult("btn")).set({
+			cursor: "pointer",
+			y: 89,scaleX: 250, scaleY: 49, alpha: alphaBotones
+			});
 
-		guia.x = 160; guia.y = 115;
+			btnAtras16 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 0, y:-50, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+	    	guia.x = 3450; guia.y = 365;
+
+
+			guia.x = 160; guia.y = 115;
+		}else{
+			btnTienda = new createjs.Bitmap(preload.getResult("btn")).set({
+			cursor: "pointer",
+			y: 89,scaleX: 250, scaleY: 49, alpha: alphaBotones
+			});
+
+			btnAtras16 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 0, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+	    	guia.x = 3450; guia.y = 355;
+
+
+			guia.x = 160; guia.y = 115;
+		}
+
+		
+		conteUbicanos.addChild(btnTienda);
+		conteUbicanos.addChild(btnAtras16);
+
 		conteUbicanos.x = 0;
 
 		btnTienda.on("click", UbicanosV2);
+		btnAtras16.on("click", cuentas);
 
 		stage.addChild(conteUbicanos);
 		stage.removeChild(conteOperaciones);
@@ -781,24 +1069,52 @@ $(document).ready(function(){
 			ubicacion2 = new createjs.Bitmap(preload.getResult("ubicacion2"));
 			conteUbicanos.addChild(ubicacion2);
 
-			btnMapa = new createjs.Bitmap(preload.getResult("btn")).set({
+			if($os=='android'){
+				btnMapa = new createjs.Bitmap(preload.getResult("btn")).set({
 				cursor: "pointer",
-				x:259, y:346, scaleX: 112, scaleY: 33, alpha: alphaBotones
-			});
+				x:259, y:346, scaleX: 112, scaleY: 33, alpha: alphaBotones});
+
+
+				btnAtras17 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 250, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
 
 			guia.x = 350; guia.y = 363;
+
+			}else{
+				btnMapa = new createjs.Bitmap(preload.getResult("btn")).set({
+				cursor: "pointer",
+				x:265, y:310, scaleX: 100, scaleY: 35, alpha: alphaBotones
+				});
+
+
+			btnAtras17 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 250, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+
+			guia.x = 350; guia.y = 330;
+
+			}
 
 			ubicacion2.x = 250;
 			conteUbicanos.x = -250;			
 
 			conteUbicanos.addChild(btnMapa);
 			conteUbicanos.addChild(guia);
+			conteUbicanos.addChild(btnAtras17);
 			
 			btnMapa.on("click", verMapa);
+			btnAtras17.on("click", Ubicanos);
 		}
 		function verMapa () {
 			ubicacion3 = new createjs.Bitmap(preload.getResult("ubicacion3"));
 			conteUbicanos.addChild(ubicacion3);
+
+			if($os=='android'){
+				btnAtras18 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}else{
+			btnAtras18 = new createjs.Bitmap(preload.getResult("btn")).set({cursor: "pointer",x: 500, y:0, scaleX: 30, scaleY: 32, alpha: alphaBotones});
+			}
+
+
+			conteUbicanos.addChild(btnAtras18);
+			btnAtras18.on("click", UbicanosV2);
 
 			ubicacion3.x = 500;
 			conteUbicanos.x = -500;
