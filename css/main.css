@@ -71,7 +71,7 @@ body, html{
 	transition: all .3s ease-out;
 	-moz-transition: all .3s ease-out;
 	
-	position: absolute;	
+	position: absolute!important;
 
 }
 
